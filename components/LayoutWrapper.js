@@ -8,7 +8,6 @@ import CommandPalette from './CommandPalette'
 import ThemeSwitch from './ThemeSwitch'
 import Typewriter from 'typewriter-effect'
 import { useRouter } from 'next/router'
-import DropMenu from './DropMenu.js'
 
 const LayoutWrapper = ({ children }) => {
   const router = useRouter()
@@ -45,7 +44,6 @@ const LayoutWrapper = ({ children }) => {
             </div>
             <CommandPalette navigation={navigation} />
             <ThemeSwitch />
-            <DropMenu />
           </div>
         </header>
         <main className="mb-auto">{children}</main>
