@@ -1,11 +1,9 @@
-const fs = require('fs')
-const globby = require('globby')
-const matter = require('gray-matter')
-const prettier = require('prettier')
-const siteMetadata = require('../data/siteMetadata')
-
+import fs from 'node:fs'
+import { globby } from 'globby'
+import matter from 'gray-matter'
+import prettier from 'prettier'
+import siteMetadata from '../data/siteMetadata.js'
 ;(async () => {
-  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
     'pages/*.js',
     'pages/*.tsx',
@@ -63,8 +61,7 @@ const siteMetadata = require('../data/siteMetadata')
         </urlset>
     `
 
-  const formatted = prettier.format(sitemap, {
-    ...prettierConfig,
+  const formatted = await prettier.format(sitemap, {
     parser: 'html',
   })
 
