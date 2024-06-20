@@ -19,7 +19,7 @@ const LayoutWrapper = ({ children }) => {
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="text-primary-color dark:text-primary-color-dark flex items-center justify-between text-xl font-semibold">
-                {`~${router.asPath.split('?'[0])}`}{' '}
+                {`~${router.asPath.split('?')[0]}`}{' '}
                 <Typewriter
                   options={{
                     strings: [],
