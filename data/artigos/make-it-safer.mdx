@@ -1,0 +1,108 @@
+---
+title: make-it-safer, uma dependência para proteger seu projeto Node
+date: '2023-04-03'
+tags: ["Segurança", "Node.js", "NPM", "Package Registry", "CI"]
+draft: false
+summary: Uma das falhas de segurança mais comuns entre todos os sistemas existentes atualmente é a falta de atualizações, e isso tem uma ótima razão.
+---
+
+<img className="inline" src="/static/images/Blog/npm.png" alt="Npm package Registry" />
+
+Uma das falhas de segurança mais comuns entre todos os sistemas existentes atualmente é a falta de atualizações, e isso tem uma ótima razão.
+
+Hackers e demais pessoas mal-intencionadas dificilmente procuram uma falha que afete apenas um único sistema e, por isso, é muito comum focar em sistemas que diversas pessoas vão utilizar (mesmo motivo pelo qual existem muito mais vírus para Windows, que muitas pessoas utilizam, do que para Linux e macOS, que menos pessoas utilizam). O foco de um malware é principalmente a área de abrangência.
+
+E bom, além de sistemas operacionais e plataformas de [CMS](https://pt.wikipedia.org/wiki/Sistema_de_gerenciamento_de_conte%C3%BAdo), como o [WordPress](https://br.wordpress.org/), o que mais é usado por centenas de milhares de pessoas? Dependências.
+
+Até mesmo os mais simples dos projetos às vezes acabam por utilizar dezenas de dependências, aliás por que não usar? Elas facilitam de mais o trabalho de desenvolver qualquer aplicação.
+
+Dependências de projetos são alvos constantes do desenvolvimento de exploits e malwares, visando afetar o maior número possível de usuários e sistemas. Para se ter uma ideia, inúmeras vulnerabilidades conhecidas de dependências do [NPM](https://www.npmjs.com/) podem levar a [RCEs](https://en.wikipedia.org/wiki/RCE_-_Remote_Code_Execution) (Remote Code Execution), onde um hacker pode executar trechos de código no servidor da aplicação e, em casos mais graves, levar a uma [escalação de privilégios](https://pt.wikipedia.org/wiki/Escalonamento_de_privil%C3%A9gios), dando acesso total do servidor a um atacante em potencial.
+
+![Esquema de RCEs](/static/images/Blog/RCE.png)
+&nbsp;
+
+> Para contornar esse problema, deve-se sempre que possível manter as dependências em suas versões mais recentes.
+
+## Entendendo um pouco mais
+
+Vamos tomar como exemplo o [Electron](https://www.npmjs.com/package/electron), ferramenta criada em [Node.js](https://nodejs.org/en) para criar aplicações *desktop*. No dia em que estou escrevendo este artigo, o pacote conta com 525,648 downloads semanais, ou seja, é usado por **muitos** sistemas e aplicações. Agora, se dermos uma olhada na [página do Snyk que lista as vulnerabilidades conhecidas do pacote](https://security.snyk.io/package/npm/electron), vamos encontrar uma lista com mais de 270 vulnerabilidades reportadas desde o lançamento do [Electron](https://www.npmjs.com/package/electron). Agora, tenha em mente que o pacote do [electron](https://www.npmjs.com/package/electron) nunca é usado sozinho, sempre com outras dependências. E essas dependências, assim como o pacote principal, também podem ter vulnerabilidades.
+
+<SpecialLink
+  link={"https://security.snyk.io/package/npm/electron"}
+  title={"Vulnerabilidades do Electron"}
+  description={"Página do Snyk com a lista de todas as vulnerabilidades conhecidas do Electron"}
+  site={"snyk.io"}
+  image={"https://res.cloudinary.com/snyk/image/upload/v1537345894/press-kit/brand/logo-black.png"}
+/>
+
+Em muitos casos, uma vulnerabilidade conhecida é relativa a um método ou função específica de algum pacote, ou seja, se sua aplicação não utilizar aquele método ou função, o sistema que está sendo desenvolvido não vai ser vulnerável à ameaça conhecida. Ou seja, vulnerabilidade reportadas em pacotes dependem muito de como este pacote está sendo usado no sistema que está em desenvolvimento.
+
+## Um exemplo prático
+
+Em um projeto em que trabalhei, utilizávamos a dependência express-fileupload, que em sua versão mais recente conta com uma vulnerabilidade de nível *"alto"*. A vulnerabilidade em questão é do tipo *["Arbitrary File Upload"](https://en.wikipedia.org/wiki/File_inclusion_vulnerability)*, que consiste em fazer o upload de algum arquivo malicioso para o servidor sem que ele seja devidamente tratado.
+
+Como o pacote não conta com nenhuma correção para o problema, foi necessário avaliar se a vulnerabilidade nos afetava ou não e, naquele caso, não afetava. Isso acontece pois os arquivos que eram enviados para o servidor recebiam o devido tratamento prévio para que não comprometessem na no servidor e nem levassem a uma [execução de código arbitrário](https://en.wikipedia.org/wiki/Arbitrary_code_execution), por exemplo.
+
+## O surgimento da solução
+
+Como comentado anteriormente, a solução para esse problema é sempre que possível utilizar as versões mais recentes e/ou sem vulnerabilidades conhecidas. Porém, isso nem sempre é fácil, ainda mais em projetos que contam com diversas dependências.
+
+Em um primeiro momento, em projetos pequenos, fiz correções manualmente e, para alguém que tem conhecimentos na área de segurança, é algo simples de se fazer. Mas logo comecei a me deparar com projetos maiores, com mais vulnerabilidades e muitas alterações a serem feitas. Esse trabalho seria massivo e, por isso, resolvi criar uma solução que pudesse ser aplicada em todos os projetos [Node](https://nodejs.org/en), que pudesse ser integrada ao [CI](https://pt.wikipedia.org/wiki/Integra%C3%A7%C3%A3o_cont%C3%ADnua), que fosse fácil de utilizar e que não implicasse em um aumento de tamanho de bundle de uma aplicação, por exemplo.
+
+E foi aí que surgiu o [make-it-safer](https://www.npmjs.com/package/make-it-safer).
+
+## A Solução
+
+O [make-it-safer](https://www.npmjs.com/package/make-it-safer) vem com duas funcionalidades principais:
+
+* Atualizar os pacotes do projeto para versões sem vulnerabilidades; e
+* Atualizar em massa as dependências do projeto.
+
+<SpecialLink
+  link={"https://www.npmjs.com/package/make-it-safer"}
+  title={"Pacote make-it-safer"}
+  description={"Página no NPM do pacote"}
+  site={"npmjs.com"}
+  image={"https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg"}
+/>
+
+E conta com uma integração com sistemas de CI e de qualidade de código de forma rápida e fácil, como em pipelines e no Husky.
+
+### Instalação da ferramenta
+
+Instalação como dependência de desenvolvimento:
+```
+npm i make-it-safer -D
+```
+
+### Corrigindo pacotes vulneráveis
+
+```
+npx make-it-safer
+```
+
+### Atualizando as dependências para a última versão
+
+```
+npx make-it-safer --latest
+```
+
+A atualização de dependências para a última versão nem sempre é simpels de se fazer, pois muitas vezes necessita de alterações em código - ocasionados por breaking changes. Portanto, é recomendável não adicionar o comando de atualização ao CI.
+
+Além da opção `--latest`, o [make-it-safer](https://www.npmjs.com/package/make-it-safer) também conta com outras opções de atualização, tais como:
+
+* `--major`: x.x.x
+* `--minor`: 1.x.x
+* `--patch`: 1.1.x
+
+## Considerações finais
+
+Como o pacote é instalado como uma dependência de desenvolvimento, ele não afeta em nada nos quesitos de tamanho ou performance na build final. Como se isso já não bastasse, o [pacote consome apenas 2kB](https://bundlephobia.com/package/make-it-safer@0.1.3) para ser baixado para seu projeto.
+
+O projeto é totalmente Open Source, então se tiver ideias de como melhorar esta dependência, abra uma Issue ou envie sua PR!
+
+Segurança em primeiro lugar, e até mais!
+
+
+Obs: Créditos da imagem do artigo vão ao [spike.sh](https://spike.sh/)
+
