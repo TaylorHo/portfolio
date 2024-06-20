@@ -249,3 +249,7 @@ input:-webkit-autofill:focus {
   transform: translateY(-2px);
   transition: transform 34ms;
 }
+
+#comments-container iframe {
+  width: 100%;
+}

@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
-  style-src 'self' 'unsafe-inline' cdn.jsdelivr.net fonts.googleapis.com;
+  style-src 'self' 'unsafe-inline' cdn.jsdelivr.net fonts.googleapis.com giscus.app;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
@@ -59,6 +59,7 @@ module.exports = withBundleAnalyzer({
       'pbs.twimg.com',
       'cdn.discordapp.com', // discord url
       'avatars.githubusercontent.com',
+      'github.githubassets.com',
       'github.com',
       's3.us-west-2.amazonaws.com', // Images coming from Notion
       'via.placeholder.com', // for articles that do not have a cover image
