@@ -10,7 +10,7 @@ import NProgress from 'nprogress'
 import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
-import ProgressBar from 'react-scroll-progress-bar'
+// import ProgressBar from 'react-scroll-progress-bar'
 import ScrollTop from '@/components/ScrollTop'
 
 NProgress.configure({ showSpinner: false })
@@ -30,7 +30,8 @@ Router.onRouteChangeError = () => {
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-      <ProgressBar bgcolor="#DE1D8D" />
+      {/* is breaking the build... */}
+      {/* <ProgressBar bgcolor="#DE1D8D" /> */}
       <ScrollTop />
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
