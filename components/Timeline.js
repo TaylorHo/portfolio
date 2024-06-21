@@ -1,4 +1,4 @@
-import { FaGraduationCap, FaBlackTie } from 'react-icons/fa'
+import { FaBlackTie } from 'react-icons/fa'
 import { AiOutlineCode } from 'react-icons/ai'
 import { Disclosure, Transition } from '@headlessui/react'
 import { HiChevronDown } from 'react-icons/hi'
@@ -35,7 +35,7 @@ export default function Timeline() {
             {formatDate(new Date())} (21 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Espandindo a empresa que criei para impulsionar iniciatias de Código Livre
+            Expandindo a empresa que criei para impulsionar iniciatias de Código Livre.
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -63,8 +63,8 @@ export default function Timeline() {
             {formatDate(new Date('2024-05-14 20:00'))} (21 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Meu primeiro livro. É sobre segurança de aplicações para desenvolvedores. É apenas o
-            primeiro de muitos.
+            Meu primeiro livro sobre segurança de aplicações para desenvolvedores. Apenas o primeiro
+            de muitos.
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -75,7 +75,7 @@ export default function Timeline() {
             Especialista em segurança na Nike
           </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            Fevereiro de 2024 (21 anos)
+            Fevereiro de 2024 (20 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
             Atuei como especialista em segurança na Nike do Brasil e Centauro, resolvendo mais de
@@ -90,7 +90,7 @@ export default function Timeline() {
             Bacharel em Ciência da Computação
           </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            Janeiro de 2024 (21 anos)
+            Janeiro de 2024 (20 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
             Concluído mais um curso de graduação, desta vez em CC, garantindo maior conhecimento dos
@@ -103,11 +103,11 @@ export default function Timeline() {
           </span>
           <h3 className="text-base font-semibold text-gray-900 dark:text-white">Fundei a Hotay</h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            14 de Abril, 2023 (20 anos)
+            14 de Abril, 2023 (19 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Aos 19 anos fundei minha primeira empresa no setor de Desenvolvimento de Software e
-            Automação. É e sempre será uma empresa de Código Livre e Software livre.
+            Aos 19 anos fundei minha primeira empresa no setor de Desenvolvimento de Software, com o
+            comprometimento de sempre ser uma empresa de Código Livre e Software livre.
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -118,7 +118,7 @@ export default function Timeline() {
             Graduação em Física Iniciada
           </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            Janeiro de 2023 (20 anos)
+            Janeiro de 2023 (19 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
             Iniciei meus estudos em uma área que sempre teve meu coração.
@@ -166,7 +166,7 @@ export default function Timeline() {
             Setembro de 2021 (18 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Após a concatenação de matérias e excelentes notas, finalizei rapidamente a graduação em
+            Com o adiantamento de matérias e excelentes notas, finalizei rapidamente a graduação em
             segurança.
           </p>
         </li>
@@ -181,7 +181,7 @@ export default function Timeline() {
             Dezembro de 2020 (17 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Concluído o Ensino Médio ainda durante a Pandemia do Covid 19. Não tive formatura por
+            Concluí o Ensino Médio ainda durante a Pandemia do Covid-19. Não houve formatura por
             conta da Pandemia.
           </p>
         </li>
@@ -196,7 +196,7 @@ export default function Timeline() {
             Maio de 2020 (17 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Antes mesmo de concluir o Ensino Médio iniciei na faculdade a fim de aprender mais sobre
+            Antes mesmo de concluir o Ensino Médio, iniciei na faculdade a fim de aprender mais
             segurança de aplicações.
           </p>
         </li>
@@ -211,7 +211,7 @@ export default function Timeline() {
             Fevereiro de 2018 (14 anos)
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Era pra ser na área de marketing e criação de sites, mas logo escalei até a gestão de
+            Iniciei na área com marketing e criação de sites, mas logo escalei até a gestão de
             tecnologia e segurança da empresa.
           </p>
         </li>
@@ -261,8 +261,8 @@ export default function Timeline() {
                       2017 (13 anos)
                     </time>
                     <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-                      Consegui comprar meu primeiro notebook, usado e com um desempenho no qual só
-                      conseguiria rodar Linux. Aí se iniciou uma jornada com o Linux.
+                      Consegui comprar meu primeiro notebook usado e com um desempenho fraco, no
+                      qual não conseguiria rodar Windows. Aí se iniciou uma jornada com o Linux.
                     </p>
                   </li>
                   <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
