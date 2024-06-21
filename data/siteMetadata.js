@@ -21,7 +21,7 @@ const siteMetadata = {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
     // TODO: change Umami by PostHog (and also add PostHog to this project)
-    umamiWebsiteId: 'a397b0be-12ea-4526-8f3f-31dde78f2ddd', // e.g. 123e4567-e89b-12d3-a456-426614174000
+    umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
   },
   newsletter: {
