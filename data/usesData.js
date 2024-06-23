@@ -1,12 +1,13 @@
 const usesData = [
   {
     title: 'Nextra - Documentação',
-    description: 'desenvolver a descrição',
+    description:
+      'Framework para documentação, simples, rápido e bonito, usando apenas Markdown - e JSX/TSX se quiser',
     href: 'https://nextra.site/',
   },
   {
     title: 'Next.js - Plataformas web em geral',
-    description: 'desenvolver a descrição',
+    description: 'Plataformas web e sites em geral, com backend. Ideal para projetos rápidos.',
     href: 'https://nextjs.org/',
   },
   {
@@ -19,6 +20,17 @@ const usesData = [
     description:
       'Os sistemas em Go são posteriormente refatorados em Rust, a fim de maior desempenho.',
     href: 'https://www.rust-lang.org/',
+  },
+  {
+    title: 'Angular - Frontend Único',
+    description: 'Para projetos maiores e mais complexos, Angular é o ideal',
+    href: 'https://angular.dev/',
+  },
+  {
+    title: 'NestJS - Backend Complexo',
+    description:
+      'Ideal para montar um backend complexo rapidamente, tendo tudo "pronto", sem precisar criar código manualmente.',
+    href: 'https://nestjs.com/',
   },
   {
     title: 'Flutter - Mobile',
