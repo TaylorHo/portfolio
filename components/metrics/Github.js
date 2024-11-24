@@ -1,18 +1,28 @@
-import useSWR from 'swr'
-import fetcher from 'lib/fetcher'
-import MetricCard from 'components/metrics/Card'
+import MetricCard from "components/metrics/Card";
+import fetcher from "lib/fetcher";
+import useSWR from "swr";
 
 export default function GithubCard() {
-  const { data } = useSWR('/api/github-stats', fetcher)
+	const { data } = useSWR("/api/github-stats", fetcher);
 
-  const stars = new Number(data?.stars)
-  const followers = new Number(data?.followers)
-  const link = 'https://github.com/TaylorHo'
+	const stars = new Number(data?.stars);
+	const followers = new Number(data?.followers);
+	const link = "https://github.com/TaylorHo";
 
-  return (
-    <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-      <MetricCard header="Estrelas no GitHub" link={link} metric={stars} isCurrency={false} />
-      <MetricCard header="Seguidores no Github" link={link} metric={followers} isCurrency={false} />
-    </div>
-  )
+	return (
+		<div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+			<MetricCard
+				header="Estrelas no GitHub"
+				link={link}
+				metric={stars}
+				isCurrency={false}
+			/>
+			<MetricCard
+				header="Seguidores no Github"
+				link={link}
+				metric={followers}
+				isCurrency={false}
+			/>
+		</div>
+	);
 }
