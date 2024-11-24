@@ -11,7 +11,6 @@ import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
-import ProgressBar from "react-scroll-progress-bar";
 
 NProgress.configure({ showSpinner: false });
 
@@ -33,8 +32,6 @@ export default function App({
 }) {
 	return (
 		<ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-			{/* is breaking the build... */}
-			<ProgressBar bgcolor="#DE1D8D" />
 			<ScrollTop />
 			<Head>
 				<meta content="width=device-width, initial-scale=1" name="viewport" />

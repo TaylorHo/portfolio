@@ -74,9 +74,6 @@ importers:
       react-rough-notation:
         specifier: ^1.0.5
         version: 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-scroll-progress-bar:
-        specifier: ^2.0.3
-        version: 2.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-share:
         specifier: ^5.1.1
         version: 5.1.1(react@18.3.1)
@@ -2571,12 +2568,6 @@ packages:
 
   react-rough-notation@1.0.5:
     resolution: {integrity: sha512-TTDnw1Qn96PwitGsBsjNh4911+o26Vivj/dhHbsHHhN6lDgkQsFhv1X/eOnCjHA2EOyDE5JBQ1HEZ1yW8sCmKA==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-
-  react-scroll-progress-bar@2.0.3:
-    resolution: {integrity: sha512-CJ8L/X/oJMei6Pi3LaAG7seLahpdBc3CMNY+hhkmUUtPjND8W8Bva32OipESm2rj5ulkezym05DxKupeAjldzQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -6095,11 +6086,6 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       rough-notation: 0.5.1
-
-  react-scroll-progress-bar@2.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   react-share@5.1.1(react@18.3.1):
     dependencies:
