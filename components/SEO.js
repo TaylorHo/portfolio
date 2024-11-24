@@ -1,6 +1,7 @@
 import siteMetadata from "@/data/siteMetadata";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 
 const CommonSEO = ({
 	title,
@@ -170,12 +171,9 @@ export const BlogSEO = ({
 				{lastmod && (
 					<meta property="article:modified_time" content={modifiedAt} />
 				)}
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify(structuredData, null, 2),
-					}}
-				/>
+				<Script type="application/ld+json" strategy="afterInteractive">
+					{JSON.stringify(structuredData, null, 2)}
+				</Script>
 			</Head>
 		</>
 	);
