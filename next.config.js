@@ -50,6 +50,11 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()',
   },
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+  {
+    key: 'Cache-Control',
+    value: 'public, max-age=2592000',
+  },
 ]
 
 module.exports = withBundleAnalyzer({
