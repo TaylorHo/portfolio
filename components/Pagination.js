@@ -11,6 +11,7 @@ export default function Pagination({ totalPages, currentPage }) {
 				{!prevPage && (
 					<button
 						rel="anterior"
+						type="button"
 						className="cursor-auto disabled:opacity-50"
 						disabled={!prevPage}
 					>
@@ -21,11 +22,13 @@ export default function Pagination({ totalPages, currentPage }) {
 					<Link
 						href={
 							currentPage - 1 === 1
-								? `/artigos/`
+								? "/artigos/"
 								: `/artigos/page/${currentPage - 1}`
 						}
 					>
-						<button rel="anterior">Anterior</button>
+						<button rel="anterior" type="button">
+							Anterior
+						</button>
 					</Link>
 				)}
 				<span>
@@ -34,6 +37,7 @@ export default function Pagination({ totalPages, currentPage }) {
 				{!nextPage && (
 					<button
 						rel="proxima"
+						type="button"
 						className="cursor-auto disabled:opacity-50"
 						disabled={!nextPage}
 					>
@@ -42,7 +46,9 @@ export default function Pagination({ totalPages, currentPage }) {
 				)}
 				{nextPage && (
 					<Link href={`/artigos/page/${currentPage + 1}`}>
-						<button rel="proxima">Próxima</button>
+						<button rel="proxima" type="button">
+							Próxima
+						</button>
 					</Link>
 				)}
 			</nav>

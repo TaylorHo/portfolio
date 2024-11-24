@@ -11,7 +11,7 @@ export default function AuthorLayout({ children, frontMatter }) {
 
 	return (
 		<>
-			<PageSEO title={`Sobre - ${name}`} description={`Um pouco sobre mim`} />
+			<PageSEO title={`Sobre - ${name}`} description={"Um pouco sobre mim"} />
 			<div className="">
 				<div className="space-y-2 pt-6 pb-8 md:space-y-5 md:pl-16">
 					<h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -141,6 +141,7 @@ export default function AuthorLayout({ children, frontMatter }) {
 									viewBox="0 0 24 24"
 									className="ml-0.5 inline-block h-4 w-4 fill-current"
 								>
+									<title>GitHub</title>
 									<g data-name="Layer 2">
 										<g data-name="external-link">
 											<rect width="24" height="24" opacity="0" />
@@ -161,6 +162,7 @@ export default function AuthorLayout({ children, frontMatter }) {
 									viewBox="0 0 24 24"
 									className="ml-0.5 inline-block h-4 w-4 fill-current"
 								>
+									<title>LinkedIn</title>
 									<g data-name="Layer 2">
 										<g data-name="external-link">
 											<rect width="24" height="24" opacity="0" />
@@ -181,6 +183,7 @@ export default function AuthorLayout({ children, frontMatter }) {
 									viewBox="0 0 24 24"
 									className="ml-0.5 inline-block h-4 w-4 fill-current"
 								>
+									<title>Email</title>
 									<g data-name="Layer 2">
 										<g data-name="external-link">
 											<rect width="24" height="24" opacity="0" />

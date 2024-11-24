@@ -16,6 +16,7 @@ export default function MetricCard({ header, link, metric, isCurrency }) {
 						viewBox="0 0 24 24"
 						stroke="currentColor"
 					>
+						<title>Card</title>
 						<path
 							strokeLinecap="round"
 							strokeLinejoin="round"

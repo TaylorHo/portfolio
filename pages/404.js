@@ -45,8 +45,8 @@ export default function FourZeroFour() {
 						push("/");
 					}}
 				>
-					<span className="shadow"></span>
-					<span className="edgeblue"></span>
+					<span className="shadow" />
+					<span className="edgeblue" />
 					<span className="frontblue">Voltar ao início</span>
 				</button>
 			</div>

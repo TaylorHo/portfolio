@@ -46,6 +46,7 @@ export default function SnippetsLayout({
 							viewBox="0 0 24 24"
 							stroke="currentColor"
 						>
+							<title>Search</title>
 							<path
 								strokeLinecap="round"
 								strokeLinejoin="round"

@@ -45,6 +45,7 @@ export default function Uses() {
 											strokeLinejoin="round"
 											className="h-12 w-12 stroke-current text-center align-middle leading-6 text-gray-700 dark:text-gray-50"
 										>
+											<title>Item</title>
 											<path d="M4 17L10 11 4 5" />
 											<path d="M12 19L20 19" />
 										</svg>

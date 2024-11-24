@@ -31,8 +31,8 @@ const ScrollTop = () => {
 				onClick={handleScrollTop}
 				className="pushable"
 			>
-				<span className="shadow"></span>
-				<span className="edge"></span>
+				<span className="shadow" />
+				<span className="edge" />
 				<span className="front">
 					<TbArrowBigUp />
 				</span>

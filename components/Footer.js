@@ -10,9 +10,9 @@ export default function Footer() {
 							Taylor Hoffmann{` © ${new Date().getFullYear()}`}
 						</Link>
 					</div>
-					{`•`}
+					{"•"}
 					<div className="mx-1">From Brazil to the World!</div>
-					{`•`}
+					{"•"}
 					<div className="mx-1">
 						<Link href="/contato" className="link-underline">
 							Contato

@@ -11,7 +11,10 @@ const ContactLink = ({ socialMedia, href, contact }) => {
 					{socialMedia}
 				</span>
 				<span className="whitespace-nowrap font-light opacity-50">: </span>
-				<a className="whitespace-nowrap duration-250 font-mono transition-colors ease-in hover:text-primary-500 dark:hover:text-primary-400">
+				<a
+					href={href}
+					className="whitespace-nowrap duration-250 font-mono transition-colors ease-in hover:text-primary-500 dark:hover:text-primary-400"
+				>
 					{contact}
 				</a>
 			</a>

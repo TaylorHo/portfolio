@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { TagSEO } from "@/components/SEO";
 import siteMetadata from "@/data/siteMetadata";
 import ListLayout from "@/layouts/ListLayout";

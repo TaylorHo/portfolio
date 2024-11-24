@@ -85,7 +85,7 @@ export default function Home({ posts }) {
 						<div className="grid grid-cols-1 grid-rows-3 gap-4 py-12">
 							<div className="my-2 grid items-start gap-8">
 								<div className="group relative">
-									<div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+									<div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200" />
 									<Link href="/projetos">
 										<span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
 											<span className="flex items-center space-x-5">
@@ -96,6 +96,7 @@ export default function Home({ posts }) {
 													viewBox="0 0 24 24"
 													stroke="currentColor"
 												>
+													<title>chemistry icon</title>
 													<path
 														strokeLinecap="round"
 														strokeLinejoin="round"
@@ -116,7 +117,7 @@ export default function Home({ posts }) {
 							</div>
 							<div className="my-2 grid items-start gap-8">
 								<div className="group relative">
-									<div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-emerald-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+									<div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-emerald-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200" />
 									<Link href="/jornada">
 										<span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
 											<span className="flex items-center space-x-5">
@@ -127,6 +128,7 @@ export default function Home({ posts }) {
 													viewBox="0 0 24 24"
 													stroke="currentColor"
 												>
+													<title>book icon</title>
 													<path
 														strokeLinecap="round"
 														strokeLinejoin="round"
@@ -147,7 +149,7 @@ export default function Home({ posts }) {
 							</div>
 							<div className="my-2 grid items-start gap-8">
 								<div className="group relative">
-									<div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r  from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+									<div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r  from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200" />
 									<Link href="https://uiclap.bio/taylor">
 										<span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
 											<span className="flex items-center space-x-5">
@@ -158,6 +160,7 @@ export default function Home({ posts }) {
 													viewBox="0 0 24 24"
 													stroke="currentColor"
 												>
+													<title>book icon</title>
 													<path
 														strokeLinecap="round"
 														strokeLinejoin="round"
@@ -178,7 +181,7 @@ export default function Home({ posts }) {
 							</div>
 							<div className="my-2 grid items-start gap-8">
 								<div className="group relative">
-									<div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-emerald-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+									<div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-emerald-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200" />
 									<Link href="/contato">
 										<span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
 											<span className="flex items-center space-x-5">
@@ -189,6 +192,7 @@ export default function Home({ posts }) {
 													fill="none"
 													stroke="currentColor"
 												>
+													<title>contact icon</title>
 													<g>
 														<path
 															fill="none"

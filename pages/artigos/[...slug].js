@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "node:fs";
 import { MDXLayoutRenderer } from "@/components/MDXComponents";
 import PageTitle from "@/components/PageTitle";
 import generateRss from "@/lib/generate-rss";

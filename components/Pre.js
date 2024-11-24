@@ -45,6 +45,7 @@ const Pre = (props) => {
 						fill="none"
 						className={copied ? "text-green-400" : "text-gray-300"}
 					>
+						<title>Copy code</title>
 						{copied ? (
 							<>
 								<path

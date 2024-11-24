@@ -1,7 +1,8 @@
 const projectsData = [
 	{
 		title: "Hotay",
-		description: `Minha primeira empresa de desenvolvimento de Software, focada em automação e código livre.`,
+		description:
+			"Minha primeira empresa de desenvolvimento de Software, focada em automação e código livre.",
 		imgSrc: "",
 		href: "https://www.hotay.dev",
 		github: "https://github.com/hotaydev/",
@@ -11,7 +12,8 @@ const projectsData = [
 	},
 	{
 		title: "dnd-beyond-kit",
-		description: `Extension to translate your D&D Beyond character sheet page to your language and use the SI unit system.`,
+		description:
+			"Extension to translate your D&D Beyond character sheet page to your language and use the SI unit system.",
 		imgSrc: "",
 		href: "https://dnd-beyond-kit.hotay.dev/",
 		github: "https://github.com/TaylorHo/dnd-beyond-kit",
@@ -31,7 +33,8 @@ const projectsData = [
 	},
 	{
 		title: "Avalia",
-		description: `Sistema de avaliação de projetos em Feiras de Iniciação Científica para escolas públicas brasileiras.`,
+		description:
+			"Sistema de avaliação de projetos em Feiras de Iniciação Científica para escolas públicas brasileiras.",
 		imgSrc: "",
 		href: "https://avalia.hotay.dev/docs",
 		github: "https://github.com/hotaydev/avalia",
@@ -41,7 +44,8 @@ const projectsData = [
 	},
 	{
 		title: "Flutter (Constribuição)",
-		description: `Contribuições com o desenvolvimento de Flutter para multiplataforma.`,
+		description:
+			"Contribuições com o desenvolvimento de Flutter para multiplataforma.",
 		imgSrc: "",
 		href: "https://flutter.dev/",
 		github: "https://github.com/flutter/flutter",
@@ -51,7 +55,7 @@ const projectsData = [
 	},
 	{
 		title: "Bonfire (Constribuição)",
-		description: `Contribuições com a Game Engine de jogos em Flutter.`,
+		description: "Contribuições com a Game Engine de jogos em Flutter.",
 		imgSrc: "",
 		href: "https://bonfire-engine.github.io/",
 		github: "https://github.com/RafaelBarbosatec/bonfire",
@@ -81,7 +85,8 @@ const projectsData = [
 	},
 	{
 		title: "Documenso (Constribuição)",
-		description: `Contribuições com o software de assinaturas digitais Open Source`,
+		description:
+			"Contribuições com o software de assinaturas digitais Open Source",
 		imgSrc: "",
 		href: "https://documenso.com/",
 		github: "https://github.com/documenso/documenso",
@@ -91,7 +96,7 @@ const projectsData = [
 	},
 	{
 		title: "git-hook-creator",
-		description: `Easily create git hooks for Node.js projects`,
+		description: "Easily create git hooks for Node.js projects",
 		imgSrc: "",
 		href: "",
 		github: "https://github.com/hotaydev/git-hook-creator",
@@ -101,7 +106,7 @@ const projectsData = [
 	},
 	{
 		title: "make-it-safer",
-		description: `Move vulnerabilities away. Make your NodeJS project safer.`,
+		description: "Move vulnerabilities away. Make your NodeJS project safer.",
 		imgSrc: "",
 		href: "",
 		github: "https://github.com/TaylorHo/make-it-safer",
@@ -111,7 +116,8 @@ const projectsData = [
 	},
 	{
 		title: "Win32-Elevation",
-		description: `A Batch Script that requests admin privileges in Windows and execute some script, command or file with high privileges.`,
+		description:
+			"A Batch Script that requests admin privileges in Windows and execute some script, command or file with high privileges.",
 		imgSrc: "",
 		href: "",
 		github: "https://github.com/TaylorHo/Win32-Elevation",

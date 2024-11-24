@@ -7,8 +7,8 @@ const CustomLink = ({
 	showIcon = true,
 	...rest
 }) => {
-	const isInternalLink = href && href.startsWith("/");
-	const isAnchorLink = href && href.startsWith("#");
+	const isInternalLink = href?.startsWith("/");
+	const isAnchorLink = href?.startsWith("#");
 
 	if (isInternalLink || isAnchorLink) {
 		return (
@@ -33,6 +33,7 @@ const CustomLink = ({
 					viewBox="0 0 24 24"
 					className="ml-0.5 inline-block h-4 w-4 fill-current"
 				>
+					<title>link</title>
 					<g data-name="Layer 2">
 						<g data-name="external-link">
 							<rect width="24" height="24" opacity="0" />

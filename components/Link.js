@@ -2,11 +2,11 @@
 import Link from "next/link";
 
 const CustomLink = ({ href, ...rest }) => {
-	const isInternalLink = href && href.startsWith("/");
-	const isAnchorLink = href && href.startsWith("#");
+	const isInternalLink = href?.startsWith("/");
+	const isAnchorLink = href?.startsWith("#");
 
 	if (isInternalLink) {
-		return <Link href={href} {...rest}></Link>;
+		return <Link href={href} {...rest} />;
 	}
 
 	if (isAnchorLink) {
