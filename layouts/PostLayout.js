@@ -126,6 +126,7 @@ export default function PostLayout({
 																viewBox="0 0 24 24"
 																className="ml-0.5 inline-block h-4 w-4 fill-current"
 															>
+																<title>External link</title>
 																<g data-name="Layer 2">
 																	<g data-name="external-link">
 																		<rect width="24" height="24" opacity="0" />
@@ -152,7 +153,7 @@ export default function PostLayout({
 									<TwitterShareButton
 										url={postUrl}
 										title={title}
-										via={siteMetadata.socialAccount.twitter}
+										via={siteMetadata.socialAccount?.twitter}
 										className="flex items-center overflow-hidden rounded-full !bg-[#1da1f2] hover:scale-110"
 									>
 										<SocialIcon

@@ -45,6 +45,7 @@ const siteMetadata = {
 			themeURL: "",
 		},
 	},
+	socialAccount: {},
 };
 
 module.exports = siteMetadata;
