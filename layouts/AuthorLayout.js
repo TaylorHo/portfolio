@@ -58,11 +58,11 @@ export default function AuthorLayout({ children, frontMatter }) {
 								animationDuration={3000}
 							>
 								Olá, eu sou o Taylor, apaixonado por tantas coisas que chega a
-								ser difícil citar. Para ser breve, posso dizer que amo Código
-								Livre e falo disso o tempo todo. Tenho um longo passado com
-								Desenvolvimento de Software e cibersegurança, também tenho um
-								livro publicado e estou me formando em Física - já tenho outras
-								duas graduações em computação.
+								ser difícil citar. Para ser breve, posso dizer que amo código
+								livre e falo disso o tempo todo. Tenho um longo passado com
+								desenvolvimento de software e cibersegurança, também tenho um
+								livro publicado e estou me formando em Física e Ciência da
+								Computação - já tenho formação em Defesa Cibernética.
 							</RoughNotation>
 						</p>
 						<br />
@@ -81,9 +81,8 @@ export default function AuthorLayout({ children, frontMatter }) {
 								animationDuration={3000}
 								multiline={true}
 							>
-								constantemente sobre programação de baixo nível, segurança,
-								Código Livre, e talvez livre, e talvez algumas vezes sobre
-								teorias físicas.
+								constantemente sobre programação, segurança, código livre, e
+								possivelmente sobre física, pesquisas e ciências em geral.
 							</RoughNotation>
 						</p>
 						<p className="hidden md:block">
@@ -110,8 +109,8 @@ export default function AuthorLayout({ children, frontMatter }) {
 								animationDuration={3000}
 								multiline={true}
 							>
-								constantemente sobre programação de baixo nível, segurança,
-								Código Livre, e talvez algumas vezes sobre teorias físicas.
+								constantemente sobre programação, segurança, código livre, e
+								possivelmente sobre física, pesquisas e ciências em geral.
 							</RoughNotation>
 						</p>
 						<br />
@@ -128,9 +127,10 @@ export default function AuthorLayout({ children, frontMatter }) {
 								href={"https://www.convisoappsec.com/"}
 								className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
 							>
-								Conviso
+								Fundação CERTI
 							</Link>
-							, como consultor. Você pode me encontrar no{" "}
+							, como Pesquisador em Engenharia e Tecnologia. Você pode me
+							encontrar no{" "}
 							<Link
 								href="https://github.com/TaylorHo"
 								className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"

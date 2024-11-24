@@ -3,7 +3,7 @@ import Link from "@/components/Link";
 const Experience = ({
 	title,
 	company,
-	location,
+	// location,
 	range,
 	url,
 	text1,

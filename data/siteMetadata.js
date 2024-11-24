@@ -13,7 +13,6 @@ const siteMetadata = {
 	socialBanner: "/static/images/twitter-card.png",
 	email: "taylor@hotay.dev",
 	github: "https://github.com/TaylorHo",
-	twitter: "https://twitter.com/hoffxhoff",
 	linkedin: "https://www.linkedin.com/in/hoffmann-taylor/",
 	website: "https://me.hotay.dev",
 	locale: "pt-BR",
@@ -45,9 +44,6 @@ const siteMetadata = {
 			darkTheme: "dark",
 			themeURL: "",
 		},
-	},
-	socialAccount: {
-		twitter: "hoffxhoff",
 	},
 };
 
