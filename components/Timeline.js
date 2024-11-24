@@ -85,21 +85,6 @@ export default function Timeline() {
 					</p>
 				</li>
 				<li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
-					<span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-green-300 ring-8 ring-white dark:bg-green-700 dark:ring-gray-900">
-						<PiGraduationCap />
-					</span>
-					<h3 className="text-base font-semibold text-gray-900 dark:text-white">
-						Bacharel em Ciência da Computação
-					</h3>
-					<time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-						Janeiro de 2024 (20 anos)
-					</time>
-					<p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-						Concluído mais um curso de graduação, desta vez em CC, garantindo
-						maior conhecimento dos fundamentos da computação.
-					</p>
-				</li>
-				<li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
 					<span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-300 ring-8 ring-white dark:bg-blue-700 dark:ring-gray-900">
 						<BiWorld />
 					</span>
@@ -127,6 +112,21 @@ export default function Timeline() {
 					</time>
 					<p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
 						Iniciei meus estudos em uma área que sempre teve meu coração.
+					</p>
+				</li>
+				<li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+					<span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-green-300 ring-8 ring-white dark:bg-green-700 dark:ring-gray-900">
+						<PiGraduationCap />
+					</span>
+					<h3 className="text-base font-semibold text-gray-900 dark:text-white">
+						Graduação em Ciência da Computação Iniciada
+					</h3>
+					<time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+						Janeiro de 2023 (19 anos)
+					</time>
+					<p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+						Buscando uma melhor compreensão dos fundamentos da computação, baixo
+						nível e programação de hardware.
 					</p>
 				</li>
 				<li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
