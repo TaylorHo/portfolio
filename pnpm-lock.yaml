@@ -59,6 +59,9 @@ importers:
       postcss:
         specifier: ^8.4.38
         version: 8.4.49
+      posthog-js:
+        specifier: ^1.188.0
+        version: 1.188.0
       preact:
         specifier: ^10.25.0
         version: 10.25.0
@@ -1493,6 +1496,9 @@ packages:
   core-js-compat@3.39.0:
     resolution: {integrity: sha512-VgEUx3VwlExr5no0tXlBt+silBvhTryPwCXRI2Id1PN8WTKu7MreethvddqOubrYxkFdv/RnYrqlv1sFNAUelw==}
 
+  core-js@3.39.0:
+    resolution: {integrity: sha512-raM0ew0/jJUqkJ0E6e8UDtl+y/7ktFivgWvqw8dNSQeNWoSDLvQ1H/RN3aPXB9tBd4/FhyR4RDPGhsNIMsAn7g==}
+
   cosmiconfig@8.3.6:
     resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
     engines: {node: '>=14'}
@@ -1706,6 +1712,9 @@ packages:
 
   fetch-ponyfill@7.1.0:
     resolution: {integrity: sha512-FhbbL55dj/qdVO3YNK7ZEkshvj3eQ7EuIGV2I6ic/2YiocvyWv+7jg2s4AyS0wdRU75s3tA8ZxI/xPigb0v5Aw==}
+
+  fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -2530,6 +2539,9 @@ packages:
     resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
     engines: {node: ^10 || ^12 || >=14}
 
+  posthog-js@1.188.0:
+    resolution: {integrity: sha512-FdNCZcgM5sjADxES7VWbRntD39V2fvHunZry6Rrsp8VDG20TcAWc+koAuCMfEoU5jKxm/Ua37QnI9Xqfwg2fow==}
+
   preact@10.25.0:
     resolution: {integrity: sha512-6bYnzlLxXV3OSpUxLdaxBmE7PMOu0aR3pG6lryK/0jmvcDFPlcXGQAt5DpK3RITWiDrfYZRI0druyaK/S9kYLg==}
 
@@ -3070,6 +3082,9 @@ packages:
 
   web-namespaces@2.0.1:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
+
+  web-vitals@4.2.4:
+    resolution: {integrity: sha512-r4DIlprAGwJ7YM11VZp4R884m0Vmgr6EAKe3P+kO0PPj3Unqyvv59rczf6UiGcb9Z8QxZVcqKNwv/g0WNdWwsw==}
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
@@ -4586,6 +4601,8 @@ snapshots:
     dependencies:
       browserslist: 4.24.2
 
+  core-js@3.39.0: {}
+
   cosmiconfig@8.3.6:
     dependencies:
       import-fresh: 3.3.0
@@ -4823,6 +4840,8 @@ snapshots:
       node-fetch: 2.6.13
     transitivePeerDependencies:
       - encoding
+
+  fflate@0.4.8: {}
 
   fill-range@7.1.1:
     dependencies:
@@ -6047,6 +6066,13 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
+  posthog-js@1.188.0:
+    dependencies:
+      core-js: 3.39.0
+      fflate: 0.4.8
+      preact: 10.25.0
+      web-vitals: 4.2.4
+
   preact@10.25.0: {}
 
   prettier@3.3.3: {}
@@ -6866,6 +6892,8 @@ snapshots:
       vfile-message: 4.0.2
 
   web-namespaces@2.0.1: {}
+
+  web-vitals@4.2.4: {}
 
   webidl-conversions@3.0.1: {}
 

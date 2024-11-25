@@ -16,13 +16,6 @@ const siteMetadata = {
 	linkedin: "https://www.linkedin.com/in/hoffmann-taylor/",
 	website: "https://me.hotay.dev",
 	locale: "pt-BR",
-	analytics: {
-		plausibleDataDomain: "", // e.g. tailwind-nextjs-starter-blog.vercel.app
-		simpleAnalytics: false, // true or false
-		// TODO: change Umami by PostHog (and also add PostHog to this project)
-		umamiWebsiteId: "", // e.g. 123e4567-e89b-12d3-a456-426614174000
-		googleAnalyticsId: "", // e.g. UA-000000-2 or G-XXXXXXX
-	},
 	newsletter: {
 		provider: "emailOctopus",
 	},
