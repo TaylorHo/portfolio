@@ -22,21 +22,20 @@ export default function Timeline() {
 		<div>
 			<ol className="relative mt-6 ml-6 border-l border-zinc-400 dark:border-gray-800 ">
 				<li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
-					<span className=" absolute -left-3 flex h-6 w-6 animate-pulse items-center justify-center rounded-full bg-blue-200 ring-8 ring-white dark:bg-green-900 dark:ring-gray-900">
-						<FaBlackTie className="animate-none" />
+					<span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-yellow-300 ring-8 ring-white dark:bg-yellow-700 dark:ring-gray-900">
+						<PiMagnifyingGlass />
 					</span>
-					<h3 className="flex items-center text-base  font-semibold text-gray-900 dark:text-white">
-						Crescendo com a Hotay
-						<span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
-							Hoje
-						</span>
+					<h3 className="text-base font-semibold text-gray-900 dark:text-white">
+						Voltei a trabalhar com pesquisa
 					</h3>
 					<time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-						{formatDate(new Date())} (21 anos)
+						Novembro de 2024 (21 anos)
 					</time>
 					<p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-						Expandindo a empresa que criei para impulsionar iniciatias de Código
-						Livre.
+						Voltei para a Fundação CERTI para trabalhar diretamente com
+						pesquisa, desta vez mais próximos de engenharia e tecnologia para
+						visualização 3D, simulações, modelagem de dados, desenvolvimento de
+						software e análises físicas.
 					</p>
 				</li>
 				<li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -50,8 +49,8 @@ export default function Timeline() {
 						Maio de 2024 (21 anos)
 					</time>
 					<p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-						Comecei a atuar como Consultor de Segurança pela Conviso Application
-						Security.
+						Comecei a atuar como Consultor de Segurança auxiliando universidades
+						brasileiras a melhorarem sua infraestrutura de segurança.
 					</p>
 				</li>
 				<li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white px-4 py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
