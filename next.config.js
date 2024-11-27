@@ -5,7 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // TODO: remove every "unsafe" option and "*"
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app us-assets.i.posthog.com vercel.live;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app us-assets.i.posthog.com insights.hotay.dev vercel.live;
   style-src 'self' 'unsafe-inline' cdn.jsdelivr.net fonts.googleapis.com giscus.app;
   img-src * blob: data: https:;
   media-src 'none';
