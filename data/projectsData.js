@@ -11,15 +11,37 @@ const projectsData = [
 		tech3: "Gerenciamento",
 	},
 	{
+		title: "Arcana Pixel",
+		description:
+			"Table Top Virtual (VTT) para jogar RPGs de diferentes sistemas, com suporte à multiplataforma, totalmente de Código Livre.",
+		imgSrc: "",
+		href: "https://www.arcanapixel.com/",
+		github: "https://github.com/hotaydev/arcanapixel.com",
+		tech1: "RPG",
+		tech2: "Rust",
+		tech3: "Svelte",
+	},
+	{
 		title: "dnd-beyond-kit",
 		description:
 			"Extension to translate your D&D Beyond character sheet page to your language and use the SI unit system.",
 		imgSrc: "",
 		href: "https://dnd-beyond-kit.hotay.dev/",
-		github: "https://github.com/TaylorHo/dnd-beyond-kit",
+		github: "https://github.com/hotaydev/dnd-beyond-kit",
 		tech1: "Javascript",
 		tech2: "Chrome Extension",
 		tech3: "NodeJS",
+	},
+	{
+		title: "enygmah",
+		description:
+			"CLI tool to run multiple vulnerability scanners against a target, being it a local code, remote code, mobile app, website, etc.",
+		imgSrc: "",
+		href: "",
+		github: "https://github.com/hotaydev/enygmah",
+		tech1: "Rust",
+		tech2: "OSS",
+		tech3: "CLI",
 	},
 	{
 		title: "audit-export",
