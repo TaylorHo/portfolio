@@ -11,7 +11,7 @@ const work = defineCollection({
   }),
 })
 
-const blog = defineCollection({
+const posts = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/posts" }),
   schema: z.object({
     title: z.string(),
@@ -35,4 +35,4 @@ const projects = defineCollection({
   }),
 })
 
-export const collections = { work, blog, projects }
+export const collections = { work, posts, projects }

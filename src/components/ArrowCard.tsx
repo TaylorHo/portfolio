@@ -2,7 +2,7 @@ import { formatDate } from "@lib/utils"
 import type { CollectionEntry } from "astro:content"
 
 type Props = {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"projects">
+  entry: CollectionEntry<"posts"> | CollectionEntry<"projects">
   pill?: boolean
 }
 
@@ -13,7 +13,7 @@ export default function ArrowCard({ entry, pill }: Props) {
         <div class="flex flex-wrap items-center gap-2">
           {pill &&
             <div class="text-sm capitalize px-2 py-0.5 rounded-full border border-black/15 dark:border-white/25">
-              {entry.collection === "blog" ? "post" : "projeto"}
+              {entry.collection === "posts" ? "post" : "projeto"}
             </div>
           }
           <div class="text-sm uppercase">
