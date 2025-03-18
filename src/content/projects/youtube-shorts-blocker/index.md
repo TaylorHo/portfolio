@@ -4,9 +4,9 @@ summary: "Extensão para remover os Shorts da interface do YouTube, evitando dis
 date: "Oct 11 2024"
 draft: false
 tags:
-- Extensão
-- Produtividade
-- MIT
+  - Extensão
+  - Produtividade
+  - MIT
 demoUrl: https://chromewebstore.google.com/detail/youtube-shorts-blocker/jchbbofddpgfbaheknainnhbdonkpogf
 repoUrl: https://github.com/hotaydev/youtube-shorts-blocker
 ---

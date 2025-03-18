@@ -78,7 +78,9 @@ article {
 .animate {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .animate.show {
@@ -107,14 +109,12 @@ article img {
   /* defined in tailwind.config */
 }
 
-
 /**
  * Meteors
  */
 
 #meteors .shower {
   @apply absolute inset-0 top-0;
-  ;
   @apply left-1/2 -translate-x-1/2;
   @apply w-screen aspect-square;
 }

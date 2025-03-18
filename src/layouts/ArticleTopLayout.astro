@@ -36,26 +36,15 @@ const repoUrl = collection === "projects" ? data.repoUrl : null;
     }
   }
 
-  const graphs: HTMLCollectionOf<Element> =
-    document.getElementsByClassName("mermaid");
+  const graphs: HTMLCollectionOf<Element> = document.getElementsByClassName("mermaid");
   renderDiagrams(graphs as HTMLCollectionOf<HTMLElement>);
 
-  document
-    .getElementById("header-theme-button")
-    ?.addEventListener("click", () => {
-      setTimeout(
-        () => renderDiagrams(graphs as HTMLCollectionOf<HTMLElement>),
-        50,
-      );
-    });
-  document
-    .getElementById("drawer-theme-button")
-    ?.addEventListener("click", () => {
-      setTimeout(
-        () => renderDiagrams(graphs as HTMLCollectionOf<HTMLElement>),
-        50,
-      );
-    });
+  document.getElementById("header-theme-button")?.addEventListener("click", () => {
+    setTimeout(() => renderDiagrams(graphs as HTMLCollectionOf<HTMLElement>), 50);
+  });
+  document.getElementById("drawer-theme-button")?.addEventListener("click", () => {
+    setTimeout(() => renderDiagrams(graphs as HTMLCollectionOf<HTMLElement>), 50);
+  });
 </script>
 <div>
   <a
@@ -82,12 +71,9 @@ const repoUrl = collection === "projects" ? data.repoUrl : null;
       ></line>
       <polyline
         points="12 19 5 12 12 5"
-        class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out"
-      ></polyline>
+        class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out"></polyline>
     </svg>
-    <div
-      class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out"
-    >
+    <div class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">
       Voltar para /{collection}
     </div>
   </a>
@@ -126,9 +112,7 @@ const repoUrl = collection === "projects" ? data.repoUrl : null;
                 class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"
               />
             </svg>
-            <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
-              Demo
-            </span>
+            <span class="text-current group-hover:text-black group-hover:dark:text-white blend">Demo</span>
           </a>
         )}
         {repoUrl && (
@@ -143,9 +127,7 @@ const repoUrl = collection === "projects" ? data.repoUrl : null;
                 class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"
               />
             </svg>
-            <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
-              Repositório
-            </span>
+            <span class="text-current group-hover:text-black group-hover:dark:text-white blend">Repositório</span>
           </a>
         )}
       </div>

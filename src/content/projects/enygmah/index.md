@@ -4,10 +4,10 @@ summary: "Ferramenta de linha de comando para rodar diversas análises de segura
 date: "Dec 30 2024"
 draft: false
 tags:
-- Rust
-- Segurança
-- CLI
-- AGPL-3.0
+  - Rust
+  - Segurança
+  - CLI
+  - AGPL-3.0
 repoUrl: https://github.com/hotaydev/enygmah
 ---
 

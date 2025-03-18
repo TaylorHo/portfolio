@@ -4,9 +4,9 @@ summary: "O Princípio de Pigeonhole é essencial para ditar a quantidade de com
 date: "Jan 19 2023"
 draft: false
 tags:
-- Hashing
-- Algoritmos
-- Matemática
+  - Hashing
+  - Algoritmos
+  - Matemática
 ---
 
 ![Imagem de CalcWorkshop](./pigeonhole.png)
@@ -23,7 +23,7 @@ Dessa forma, se tivermos mais pombos que caixas, teremos uma caixa para cada pom
 
 ## Motivação
 
-Este conceito pode até parecer sem aplicabilidade em um primeiro momento, mas na verdade ele é fundamental em diversos assuntos. Para a área da tecnologia, ele é fundamental para [*funções de hash*](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_hash).
+Este conceito pode até parecer sem aplicabilidade em um primeiro momento, mas na verdade ele é fundamental em diversos assuntos. Para a área da tecnologia, ele é fundamental para [_funções de hash_](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_hash).
 
 ## Hashing
 
@@ -50,4 +50,3 @@ Então, seguindo o Princípio de Pigeonhole, podemos ver que:
 Como hashes são usadas em diversos sistemas diferentes, pode ocorrer essa duplicidade, o que não seria um problema justamente por se tratarem de sistemas diferentes (por exemplo, um sistema usado unicamente em uma empresa privada e um software usado apenas na China). Essa duplicidade seria um problema apenas no caso de hashes duplicadas em um mesmo sistema.
 
 De toda forma, é algo **pouco provável de acontecer, mas não impossível**
-

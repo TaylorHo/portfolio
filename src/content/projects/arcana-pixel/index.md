@@ -4,10 +4,10 @@ summary: "Virtual Table Top Open Source para rodar todos os RPGs. Suporte oficia
 date: "Mar 1 2025"
 draft: false
 tags:
-- Rust
-- Svelte
-- AGPL-3.0
-- RPG
+  - Rust
+  - Svelte
+  - AGPL-3.0
+  - RPG
 demoUrl: https://www.arcanapixel.com/
 repoUrl: https://github.com/hotaydev/arcana-pixel
 ---

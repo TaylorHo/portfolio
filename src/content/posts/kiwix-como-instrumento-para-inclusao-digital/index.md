@@ -4,10 +4,10 @@ summary: "Estudo do uso do Kiwix como instrumento de inclusão digital em escola
 date: "Nov 14 2024"
 draft: false
 tags:
-- Criptografia
-- Algoritmos
-- Hashing
-- Linux
+  - Criptografia
+  - Algoritmos
+  - Hashing
+  - Linux
 ---
 
 Recentemente escrevi um artigo sobre o uso do [Kiwix](https://kiwix.org/en/) como uma ferramenta para auxílio na inclusão digital em escolas brasileiras com pouco ou nenhum acesso à internet.

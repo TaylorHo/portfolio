@@ -1,17 +1,16 @@
 ---
 title: "LZMA2 - O melhor algoritmo de compressão atual"
-summary: "Para compressões maiores e mais eficazes podemos usar algoritmos de compressão mais \"poderosos\"."
+summary: 'Para compressões maiores e mais eficazes podemos usar algoritmos de compressão mais "poderosos".'
 date: "Jan 12 2023"
 draft: false
 tags:
-- Criptografia
-- Algoritmos
-- Hashing
-- Linux
+  - Criptografia
+  - Algoritmos
+  - Hashing
+  - Linux
 ---
 
 ![Hashing Algoritm](./hashing-algoritm.png)
-
 
 Compressão de dados muitas vezes é algo essencial, principalmente em aplicações que contam com alto consumo de rede ou tráfego de arquivos muito grandes. Para muitos casos, criar um arquivo .zip, .rar, .7z ou .tar.gz resolve o problema. Mas, e se os arquivos a serem comprimidos forem muito grandes? O ideal nesse caso, sempre vai ser comprimir o arquivo ao máximo (sem perda de dados, obviamente).
 

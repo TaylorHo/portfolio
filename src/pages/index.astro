@@ -1,68 +1,71 @@
 ---
-import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import ArrowCard from "@components/ArrowCard"
-import { SITE, SOCIALS } from "@consts"
-import TwinklingStars from "@components/TwinklingStars.astro"
-import MeteorShower from "@components/MeteorShower.astro"
-import BoldItalic from "@components/BoldItalic.astro"
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import ArrowCard from "@components/ArrowCard";
+import { SITE, SOCIALS } from "@consts";
+import TwinklingStars from "@components/TwinklingStars.astro";
+import MeteorShower from "@components/MeteorShower.astro";
+import BoldItalic from "@components/BoldItalic.astro";
 
 const posts = (await getCollection("posts"))
-  .filter(post => !post.data.draft)
+  .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+  .slice(0, 3);
 
 const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
+  .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+  .slice(0, 3);
 ---
 
 <PageLayout title="Início" description={SITE.DESCRIPTION}>
-
   <!-- Light Mode: Particles -->
-  <div class='absolute inset-0 block dark:hidden'>
-    <div id='particles1' class='fixed inset-0'></div>
-    <div id='particles2' class='fixed inset-0'></div>
-    <div id='particles3' class='fixed inset-0'></div>
+  <div class="absolute inset-0 block dark:hidden">
+    <div id="particles1" class="fixed inset-0"></div>
+    <div id="particles2" class="fixed inset-0"></div>
+    <div id="particles3" class="fixed inset-0"></div>
   </div>
 
   <!-- Dark Theme: Stars -->
-  <div class='absolute inset-0 bg-black hidden dark:block'>
-    <div id='stars1' class='fixed inset-0'></div>
-    <div id='stars2' class='fixed inset-0'></div>
-    <div id='stars3' class='fixed inset-0'></div>
+  <div class="absolute inset-0 bg-black hidden dark:block">
+    <div id="stars1" class="fixed inset-0"></div>
+    <div id="stars2" class="fixed inset-0"></div>
+    <div id="stars3" class="fixed inset-0"></div>
   </div>
 
   <!-- Dark Theme: Twinkling Stars / Meteors -->
   <div id="galaxy" class="fixed inset-0">
     <div class="hidden dark:block">
-      <TwinklingStars/>
-      <MeteorShower/>
+      <TwinklingStars />
+      <MeteorShower />
     </div>
   </div>
 
   <script is:inline src="/js/bg.js"></script>
-  
+
   <!-- HERO -->
   <section class="relative h-screen w-full">
     <div class="animate absolute h-full w-full flex items-center justify-center">
-      <div class='relative w-full h-full flex items-center justify-center'>
-        <div class='p-5 text-center'>
-          <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
-            Olá, sou o
-          </p>
-          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
+      <div class="relative w-full h-full flex items-center justify-center">
+        <div class="p-5 text-center">
+          <p class="animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75">Olá, sou o</p>
+          <p class="animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white">
             Taylor Hoffmann
           </p>
-          <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
+          <p class="animated text-sm md:text-base lg:text-lg opacity-75">
             Pesquisador, físico, desenvolvedor de software e defensor de código livre.
           </p>
-          <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
-            <a href='/posts' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend'>
+          <div id="ctaButtons" class="animated flex flex-wrap gap-4 justify-center mt-5">
+            <a
+              href="/posts"
+              class="py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend"
+            >
               Ver artigos
             </a>
-            <a href='/projects' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend'>
+            <a
+              href="/projects"
+              class="py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend"
+            >
               Ver projetos
             </a>
           </div>
@@ -73,19 +76,38 @@ const projects = (await getCollection("projects"))
 
   <div class="relative bg-white dark:bg-black">
     <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16">
-
       <!-- About Section -->
       <section class="animate">
         <article>
-          <p>Gosto de poder fazer de tudo um pouco e <BoldItalic>tenho o prazer de trabalhar com aquilo que gosto</BoldItalic>.</p>
+          <p>
+            Gosto de poder fazer de tudo um pouco e <BoldItalic
+              >tenho o prazer de trabalhar com aquilo que gosto</BoldItalic
+            >.
+          </p>
 
-          <p>Tenho uma vasta <BoldItalic>experiência na área de tecnologia</BoldItalic>, incluindo desenvolvimento fullstack, mobile e desktop, passando também por segurança, QA, DevOps e, mais recentemente, treinamento de IA/ML voltado para pesquisa.</p>
+          <p>
+            Tenho uma vasta <BoldItalic>experiência na área de tecnologia</BoldItalic>, incluindo desenvolvimento
+            fullstack, mobile e desktop, passando também por segurança, QA, DevOps e, mais recentemente, treinamento de
+            IA/ML voltado para pesquisa.
+          </p>
 
-          <p>Atualmente, <BoldItalic>trabalho como pesquisador</BoldItalic>, exercendo todas essas atividades, trabalhando com uma equipe incrível e extremamente competente.</p>
+          <p>
+            Atualmente, <BoldItalic>trabalho como pesquisador</BoldItalic>, exercendo todas essas atividades,
+            trabalhando com uma equipe incrível e extremamente competente.
+          </p>
 
-          <p>No meio acadêmico posso aproveitar esses conhecimentos para realizar simulações e criar modelos computacionais. <BoldItalic>Minhas pesquisas focam em partículas e campos,</BoldItalic> estudando <BoldItalic>efeitos gravitacionais subatômicos</BoldItalic>, análise de dados de <BoldItalic>colisores de partículas</BoldItalic> (começando), desenvolvimento de softwares para a área e <BoldItalic>computação quântica</BoldItalic>.</p>
+          <p>
+            No meio acadêmico posso aproveitar esses conhecimentos para realizar simulações e criar modelos
+            computacionais. <BoldItalic>Minhas pesquisas focam em partículas e campos,</BoldItalic> estudando <BoldItalic
+              >efeitos gravitacionais subatômicos</BoldItalic
+            >, análise de dados de <BoldItalic>colisores de partículas</BoldItalic> (começando), desenvolvimento de softwares
+            para a área e <BoldItalic>computação quântica</BoldItalic>.
+          </p>
 
-          <p>Além disso sou um grande <BoldItalic>defensor de código livre</BoldItalic>, mantendo vários projetos e ajudando em outros.</p>
+          <p>
+            Além disso sou um grande <BoldItalic>defensor de código livre</BoldItalic>, mantendo vários projetos e
+            ajudando em outros.
+          </p>
 
           <p><BoldItalic>No mais, ainda tenho muito a descobrir!</BoldItalic></p>
         </article>
@@ -95,21 +117,24 @@ const projects = (await getCollection("projects"))
       <section class="animate">
         <div class="space-y-4">
           <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Publicações recentes
-            </p>
-            <a href="/posts" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
+            <p class="font-semibold text-black dark:text-white">Publicações recentes</p>
+            <a
+              href="/posts"
+              class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend"
+            >
               <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
                 Todas as publicações
               </span>
             </a>
           </div>
           <ul class="space-y-4">
-            {posts.map((post) => (
-              <li>
-                <ArrowCard entry={post} />
-              </li>
-            ))}
+            {
+              posts.map((post) => (
+                <li>
+                  <ArrowCard entry={post} />
+                </li>
+              ))
+            }
           </ul>
         </div>
       </section>
@@ -118,21 +143,24 @@ const projects = (await getCollection("projects"))
       <section class="animate">
         <div class="space-y-4">
           <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Projetos recentes
-            </p>
-            <a href="/projects" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
+            <p class="font-semibold text-black dark:text-white">Projetos recentes</p>
+            <a
+              href="/projects"
+              class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend"
+            >
               <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
                 Todos os projetos
               </span>
             </a>
           </div>
           <ul class="space-y-4">
-            {projects.map((project) => (
-              <li>
-                <ArrowCard entry={project} />
-              </li>
-            ))}
+            {
+              projects.map((project) => (
+                <li>
+                  <ArrowCard entry={project} />
+                </li>
+              ))
+            }
           </ul>
         </div>
       </section>
@@ -140,27 +168,30 @@ const projects = (await getCollection("projects"))
       <!-- Contact Section -->
       <section class="animate">
         <div>
-          <p class="font-semibold text-black dark:text-white">
-            Vamos nos conectar
-          </p>
-          <p>
-            Entre em contato comigo por e-mail ou pelas redes sociais.
-          </p>
+          <p class="font-semibold text-black dark:text-white">Vamos nos conectar</p>
+          <p>Entre em contato comigo por e-mail ou pelas redes sociais.</p>
           <div class="grid grid-cols-4 gap-y-2 mt-4 auto-cols-min">
-            {SOCIALS.map(social => (
-              <div class="col-span-1 flex items-center gap-1">
-                <span class="whitespace-nowrap truncate">
-                  {social.NAME}
-                </span>
-              </div>
-              <div class="col-span-3 truncate">
-                <a href={social.HREF} target="_blank" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-                  <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                    {social.TEXT}
-                  </span>
-                </a>
-              </div>
-            ))}
+            {
+              SOCIALS.map((social) => (
+                <div>
+                  <div class="col-span-1 flex items-center gap-1">
+                    <span class="whitespace-nowrap truncate">{social.NAME}</span>
+                  </div>
+                  <div class="col-span-3 truncate">
+                    <a
+                      href={social.HREF}
+                      target="_blank"
+                      class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend"
+                    >
+                      <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
+                        {social.TEXT}
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </section>
     </div>

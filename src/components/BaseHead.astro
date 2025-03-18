@@ -51,12 +51,7 @@ const { title, description, image = "/open-graph.jpg" } = Astro.props;
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- RSS Feed -->
-<link
-  rel="alternate"
-  type="application/rss+xml"
-  title={title}
-  href={`${Astro.site}rss.xml`}
-/>
+<link rel="alternate" type="application/rss+xml" title={title} href={`${Astro.site}rss.xml`} />
 
 <!-- Global Scripts -->
 <script is:inline src="/js/theme.js"></script>
@@ -69,11 +64,9 @@ const { title, description, image = "/open-graph.jpg" } = Astro.props;
 <script>
   import type { TransitionBeforeSwapEvent } from "astro:transitions/client";
   document.addEventListener("astro:before-swap", (e) =>
-    [
-      ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
-        'link[as="font"]',
-      ),
-    ].forEach((link) => link.remove()),
+    [...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll('link[as="font"]')].forEach((link) =>
+      link.remove(),
+    ),
   );
 </script>
 

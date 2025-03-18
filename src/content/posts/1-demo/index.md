@@ -4,10 +4,10 @@ summary: "Basic Markdown syntax that can be used when writing Markdown content."
 date: "Mar 17 2025"
 draft: true
 tags:
-- Tutorial
-- Astro
-- Astro Sphere
-- Markdown
+  - Tutorial
+  - Astro
+  - Astro Sphere
+  - Markdown
 ---
 
 ### Headings
@@ -237,7 +237,6 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 
 #### Math syntax
 
-
 ````markdown
 ```math
 \delta = \frac{1}{x}
@@ -247,6 +246,7 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 ```math
 \delta = \frac{1}{x}
 ```
+
 or
 
 ```markdown
