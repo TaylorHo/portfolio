@@ -7,6 +7,7 @@ tags:
 - Rust
 - Segurança
 - CLI
+- AGPL-3.0
 repoUrl: https://github.com/hotaydev/enygmah
 ---
 

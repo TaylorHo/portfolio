@@ -6,6 +6,7 @@ draft: false
 tags:
 - NextJS
 - Ciência
+- AGPL-3.0
 demoUrl: https://avalia.hotay.dev/docs/index.html
 repoUrl: https://github.com/hotaydev/avalia
 ---

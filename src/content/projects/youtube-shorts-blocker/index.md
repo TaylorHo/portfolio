@@ -6,6 +6,7 @@ draft: false
 tags:
 - Extensão
 - Produtividade
+- MIT
 demoUrl: https://chromewebstore.google.com/detail/youtube-shorts-blocker/jchbbofddpgfbaheknainnhbdonkpogf
 repoUrl: https://github.com/hotaydev/youtube-shorts-blocker
 ---

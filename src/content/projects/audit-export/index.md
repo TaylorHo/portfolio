@@ -7,6 +7,7 @@ tags:
 - NodeJS
 - Segurança
 - CLI
+- MIT
 demoUrl: https://www.npmjs.com/package/audit-export
 repoUrl: https://github.com/hotaydev/audit-export/
 ---

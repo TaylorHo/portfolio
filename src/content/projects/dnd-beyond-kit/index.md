@@ -6,6 +6,7 @@ draft: false
 tags:
 - Extensão
 - RPG
+- MIT
 demoUrl: https://dnd-beyond-kit.hotay.dev/
 repoUrl: https://github.com/hotaydev/dnd-beyond-kit
 ---
