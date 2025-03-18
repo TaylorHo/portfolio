@@ -14,6 +14,49 @@ const demoUrl = collection === "projects" ? data.demoUrl : null;
 const repoUrl = collection === "projects" ? data.repoUrl : null;
 ---
 
+<script>
+  async function renderDiagrams(graphs: HTMLCollectionOf<HTMLElement>) {
+    if (graphs.length === 0) return;
+
+    const theme = localStorage.theme;
+    const { default: mermaid } = await import("mermaid");
+    mermaid.initialize({
+      startOnLoad: false,
+      fontFamily: "var(--sans-font)",
+      theme: theme == "dark" ? "dark" : "default",
+    });
+
+    for (const graph of graphs) {
+      const content = graph.dataset.content;
+      if (!content) continue;
+      const id = "mermaid-" + Math.round(Math.random() * 100000);
+      mermaid.render(id, content).then((result) => {
+        graph.innerHTML = result.svg;
+      });
+    }
+  }
+
+  const graphs: HTMLCollectionOf<Element> =
+    document.getElementsByClassName("mermaid");
+  renderDiagrams(graphs as HTMLCollectionOf<HTMLElement>);
+
+  document
+    .getElementById("header-theme-button")
+    ?.addEventListener("click", () => {
+      setTimeout(
+        () => renderDiagrams(graphs as HTMLCollectionOf<HTMLElement>),
+        50,
+      );
+    });
+  document
+    .getElementById("drawer-theme-button")
+    ?.addEventListener("click", () => {
+      setTimeout(
+        () => renderDiagrams(graphs as HTMLCollectionOf<HTMLElement>),
+        50,
+      );
+    });
+</script>
 <div>
   <a
     href={`/${collection}`}
