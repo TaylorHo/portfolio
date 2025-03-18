@@ -48,6 +48,15 @@
       ]
     },
     {
+      "source": "/(.*\\.(?:xml))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/(.*\\.(?:png|jpg|webp|jpeg|gif|svg|ico|woff|woff2))",
       "headers": [
         {
