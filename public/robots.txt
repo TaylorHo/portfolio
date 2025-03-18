@@ -1,5 +1,0 @@
-Sitemap: https://me.hotay.dev/sitemap.xml
-
-User-agent: *
-Allow: /
-Disallow: /api/*

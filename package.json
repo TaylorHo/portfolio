@@ -1,75 +1,38 @@
 {
-  "name": "taylor-hoffmann-blog",
-  "version": "0.0.1",
-  "private": false,
-  "author": {
-    "name": "Taylor Hoffmann",
-    "email": "taylor@hotay.dev",
-    "url": "https://me.hotay.dev/"
-  },
+  "name": "astro-sphere",
+  "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "start": "next start",
-    "dev": "next dev",
-    "build": "next build && node ./scripts/generate-sitemap.mjs",
-    "analyze": "ANALYZE=true next build",
-    "format": "biome check --write ./{components,data,layouts,lib,pages}",
-    "prepare": "if [ -d .git ]; then git config --local core.hooksPath .hooks/; fi"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TaylorHo/portfolio.git"
+    "dev": "astro dev",
+    "dev:network": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "preview:network": "astro dev --host",
+    "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.1.0",
-    "@headlessui/react": "^2.2.0",
-    "@tailwindcss/forms": "^0.5.9",
-    "@tailwindcss/typography": "^0.5.15",
-    "autoprefixer": "^10.4.20",
-    "dayjs": "^1.11.13",
-    "esbuild": "^0.24.0",
-    "framer-motion": "^11.11.17",
-    "github-slugger": "^2.0.0",
-    "gray-matter": "^4.0.3",
-    "image-size": "^1.1.1",
-    "mdx-bundler": "^10.0.3",
-    "motion": "^11.11.17",
-    "next": "^14.2.18",
-    "next-themes": "^0.4.3",
-    "nprogress": "^0.2.0",
-    "postcss": "^8.4.38",
-    "posthog-js": "^1.188.0",
-    "preact": "^10.25.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "react-rough-notation": "^1.0.5",
-    "react-share": "^5.1.1",
-    "react-social-icons": "^6.16.0",
-    "reading-time": "^1.5.0",
-    "rehype-autolink-headings": "^7.1.0",
-    "rehype-citation": "^2.0.0",
-    "rehype-katex": "^7.0.0",
-    "rehype-preset-minify": "^7.0.1",
-    "rehype-prism-plus": "^2.0.0",
-    "rehype-slug": "^6.0.0",
-    "remark-footnotes": "^4.0.1",
-    "remark-gfm": "^4.0.0",
-    "remark-math": "^6.0.0",
-    "rss-parser": "^3.13.0",
-    "swr": "^2.2.5",
-    "tailwindcss": "^3.4.15",
-    "typewriter-effect": "^2.21.0",
-    "unist-util-visit": "^5.0.0",
-    "use-sound": "^4.0.3"
+    "@astrojs/mdx": "^4.2.0",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/solid-js": "^5.0.5",
+    "@astrojs/tailwind": "^6.0.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "astro": "^5.5.2",
+    "clsx": "^2.1.0",
+    "fuse.js": "^7.0.0",
+    "solid-js": "^1.8.15",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.4.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@next/bundle-analyzer": "^14.2.18",
-    "@svgr/webpack": "^8.1.0",
-    "@types/nprogress": "^0.2.3",
-    "@types/react": "^18.3.12",
-    "globby": "^14.0.2",
-    "prettier": "^3.3.3"
+    "@astrojs/check": "^0.9.4",
+    "sharp": "^0.33.5",
+    "typescript": "^5.8.2"
   }
 }
