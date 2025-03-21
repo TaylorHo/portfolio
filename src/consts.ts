@@ -42,6 +42,10 @@ export const LINKS: Links = [
     HREF: "/work",
   },
   {
+    TEXT: "Livros",
+    HREF: "https://uiclap.bio/taylor",
+  },
+  {
     TEXT: "Artigos",
     HREF: "/posts",
   },

@@ -34,6 +34,7 @@ import Container from "@components/Container.astro";
                     ? "bg-black dark:bg-white text-white dark:text-black"
                     : "hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white",
                 )}
+                target={LINK.HREF.startsWith("http") ? "_blank" : "_self"}
               >
                 {LINK.TEXT}
               </a>
