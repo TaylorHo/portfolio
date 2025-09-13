@@ -17,7 +17,7 @@ export default defineConfig({
 					localized: [
 						['en', '/en/:path(.*)?'],
 						// Portuguese is the default locale:
-						['pt', '/:path(.*)?']
+						['pt-BR', '/:path(.*)?']
 					]
 				}
 			]
