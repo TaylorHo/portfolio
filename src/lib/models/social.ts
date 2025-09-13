@@ -1,8 +1,18 @@
+import type { Component } from 'svelte';
+
 export interface SocialLink {
 	name: string;
 	url: string;
 	icon: string;
 	iconSize: number;
+	label: string;
+}
+
+export interface FooterLink {
+	name: string;
+	url: string;
+	icon?: Component;
+	svg?: string;
 	label: string;
 }
 
@@ -12,5 +22,6 @@ export interface PersonalInfo {
 	bio: string;
 	location: string;
 	email: string;
-	socialLinks: SocialLink[];
+	featuredLinks: SocialLink[];
+	footerLinks: FooterLink[];
 }

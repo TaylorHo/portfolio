@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { Publication } from '$lib/models/publication';
-	import { FileText, BookOpen, Book, Mic } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages';
+	import { getTypeTitle } from '$lib/services/publications';
+	import { FileText, BookOpen, Mic } from '@lucide/svelte';
 	import type { Component } from 'svelte';
 
 	interface Props {
@@ -15,8 +17,6 @@
 				return FileText;
 			case 'book':
 				return BookOpen;
-			case 'chapter':
-				return Book;
 			case 'conference':
 				return Mic;
 			default:
@@ -40,7 +40,7 @@
 			<span class="type-icon">
 				<ComponentIcon size={16} />
 			</span>
-			<span class="type-text">{publication.type}</span>
+			<span class="type-text">{getTypeTitle(publication.type)}</span>
 			<span class="year">{publication.year}</span>
 		</div>
 	</div>
@@ -75,7 +75,7 @@
 	<div class="publication-links">
 		{#if publication.url}
 			<a href={publication.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-				View Publication
+				{m.view_publication()}
 			</a>
 		{/if}
 		{#if publication.pdf}
@@ -100,7 +100,7 @@
 				rel="noopener noreferrer"
 				class="btn btn-accent"
 			>
-				Buy Physical Copy
+				{m.buy_physical_copy()}
 			</a>
 		{/if}
 	</div>

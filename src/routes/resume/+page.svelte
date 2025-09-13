@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { personalInfo } from '$lib/data/personal';
 	import { resume } from '$lib/data/resume';
+	import { m } from '$lib/paraglide/messages';
 	import { Briefcase, GraduationCap, Award } from '@lucide/svelte';
 
 	function formatDate(dateStr: string): string {
 		const date = new Date(dateStr);
-		return date.toLocaleDateString('en-US', {
+		return date.toLocaleDateString(undefined, {
 			month: 'short',
 			year: 'numeric'
 		});
@@ -13,31 +14,27 @@
 
 	function formatDateRange(startDate: string, endDate?: string): string {
 		const start = formatDate(startDate);
-		const end = endDate ? formatDate(endDate) : 'Present';
+		const end = endDate ? formatDate(endDate) : m.present();
 		return `${start} - ${end}`;
 	}
 </script>
 
 <svelte:head>
-	<title>Resume - {personalInfo.name}</title>
-	<meta
-		name="description"
-		content="Professional experience and academic background of {personalInfo.name}"
-	/>
+	<title>{m.experience()} - {personalInfo.name}</title>
+	<meta name="description" content={m.resume_page_meta_description({ name: personalInfo.name })} />
 </svelte:head>
 
 <div class="resume-page">
 	<div class="container">
 		<div class="page-header">
-			<h1>Resume</h1>
+			<h1>{m.experience()}</h1>
 			<p class="page-description">
-				My professional journey in physics, software engineering and research, including work
-				experience and academic achievements.
+				{m.resume_page_headline()}
 			</p>
 			<!-- <div class="download-section">
 				<button class="btn btn-primary" disabled>
 					<Download size={20} />
-					Download PDF
+					{m.download_as_pdf()}
 				</button>
 			</div> -->
 		</div>
@@ -47,7 +44,7 @@
 			<section class="resume-section">
 				<h2 class="section-title">
 					<span class="section-icon"><Briefcase size={24} /></span>
-					Work Experience
+					{m.work_experience()}
 				</h2>
 				<div class="timeline">
 					{#each resume.workExperience as job}
@@ -81,7 +78,7 @@
 
 								{#if job.projects && job.projects.length > 0}
 									<div class="projects-section">
-										<h4 class="projects-heading">Key Projects</h4>
+										<h4 class="projects-heading">{m.key_projects()}</h4>
 										{#each job.projects as project}
 											<div class="project">
 												<h5 class="project-title">{project.title}</h5>
@@ -98,7 +95,7 @@
 
 												{#if project.technologies && project.technologies.length > 0}
 													<div class="project-technologies">
-														<span class="tech-label">Technologies:</span>
+														<span class="tech-label">{m.technologies()}:</span>
 														<div class="tech-tags">
 															{#each project.technologies as tech}
 																<span class="tech-tag">{tech}</span>
@@ -120,7 +117,7 @@
 			<section class="resume-section">
 				<h2 class="section-title">
 					<span class="section-icon"><GraduationCap size={24} /></span>
-					Education
+					{m.education()}
 				</h2>
 				<div class="timeline">
 					{#each resume.education as edu}
@@ -144,7 +141,7 @@
 
 								{#if edu.thesis}
 									<div class="thesis">
-										<span class="thesis-label">Thesis:</span>
+										<span class="thesis-label">{m.thesis()}:</span>
 										<span class="thesis-title">{edu.thesis}</span>
 									</div>
 								{/if}
@@ -165,7 +162,7 @@
 			<section class="resume-section">
 				<h2 class="section-title">
 					<span class="section-icon"><Award size={24} /></span>
-					Extra Capacitation
+					{m.extra_capacitation()}
 				</h2>
 				<div class="timeline">
 					{#each resume.extraCapacitation as cert}
@@ -188,14 +185,14 @@
 
 								{#if cert.credentialUrl}
 									<div class="credential">
-										<span class="credential-label">Credential:</span>
+										<span class="credential-label">{m.credential()}:</span>
 										<a
 											href={cert.credentialUrl}
 											target="_blank"
 											rel="noopener noreferrer"
 											class="credential-link"
 										>
-											View Certificate
+											{m.view_certificate()}
 										</a>
 									</div>
 								{/if}

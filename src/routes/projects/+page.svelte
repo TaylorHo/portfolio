@@ -2,6 +2,8 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import { personalInfo } from '$lib/data/personal';
 	import { projects } from '$lib/data/projects';
+	import { m } from '$lib/paraglide/messages';
+	import { getStatusTitle, getTypeTitle } from '$lib/services/projects';
 	import { Search } from '@lucide/svelte';
 
 	// Sort projects: featured first, then by year (most recent first)
@@ -26,45 +28,40 @@
 			return typeMatch && statusMatch;
 		});
 	});
-
-	function capitalizeFirst(str: string): string {
-		return str.charAt(0).toUpperCase() + str.slice(1);
-	}
 </script>
 
 <svelte:head>
-	<title>Projects - {personalInfo.name}</title>
+	<title>{m.projects()} - {personalInfo.name}</title>
 	<meta
 		name="description"
-		content="Software projects, open-source tools, and research prototypes by {personalInfo.name}"
+		content={m.projects_page_meta_description({ name: personalInfo.name })}
 	/>
 </svelte:head>
 
 <div class="projects-page">
 	<div class="container">
 		<div class="page-header">
-			<h1>Projects</h1>
+			<h1>{m.projects()}</h1>
 			<p class="page-description">
-				A showcase of my software projects, ranging from open-source libraries and web applications
-				to research prototypes and data notebooks.
+				{m.projects_page_headline()}
 			</p>
 		</div>
 
 		<div class="filters">
 			<div class="filter-group">
-				<label for="type-filter">Type:</label>
+				<label for="type-filter">{m.project_filter_type()}:</label>
 				<select id="type-filter" bind:value={selectedType}>
 					{#each types as type}
-						<option value={type}>{capitalizeFirst(type)}</option>
+						<option value={type}>{getTypeTitle(type)}</option>
 					{/each}
 				</select>
 			</div>
 
 			<div class="filter-group">
-				<label for="status-filter">Status:</label>
+				<label for="status-filter">{m.project_filter_status()}:</label>
 				<select id="status-filter" bind:value={selectedStatus}>
 					{#each statuses as status}
-						<option value={status}>{capitalizeFirst(status)}</option>
+						<option value={status}>{getStatusTitle(status)}</option>
 					{/each}
 				</select>
 			</div>
@@ -79,8 +76,8 @@
 		{#if filteredProjects().length === 0}
 			<div class="empty-state">
 				<div class="empty-icon"><Search size={64} /></div>
-				<h3>No projects found</h3>
-				<p>Try adjusting your filters to see more projects.</p>
+				<h3>{m.project_filter_no_projects_found()}</h3>
+				<p>{m.project_filter_try_adjusting_filters()}</p>
 			</div>
 		{/if}
 	</div>

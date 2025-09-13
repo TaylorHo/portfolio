@@ -2,13 +2,14 @@
 	import { personalInfo } from '$lib/data/personal';
 	import { MapPin, BookOpen, Code, GraduationCap } from '@lucide/svelte';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import { m } from '$lib/paraglide/messages';
 </script>
 
 <svelte:head>
 	<title>{personalInfo.name} - {personalInfo.title}</title>
 	<meta
 		name="description"
-		content="Personal portfolio of {personalInfo.name}, {personalInfo.title}"
+		content="{m.personal_portfolio_of()} {personalInfo.name}, {personalInfo.title}"
 	/>
 </svelte:head>
 
@@ -35,13 +36,23 @@
 				<!-- Floating decorations for dark theme -->
 				<div class="floating-decorations">
 					<span class="decoration moon">
-						<img src="/images/profile/decorations/moon.png" alt="Moon" width={36} height={36} />
+						<img
+							src="/images/profile/decorations/moon.png"
+							alt={m.dark_theme_decoration_name()}
+							width={36}
+							height={36}
+						/>
 					</span>
 				</div>
 				<!-- Floating decorations for light theme -->
 				<div class="floating-decorations-light">
 					<span class="decoration atom">
-						<img src="/images/profile/decorations/atom.png" alt="Atom" width={36} height={36} />
+						<img
+							src="/images/profile/decorations/atom.png"
+							alt={m.light_theme_decoration_name()}
+							width={36}
+							height={36}
+						/>
 					</span>
 				</div>
 			</div>
@@ -56,7 +67,7 @@
 				<p class="hero-bio">{personalInfo.bio}</p>
 
 				<div class="social-links">
-					{#each personalInfo.socialLinks as social}
+					{#each personalInfo.featuredLinks as social}
 						<a
 							href={social.url}
 							target="_blank"
@@ -82,27 +93,31 @@
 		<div class="highlights">
 			<div class="container">
 				<div class="highlights-tagline">
-					<p>Explore my work</p>
+					<p>{m.explore_my_work()}</p>
 				</div>
 				<div class="highlights-grid">
 					<div class="highlight-card">
 						<div class="highlight-icon"><BookOpen size={28} /></div>
-						<h3>Publications</h3>
+						<h3>{m.publications()}</h3>
 						<a href={localizeHref('/publications')} class="btn btn-primary highlight-btn"
-							>View all</a
+							>{m.view_all()}</a
 						>
 					</div>
 
 					<div class="highlight-card">
 						<div class="highlight-icon"><Code size={28} /></div>
-						<h3>Projects</h3>
-						<a href={localizeHref('/projects')} class="btn btn-primary highlight-btn">Explore</a>
+						<h3>{m.projects()}</h3>
+						<a href={localizeHref('/projects')} class="btn btn-primary highlight-btn"
+							>{m.explore()}</a
+						>
 					</div>
 
 					<div class="highlight-card">
 						<div class="highlight-icon"><GraduationCap size={28} /></div>
-						<h3>Experience</h3>
-						<a href={localizeHref('/resume')} class="btn btn-primary highlight-btn">View resume</a>
+						<h3>{m.experience()}</h3>
+						<a href={localizeHref('/resume')} class="btn btn-primary highlight-btn"
+							>{m.view_resume()}</a
+						>
 					</div>
 				</div>
 			</div>

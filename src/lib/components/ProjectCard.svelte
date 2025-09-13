@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { Project } from '$lib/models/project';
+	import { m } from '$lib/paraglide/messages';
+	import { getStatusTitle, getTypeTitle } from '$lib/services/projects';
 	import {
 		Globe,
 		Smartphone,
@@ -11,6 +13,7 @@
 		Github,
 		ExternalLink
 	} from '@lucide/svelte';
+	import type { Component } from 'svelte';
 
 	interface Props {
 		project: Project;
@@ -18,7 +21,7 @@
 
 	let { project }: Props = $props();
 
-	function getTypeIcon(type: string) {
+	function getTypeIcon(type: string): Component {
 		switch (type) {
 			case 'web':
 				return Globe;
@@ -57,7 +60,7 @@
 			<span class="type-icon">
 				<ComponentIcon size={16} />
 			</span>
-			<span class="type-text">{project.type}</span>
+			<span class="type-text">{getTypeTitle(project.type)}</span>
 			<span class="year">{project.year}</span>
 		</div>
 		<div class="project-status">
@@ -65,12 +68,12 @@
 				class="status-badge"
 				style="background-color: {getStatusColor(project.status)}; color: white;"
 			>
-				{project.status}
+				{getStatusTitle(project.status)}
 			</span>
 			{#if project.featured}
 				<span class="featured-badge">
 					<Star size={16} />
-					Featured
+					{m.project_featured()}
 				</span>
 			{/if}
 		</div>

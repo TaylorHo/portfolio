@@ -2,6 +2,8 @@
 	import PublicationCard from '$lib/components/PublicationCard.svelte';
 	import { personalInfo } from '$lib/data/personal';
 	import { publications } from '$lib/data/publications';
+	import { m } from '$lib/paraglide/messages';
+	import { getTypeTitle } from '$lib/services/publications';
 
 	// Sort publications by year (most recent first)
 	const sortedPublications = publications.sort((a, b) => b.year - a.year);
@@ -20,36 +22,22 @@
 
 	const typeOrder = ['book', 'article', 'conference'];
 	const orderedTypes = typeOrder.filter((type) => publicationsByType[type]);
-
-	function getTypeTitle(type: string): string {
-		switch (type) {
-			case 'article':
-				return 'Journal Articles';
-			case 'book':
-				return 'Books';
-			case 'conference':
-				return 'Conference Papers';
-			default:
-				return type.charAt(0).toUpperCase() + type.slice(1);
-		}
-	}
 </script>
 
 <svelte:head>
-	<title>Publications - {personalInfo.name}</title>
+	<title>{m.publications()} - {personalInfo.name}</title>
 	<meta
 		name="description"
-		content="Academic publications, research papers, and books by {personalInfo.name}"
+		content={m.publications_page_meta_description({ name: personalInfo.name })}
 	/>
 </svelte:head>
 
 <div class="publications-page">
 	<div class="container">
 		<div class="page-header">
-			<h1>Publications</h1>
+			<h1>{m.publications()}</h1>
 			<p class="page-description">
-				A collection of my research papers, books, and academic contributions in physics, software
-				engineering, and the ways we can shape a better world.
+				{m.publications_page_headline()}
 			</p>
 		</div>
 

@@ -3,6 +3,7 @@
 	import { personalInfo } from '$lib/data/personal';
 	import { Moon, Sun, Globe, ChevronDown } from '@lucide/svelte';
 	import { baseLocale, locales, getLocale, setLocale, localizeHref } from '$lib/paraglide/runtime';
+	import { m } from '$lib/paraglide/messages';
 
 	type Locale = (typeof locales)[number];
 
@@ -19,30 +20,18 @@
 
 	// Make navItems reactive to locale changes
 	const navItems = $derived([
-		{ href: localizeHref('/'), baseHref: '/', label: 'Home' },
-		{ href: localizeHref('/publications'), baseHref: '/publications', label: 'Publications' },
-		{ href: localizeHref('/projects'), baseHref: '/projects', label: 'Projects' },
-		{ href: localizeHref('/resume'), baseHref: '/resume', label: 'Resume' }
+		{ href: localizeHref('/'), label: m.topbar_tab_home() },
+		{
+			href: localizeHref('/publications'),
+			label: m.topbar_tab_publications()
+		},
+		{ href: localizeHref('/projects'), label: m.topbar_tab_projects() },
+		{ href: localizeHref('/resume'), label: m.topbar_tab_resume() }
 	]);
 
-	function isActive(baseHref: string): boolean {
-		// Remove locale prefix from current pathname for comparison
+	function isActive(href: string): boolean {
 		let currentPath: string = page.url.pathname;
-
-		// If current locale is not the base locale, remove the locale prefix
-		if (currentLocale !== baseLocale) {
-			const localePrefix = `/${currentLocale}`;
-			if (currentPath.startsWith(localePrefix)) {
-				const pathWithoutLocale = currentPath.slice(localePrefix.length);
-				currentPath = pathWithoutLocale || '/';
-			}
-		}
-
-		// Compare with base href
-		if (baseHref === '/') {
-			return currentPath === '/';
-		}
-		return currentPath.startsWith(baseHref);
+		return currentPath.replaceAll('/', '') === href.replaceAll('/', '');
 	}
 
 	function toggleLanguageDropdown() {
@@ -90,14 +79,14 @@
 
 		<div class="nav-links">
 			{#each navItems as item}
-				<a href={item.href} class="nav-link" class:active={isActive(item.baseHref)}>
+				<a href={item.href} class="nav-link" class:active={isActive(item.href)}>
 					{item.label}
 				</a>
 			{/each}
 		</div>
 
 		<div class="nav-controls">
-			<button class="theme-toggle" title="Toggle theme" onclick={toggleTheme}>
+			<button class="theme-toggle" title={m.topbar_toggle_theme()} onclick={toggleTheme}>
 				{#if isDark}
 					<Sun size={18} />
 				{:else}
@@ -108,7 +97,7 @@
 			<div class="language-switcher">
 				<button
 					class="lang-toggle"
-					title="Select language"
+					title={m.topbar_select_language()}
 					onclick={toggleLanguageDropdown}
 					class:active={showLanguageDropdown}
 				>
