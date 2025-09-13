@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { personalInfo } from '$lib/data/personal';
 	import { MapPin, BookOpen, Code, GraduationCap } from '@lucide/svelte';
+	import { localizeHref } from '$lib/paraglide/runtime';
 </script>
 
 <svelte:head>
@@ -87,19 +88,21 @@
 					<div class="highlight-card">
 						<div class="highlight-icon"><BookOpen size={28} /></div>
 						<h3>Publications</h3>
-						<a href="/publications" class="btn btn-primary highlight-btn">View all</a>
+						<a href={localizeHref('/publications')} class="btn btn-primary highlight-btn"
+							>View all</a
+						>
 					</div>
 
 					<div class="highlight-card">
 						<div class="highlight-icon"><Code size={28} /></div>
 						<h3>Projects</h3>
-						<a href="/projects" class="btn btn-primary highlight-btn">Explore</a>
+						<a href={localizeHref('/projects')} class="btn btn-primary highlight-btn">Explore</a>
 					</div>
 
 					<div class="highlight-card">
 						<div class="highlight-icon"><GraduationCap size={28} /></div>
 						<h3>Experience</h3>
-						<a href="/resume" class="btn btn-primary highlight-btn">View resume</a>
+						<a href={localizeHref('/resume')} class="btn btn-primary highlight-btn">View resume</a>
 					</div>
 				</div>
 			</div>

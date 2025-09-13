@@ -26,12 +26,15 @@ if (!fs.existsSync(buildFolder)) {
 
 		for (const file of files) {
 			const filePath = path.join(langFolder, file);
-			const fileContent = fs.readFileSync(filePath, 'utf8');
-			const newFileContent = fileContent.replace(
-				`<html lang="${baseLocale}">`,
-				`<html lang="${locale}">`
-			);
-			fs.writeFileSync(filePath, newFileContent);
+
+			if (file.endsWith('.html')) {
+				const fileContent = fs.readFileSync(filePath, 'utf8');
+				const newFileContent = fileContent.replace(
+					`<html lang="${baseLocale}">`,
+					`<html lang="${locale}">`
+				);
+				fs.writeFileSync(filePath, newFileContent);
+			}
 		}
 	}
 })();
