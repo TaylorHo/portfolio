@@ -44,7 +44,7 @@
 		<div class="publications-content">
 			{#each orderedTypes as type}
 				<section class="publication-section">
-					<h2 class="section-title">{getTypeTitle(type)}</h2>
+					<h2 class="section-title">{getTypeTitle(type, true)}</h2>
 					<div class="publications-grid">
 						{#each publicationsByType[type] as publication}
 							<PublicationCard {publication} />
