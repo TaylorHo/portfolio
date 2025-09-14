@@ -58,5 +58,10 @@
 	"extra_capacitation": "Formação Complementar",
 	"view_certificate": "Ver Certificado",
 	"credential": "Credencial",
-	"present": "Presente"
+	"present": "Presente",
+	"conferences_title": "Conferencias e Eventos que eu participei",
+	"conference_type_conference": "Conferência",
+	"conference_type_talk": "Palestra",
+	"conference_type_workshop": "Oficina",
+	"conference_type_webinar": "Webinar"
 }

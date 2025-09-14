@@ -1,7 +1,9 @@
 <script lang="ts">
 	import PublicationCard from '$lib/components/PublicationCard.svelte';
+	import ConferenceCard from '$lib/components/ConferenceCard.svelte';
 	import { personalInfo } from '$lib/data/personal';
 	import { publications } from '$lib/data/publications';
+	import { conferences } from '$lib/data/conferences';
 	import { m } from '$lib/paraglide/messages';
 	import { getTypeTitle } from '$lib/services/publications';
 
@@ -22,6 +24,9 @@
 
 	const typeOrder = ['book', 'article', 'conference'];
 	const orderedTypes = typeOrder.filter((type) => publicationsByType[type]);
+
+	// Sort conferences by year (most recent first)
+	const sortedConferences = conferences.sort((a, b) => b.year - a.year);
 </script>
 
 <svelte:head>
@@ -52,6 +57,17 @@
 					</div>
 				</section>
 			{/each}
+
+			<!-- Conferences and Events Section -->
+			<section class="publication-section conferences-section">
+				<h2 class="section-title">{m.conferences_title()}</h2>
+
+				<div class="conferences-grid">
+					{#each sortedConferences as conference}
+						<ConferenceCard {conference} />
+					{/each}
+				</div>
+			</section>
 		</div>
 	</div>
 </div>
@@ -101,6 +117,11 @@
 	}
 
 	.publications-grid {
+		display: grid;
+		gap: var(--space-6);
+	}
+
+	.conferences-grid {
 		display: grid;
 		gap: var(--space-6);
 	}

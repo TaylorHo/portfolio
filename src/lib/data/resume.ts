@@ -3,109 +3,151 @@ import type { Resume } from '../models/resume';
 export const resume: Resume = {
 	workExperience: [
 		{
-			id: 'work-experience-01',
-			title: 'Title 01',
-			company: 'Company 01',
-			location: 'Location 01',
-			startDate: '2022-06',
-			description: [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
-				'Ut labore et dolore magna aliqua, enim ad minim veniam quis nostrud exercitation',
-				'Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor',
-				'In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
-			],
+			title: 'Pesquisador em Engenharia e Tecnologia',
+			company: 'Fundação CERTI',
+			location: 'Florianópolis, Santa Catarina, Brasil',
+			startDate: '2024-11',
+			description: [],
 			projects: [
 				{
-					id: 'project-01',
-					title: 'Project 01',
-					description: ['Description 01', 'Description 02', 'Description 03', 'Description 04'],
-					technologies: ['tech1', 'tech2', 'tech3', 'tech4', 'tech5']
+					title: 'Simulação e Redução de Doses de Radiação em tomografia computadorizada',
+					description: [],
+					technologies: ['CT Scanner', 'DICOM', 'Rust', 'OHIF', 'Node.js']
 				},
 				{
-					id: 'project-02',
-					title: 'Project 02',
-					description: ['Description 01', 'Description 02', 'Description 03', 'Description 04'],
-					technologies: ['tech1', 'tech2', 'tech3', 'tech4', 'tech5', 'tech6', 'tech7']
+					title: 'Extensão do padrão BIM para Sistemas Submarinos | Petrobras',
+					description: [],
+					technologies: [
+						'OpenBIM',
+						'IFC',
+						'Blender',
+						'FreeCAD',
+						'GeoBIM',
+						'webGIS',
+						'ArcGIS',
+						'Python',
+						'Node.js',
+						'Graph Store'
+					]
 				}
 			]
 		},
 		{
-			id: 'work-experience-02',
-			title: 'Title 02',
-			company: 'Company 02',
-			location: 'Location 02',
-			startDate: '2021-01',
-			endDate: '2022-05',
-			description: [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
-			],
+			title: 'Consultor em Segurança de Aplicações',
+			company: 'Nike do Brasil + Universidade Cruzeiro do Sul',
+			location: 'São Paulo, Brasil',
+			startDate: '2024-02',
+			endDate: '2024-11',
+			description: [],
 			projects: []
 		},
 		{
-			id: 'work-experience-03',
-			title: 'Title 03',
-			company: 'Company 03',
-			location: 'Location 03',
-			startDate: '2019-08',
-			endDate: '2020-12',
-			description: [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
-				'Ut labore et dolore magna aliqua, enim ad minim veniam quis nostrud exercitation',
-				'Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor',
-				'In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
-			],
+			title: 'Pesquisador',
+			company: 'Fundação CERTI',
+			location: 'Florianópolis, Santa Catarina, Brasil',
+			startDate: '2022-06',
+			endDate: '2024-02',
+			description: [],
+			projects: [
+				{
+					title: 'Eficiência Energética | Labfaber',
+					description: [],
+					technologies: ['Time Series', 'Hardware', 'Monitoring', 'Node.js', 'Energy efficiency']
+				},
+				{
+					title: 'Descomissionamento de Plataformas Marítimas | Petrobras',
+					description: [],
+					technologies: [
+						'Flutter',
+						'Node.js',
+						'Offline Data sync',
+						'Augmented Reality',
+						'Naval engineering'
+					]
+				},
+				{
+					title: 'Digitalização de processos estruturais de plataformas marítimas | Petrobras',
+					description: [],
+					technologies: ['Realtime', 'Node.js', 'Cloud', 'IFC', 'Naval engineering']
+				}
+			]
+		},
+		{
+			title: 'Professor de Programação',
+			company: 'Unialcance',
+			location: 'Rio Grande do Sul, Brasil',
+			startDate: '2022-09',
+			endDate: '2023-08',
+			description: [],
+			projects: []
+		},
+		{
+			title: 'Engenheiro de Software',
+			company: 'Unialcance',
+			location: 'Rio Grande do Sul, Brasil',
+			startDate: '2020-02',
+			endDate: '2022-03',
+			description: [],
 			projects: []
 		}
 	],
 	education: [
 		{
-			id: 'education-01',
-			degree: 'Degree 01',
-			institution: 'Institution 01',
-			location: 'Location 01',
-			startDate: '2017-09',
-			endDate: '2021-12',
+			degree: 'Bacharelado em Física',
+			institution: 'Universidade de Franca',
+			location: 'Franca, São Paulo, Brasil',
+			startDate: '2023-01',
+			endDate: '2025-12',
 			description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-			thesis: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit',
-			gpa: 'x.x/x.x'
+			gpa: '9.9/10.0'
 		},
 		{
-			id: 'education-02',
-			degree: 'Degree 02',
-			institution: 'Institution 02',
-			location: 'Location 02',
-			startDate: '2015-09',
-			endDate: '2017-06',
+			degree: 'Bacharelado em Ciência da Computação',
+			institution: 'Universidade Estácio',
+			location: 'Rio de Janeiro, Rio de Janeiro, Brasil',
+			startDate: '2023-01',
+			endDate: '2026-06',
 			description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium',
-			gpa: 'x.x/x.x'
-		},
-		{
-			id: 'education-03',
-			degree: 'Degree 03',
-			institution: 'Institution 03',
-			location: 'Location 03',
-			startDate: '2011-09',
-			endDate: '2015-06',
-			description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis',
-			gpa: 'x.x/x.x'
+			gpa: '9.74/10.0'
 		}
+		// {
+		// 	degree: 'Especialização em Biotecnologia',
+		// 	institution: 'Universidade Estácio',
+		// 	location: 'Rio de Janeiro, Rio de Janeiro, Brasil',
+		// 	startDate: '2026',
+		// 	endDate: '2027',
+		// 	description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
+		// },
+		// {
+		// 	degree: 'Doutorado em Física',
+		// 	institution: 'Universidade Federal do Rio Grande do Sul',
+		// 	location: 'Porto Alegre, Rio Grande do Sul, Brasil',
+		// 	startDate: '2026',
+		// 	endDate: '2030',
+		// 	description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
+		// }
 	],
 	extraCapacitation: [
 		{
-			id: 'certification-01',
-			title: 'Certification 01',
-			institution: 'Institution 01',
-			completionDate: '2023-11',
+			title: 'Open Science 101',
+			institution: 'NASA - National Aeronautics and Space Administration',
+			completionDate: '2025-08',
 			description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod',
-			credentialUrl: 'https://example.com'
+			credentialUrl: 'https://www.credly.com/badges/07f01202-c35c-43cd-a4c1-cad9e87a0aa1'
 		},
 		{
-			id: 'certification-02',
-			title: 'Certification 02',
-			institution: 'Institution 02',
-			completionDate: '2023-08',
-			description: 'Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi',
-			credentialUrl: 'https://example.com'
+			title: 'Método dos Mínimos Quadrados – para cientistas experimentais',
+			institution: 'SBF - Sociedade Brasileira de Física',
+			completionDate: '2025-09',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod',
+			credentialUrl:
+				'https://sec.sbfisica.org.br/servicos/certificados/validaCertificadoWebMiniCurso.asp?curId=24&insId=9'
+		},
+		{
+			title: 'GEANT4 e DMG4 - Introdução à Simulação de Monte Carlo',
+			institution: 'UFRN - Universidade Federal do Rio Grande do Norte',
+			completionDate: '2024-10',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod'
 		}
 	]
 };

@@ -58,5 +58,10 @@
 	"extra_capacitation": "Extra Capacitation",
 	"view_certificate": "View Certificate",
 	"credential": "Credential",
-	"present": "Present"
+	"present": "Present",
+	"conferences_title": "Conferences and Events I've Attended",
+	"conference_type_conference": "Conference",
+	"conference_type_talk": "Talk",
+	"conference_type_workshop": "Workshop",
+	"conference_type_webinar": "Webinar"
 }

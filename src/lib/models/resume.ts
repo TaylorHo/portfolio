@@ -1,12 +1,10 @@
 export interface WorkProject {
-	id: string;
 	title: string;
 	description: string[];
 	technologies?: string[];
 }
 
 export interface WorkExperience {
-	id: string;
 	title: string;
 	company: string;
 	location: string;
@@ -17,7 +15,6 @@ export interface WorkExperience {
 }
 
 export interface Education {
-	id: string;
 	degree: string;
 	institution: string;
 	location: string;
@@ -29,7 +26,6 @@ export interface Education {
 }
 
 export interface ExtraCapacitation {
-	id: string;
 	title: string;
 	institution: string;
 	completionDate: string;
