@@ -145,6 +145,13 @@
 		margin: 0 auto;
 	}
 
+	@media (max-width: 480px) {
+		.projects-grid {
+			grid-template-columns: 1fr;
+			gap: var(--space-4);
+		}
+	}
+
 	.empty-state {
 		text-align: center;
 		padding: var(--space-16);
@@ -168,6 +175,10 @@
 
 		.page-header h1 {
 			font-size: var(--font-size-3xl);
+		}
+
+		.page-description {
+			font-size: var(--font-size-base);
 		}
 
 		.projects-grid {

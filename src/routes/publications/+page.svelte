@@ -135,6 +135,10 @@
 			font-size: var(--font-size-3xl);
 		}
 
+		.page-description {
+			font-size: var(--font-size-base);
+		}
+
 		.publication-section {
 			margin-bottom: var(--space-12);
 		}

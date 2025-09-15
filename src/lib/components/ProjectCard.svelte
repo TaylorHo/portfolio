@@ -227,10 +227,77 @@
 			flex-direction: column;
 			align-items: flex-start;
 			gap: var(--space-2);
+			margin-bottom: var(--space-2);
+		}
+
+		.project-type {
+			font-size: var(--font-size-sm);
+		}
+
+		.project-status {
+			margin-bottom: var(--space-2);
+		}
+
+		.project-title {
+			font-size: var(--font-size-lg);
+			margin-bottom: var(--space-2);
+		}
+
+		.project-description {
+			font-size: var(--font-size-sm);
+			margin-bottom: var(--space-3);
+		}
+
+		.technologies {
+			margin-bottom: var(--space-3);
+		}
+
+		.tech-tag {
+			font-size: var(--font-size-sm);
+			padding: var(--space-1) var(--space-2);
 		}
 
 		.project-links {
 			flex-direction: column;
+			gap: var(--space-2);
+		}
+
+		.project-links .btn {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.project-header {
+			gap: var(--space-1);
+		}
+
+		.project-type {
+			gap: var(--space-1);
+		}
+
+		.project-title {
+			font-size: var(--font-size-lg);
+		}
+
+		.project-description {
+			font-size: var(--font-size-base);
+		}
+
+		.featured-badge {
+			font-size: var(--font-size-sm);
+			padding: var(--space-1) var(--space-2);
+		}
+
+		.year {
+			font-size: var(--font-size-sm);
+			padding: var(--space-1) var(--space-2);
+		}
+
+		.status-badge {
+			font-size: var(--font-size-sm);
+			padding: var(--space-1) var(--space-2);
 		}
 	}
 </style>

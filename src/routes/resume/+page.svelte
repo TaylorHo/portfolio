@@ -549,6 +549,10 @@
 			font-size: var(--font-size-3xl);
 		}
 
+		.page-description {
+			font-size: var(--font-size-base);
+		}
+
 		.timeline {
 			padding-left: var(--space-4);
 		}
@@ -591,8 +595,8 @@
 		}
 
 		.tech-tag {
-			padding: calc(var(--space-1) * 0.75) var(--space-2);
-			font-size: var(--font-size-xs);
+			padding: var(--space-1) var(--space-2);
+			font-size: var(--font-size-sm);
 		}
 	}
 </style>

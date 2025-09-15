@@ -79,6 +79,7 @@
 <style>
 	.conference-card {
 		cursor: pointer;
+		padding: var(--space-3) var(--space-6);
 	}
 
 	.conference-header {
@@ -122,7 +123,7 @@
 	}
 
 	.conference-meta {
-		margin-bottom: var(--space-4);
+		margin-bottom: var(--space-1);
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-1);

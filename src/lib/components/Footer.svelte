@@ -93,10 +93,36 @@
 			flex-direction: column;
 			gap: var(--space-3);
 			text-align: center;
+			padding: 0 var(--space-3);
+		}
+
+		.footer-text {
+			font-size: var(--font-size-sm);
 		}
 
 		.social-links {
 			justify-content: center;
+			gap: var(--space-2);
+		}
+
+		.social-link {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.footer {
+			padding: var(--space-3) 0;
+		}
+
+		.footer-content {
+			gap: var(--space-2);
+		}
+
+		.social-link {
+			width: 36px;
+			height: 36px;
 		}
 	}
 </style>

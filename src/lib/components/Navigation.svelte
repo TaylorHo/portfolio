@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { personalInfo } from '$lib/data/personal';
-	import { Moon, Sun, Globe, ChevronDown } from '@lucide/svelte';
-	import { baseLocale, locales, getLocale, setLocale, localizeHref } from '$lib/paraglide/runtime';
+	import { Moon, Sun, Globe, ChevronDown, Menu, X } from '@lucide/svelte';
+	import { locales, getLocale, setLocale, localizeHref } from '$lib/paraglide/runtime';
 	import { m } from '$lib/paraglide/messages';
 
 	type Locale = (typeof locales)[number];
@@ -14,6 +14,8 @@
 
 	let { isDark, toggleTheme }: Props = $props();
 
+	// Mobile menu state
+	let showMobileMenu = $state(false);
 	// Language switcher state
 	let showLanguageDropdown = $state(false);
 	let currentLocale = $state(getLocale());
@@ -34,6 +36,14 @@
 		return currentPath.replaceAll('/', '') === href.replaceAll('/', '');
 	}
 
+	function toggleMobileMenu() {
+		showMobileMenu = !showMobileMenu;
+	}
+
+	function closeMobileMenu() {
+		showMobileMenu = false;
+	}
+
 	function toggleLanguageDropdown() {
 		showLanguageDropdown = !showLanguageDropdown;
 	}
@@ -42,6 +52,14 @@
 		setLocale(locale);
 		currentLocale = locale;
 		showLanguageDropdown = false;
+		closeMobileMenu();
+	}
+
+	function handleOverlayKeydown(event: KeyboardEvent) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault();
+			closeMobileMenu();
+		}
 	}
 
 	// Update current locale when it changes (e.g., from URL navigation)
@@ -77,7 +95,8 @@
 			<a href={localizeHref('/')}>{personalInfo.name}</a>
 		</div>
 
-		<div class="nav-links">
+		<!-- Desktop Navigation -->
+		<div class="nav-links desktop-nav">
 			{#each navItems as item}
 				<a href={item.href} class="nav-link" class:active={isActive(item.href)}>
 					{item.label}
@@ -86,42 +105,112 @@
 		</div>
 
 		<div class="nav-controls">
-			<button class="theme-toggle" title={m.topbar_toggle_theme()} onclick={toggleTheme}>
-				{#if isDark}
-					<Sun size={18} />
-				{:else}
-					<Moon size={18} />
-				{/if}
-			</button>
-
-			<div class="language-switcher">
-				<button
-					class="lang-toggle"
-					title={m.topbar_select_language()}
-					onclick={toggleLanguageDropdown}
-					class:active={showLanguageDropdown}
-				>
-					<Globe size={18} />
-					<span>{currentLocale.toUpperCase()}</span>
-					<ChevronDown size={14} class={`chevron ${showLanguageDropdown ? 'rotated' : ''}`} />
+			<!-- Desktop Controls -->
+			<div class="desktop-controls">
+				<button class="theme-toggle" title={m.topbar_toggle_theme()} onclick={toggleTheme}>
+					{#if isDark}
+						<Sun size={18} />
+					{:else}
+						<Moon size={18} />
+					{/if}
 				</button>
 
-				{#if showLanguageDropdown}
-					<div class="language-dropdown">
-						{#each locales as locale}
-							<button
-								class="language-option"
-								class:current={locale === currentLocale}
-								onclick={() => handleLocaleChange(locale)}
-							>
-								{locale.toUpperCase()}
-							</button>
-						{/each}
-					</div>
-				{/if}
+				<div class="language-switcher">
+					<button
+						class="lang-toggle"
+						title={m.topbar_select_language()}
+						onclick={toggleLanguageDropdown}
+						class:active={showLanguageDropdown}
+					>
+						<Globe size={18} />
+						<span>{currentLocale.toUpperCase()}</span>
+						<ChevronDown size={14} class={`chevron ${showLanguageDropdown ? 'rotated' : ''}`} />
+					</button>
+
+					{#if showLanguageDropdown}
+						<div class="language-dropdown">
+							{#each locales as locale}
+								<button
+									class="language-option"
+									class:current={locale === currentLocale}
+									onclick={() => handleLocaleChange(locale)}
+								>
+									{locale.toUpperCase()}
+								</button>
+							{/each}
+						</div>
+					{/if}
+				</div>
 			</div>
+
+			<!-- Mobile Menu Button -->
+			<button class="mobile-menu-button" onclick={toggleMobileMenu} aria-label="Toggle mobile menu">
+				{#if showMobileMenu}
+					<X size={24} />
+				{:else}
+					<Menu size={24} />
+				{/if}
+			</button>
 		</div>
 	</div>
+
+	<!-- Mobile Menu Overlay -->
+	{#if showMobileMenu}
+		<div
+			class="mobile-overlay"
+			role="button"
+			tabindex="0"
+			aria-label="Close mobile menu"
+			onclick={closeMobileMenu}
+			onkeydown={handleOverlayKeydown}
+		></div>
+	{/if}
+
+	<!-- Mobile Navigation Menu -->
+	{#if showMobileMenu}
+		<div class="mobile-nav">
+			<div class="mobile-nav-content">
+				<div class="mobile-nav-links">
+					{#each navItems as item}
+						<a
+							href={item.href}
+							class="mobile-nav-link"
+							class:active={isActive(item.href)}
+							onclick={closeMobileMenu}
+						>
+							{item.label}
+						</a>
+					{/each}
+				</div>
+
+				<div class="mobile-nav-controls">
+					<button class="mobile-theme-toggle" onclick={toggleTheme}>
+						{#if isDark}
+							<Sun size={20} />
+						{:else}
+							<Moon size={20} />
+						{/if}
+						<span>{m.topbar_toggle_theme()}</span>
+					</button>
+
+					<div class="mobile-language-switcher">
+						<span class="mobile-lang-label">{m.topbar_select_language()}:</span>
+						<div class="mobile-lang-options">
+							{#each locales as locale}
+								<button
+									class="mobile-lang-option"
+									class:current={locale === currentLocale}
+									onclick={() => handleLocaleChange(locale)}
+								>
+									{locale.toUpperCase()}
+								</button>
+							{/each}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{/if}
 </nav>
 
 <style>
@@ -177,6 +266,11 @@
 	}
 
 	.nav-controls {
+		display: flex;
+		gap: var(--space-2);
+	}
+
+	.desktop-controls {
 		display: flex;
 		gap: var(--space-2);
 	}
@@ -256,31 +350,173 @@
 		background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
 	}
 
+	/* Mobile Menu Button */
+	.mobile-menu-button {
+		display: none;
+		background: none;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-md);
+		padding: var(--space-2);
+		cursor: pointer;
+		color: var(--color-text-secondary);
+		transition: all 0.2s ease;
+	}
+
+	.mobile-menu-button:hover {
+		border-color: var(--color-primary);
+		color: var(--color-text);
+	}
+
+	/* Mobile Overlay */
+	.mobile-overlay {
+		display: none;
+		position: fixed;
+		top: 64px; /* Start below the navigation bar */
+		left: 0;
+		width: 100%;
+		height: calc(100vh - 64px); /* Cover remaining viewport height */
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 999;
+	}
+
+	/* Mobile Navigation */
+	.mobile-nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background-color: var(--color-surface);
+		border-bottom: 1px solid var(--color-border);
+		box-shadow: var(--shadow-lg);
+		z-index: 1000;
+	}
+
+	.mobile-nav-content {
+		padding: var(--space-4);
+	}
+
+	.mobile-nav-links {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		margin-bottom: var(--space-6);
+	}
+
+	.mobile-nav-link {
+		display: block;
+		padding: var(--space-3) var(--space-4);
+		color: var(--color-text-secondary);
+		text-decoration: none;
+		font-weight: 500;
+		border-radius: var(--radius-md);
+		transition: all 0.2s ease;
+		font-size: var(--font-size-base);
+	}
+
+	.mobile-nav-link:hover,
+	.mobile-nav-link.active {
+		color: var(--color-primary);
+		background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+	}
+
+	.mobile-nav-controls {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--color-border);
+	}
+
+	.mobile-theme-toggle {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-3) var(--space-4);
+		background: none;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-md);
+		color: var(--color-text-secondary);
+		font-size: var(--font-size-base);
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.mobile-theme-toggle:hover {
+		border-color: var(--color-primary);
+		color: var(--color-text);
+	}
+
+	.mobile-language-switcher {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+
+	.mobile-lang-label {
+		font-size: var(--font-size-sm);
+		font-weight: 500;
+		color: var(--color-text);
+	}
+
+	.mobile-lang-options {
+		display: flex;
+		gap: var(--space-2);
+	}
+
+	.mobile-lang-option {
+		flex: 1;
+		padding: var(--space-2) var(--space-3);
+		background: none;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-md);
+		color: var(--color-text-secondary);
+		font-size: var(--font-size-sm);
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.mobile-lang-option:hover {
+		border-color: var(--color-primary);
+		color: var(--color-text);
+	}
+
+	.mobile-lang-option.current {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
+		background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+	}
+
 	@media (max-width: 768px) {
 		.nav-container {
 			padding: 0 var(--space-3);
 		}
 
-		.nav-links {
-			gap: var(--space-3);
+		.desktop-nav {
+			display: none;
 		}
 
-		.nav-link {
-			padding: var(--space-1) var(--space-2);
-			font-size: var(--font-size-sm);
+		.desktop-controls {
+			display: none;
+		}
+
+		.mobile-menu-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.mobile-overlay {
+			display: block;
 		}
 
 		.nav-brand a {
 			font-size: var(--font-size-lg);
 		}
+	}
 
-		.theme-toggle,
-		.lang-toggle {
-			padding: var(--space-1) var(--space-2);
-		}
-
-		.language-dropdown {
-			right: -var(--space-2);
+	@media (min-width: 769px) {
+		.mobile-nav {
+			display: none;
 		}
 	}
 </style>

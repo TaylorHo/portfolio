@@ -91,34 +91,31 @@
 		</div>
 
 		<div class="highlights">
-			<div class="container">
-				<div class="highlights-tagline">
-					<p>{m.explore_my_work()}</p>
+			<div class="highlights-tagline">
+				<p>{m.explore_my_work()}</p>
+			</div>
+			<div class="highlights-grid">
+				<div class="highlight-card">
+					<div class="highlight-icon"><BookOpen size={28} /></div>
+					<h3>{m.publications()}</h3>
+					<a href={localizeHref('/publications')} class="btn btn-primary highlight-btn"
+						>{m.view_all()}</a
+					>
 				</div>
-				<div class="highlights-grid">
-					<div class="highlight-card">
-						<div class="highlight-icon"><BookOpen size={28} /></div>
-						<h3>{m.publications()}</h3>
-						<a href={localizeHref('/publications')} class="btn btn-primary highlight-btn"
-							>{m.view_all()}</a
-						>
-					</div>
 
-					<div class="highlight-card">
-						<div class="highlight-icon"><Code size={28} /></div>
-						<h3>{m.projects()}</h3>
-						<a href={localizeHref('/projects')} class="btn btn-primary highlight-btn"
-							>{m.explore()}</a
-						>
-					</div>
+				<div class="highlight-card">
+					<div class="highlight-icon"><Code size={28} /></div>
+					<h3>{m.projects()}</h3>
+					<a href={localizeHref('/projects')} class="btn btn-primary highlight-btn">{m.explore()}</a
+					>
+				</div>
 
-					<div class="highlight-card">
-						<div class="highlight-icon"><GraduationCap size={28} /></div>
-						<h3>{m.experience()}</h3>
-						<a href={localizeHref('/resume')} class="btn btn-primary highlight-btn"
-							>{m.view_resume()}</a
-						>
-					</div>
+				<div class="highlight-card">
+					<div class="highlight-icon"><GraduationCap size={28} /></div>
+					<h3>{m.experience()}</h3>
+					<a href={localizeHref('/resume')} class="btn btn-primary highlight-btn"
+						>{m.view_resume()}</a
+					>
 				</div>
 			</div>
 		</div>
@@ -312,6 +309,10 @@
 
 	.highlights {
 		margin-top: var(--space-16);
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 var(--space-4);
 	}
 
 	.highlights-tagline {
@@ -328,9 +329,16 @@
 
 	.highlights-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: var(--space-4);
 		width: 100%;
+		justify-items: center;
+	}
+
+	@media (max-width: 900px) {
+		.highlights-grid {
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		}
 	}
 
 	.highlight-card {
@@ -344,6 +352,21 @@
 		gap: var(--space-4);
 		transition: all 0.2s ease;
 		text-decoration: none;
+		width: 100%;
+		max-width: 400px;
+		flex-wrap: nowrap;
+	}
+
+	@media (max-width: 320px) {
+		.highlight-card {
+			flex-direction: column;
+			text-align: center;
+			gap: var(--space-2);
+		}
+
+		.highlight-btn {
+			width: 100%;
+		}
 	}
 
 	.highlight-card:hover {
@@ -355,6 +378,7 @@
 		color: var(--color-primary);
 		flex-shrink: 0;
 		display: flex;
+		margin-left: var(--space-1);
 	}
 
 	.highlight-card h3 {
@@ -368,23 +392,148 @@
 		font-size: var(--font-size-sm);
 		padding: var(--space-1) var(--space-3);
 		align-self: flex-start;
+		white-space: nowrap;
+		flex-shrink: 0;
+		min-width: fit-content;
 	}
 
 	@media (max-width: 768px) {
 		.hero {
-			padding: var(--space-6) 0;
-			min-height: 100vh;
+			padding: var(--space-6) 0 var(--space-4) 0;
+			min-height: calc(100vh - 64px);
+		}
+
+		.hero-text {
+			max-width: 100%;
 		}
 
 		.hero-content {
 			grid-template-columns: 1fr;
 			gap: var(--space-6);
 			text-align: center;
+			padding-bottom: var(--space-4);
+		}
+
+		.hero-image {
+			padding: var(--space-4);
 		}
 
 		.profile-photo {
-			width: 160px;
-			height: 160px;
+			width: 140px;
+			height: 140px;
+		}
+
+		.floating-decorations,
+		.floating-decorations-light {
+			display: none;
+		}
+
+		.hero-title {
+			font-size: var(--font-size-2xl);
+			line-height: 1.2;
+		}
+
+		.hero-subtitle {
+			font-size: var(--font-size-lg);
+			margin-bottom: var(--space-2);
+		}
+
+		.hero-location {
+			font-size: var(--font-size-base);
+			margin-bottom: var(--space-4);
+			justify-content: center;
+		}
+
+		.hero-bio {
+			font-size: var(--font-size-base);
+			margin-bottom: var(--space-6);
+			line-height: 1.6;
+		}
+
+		.social-links {
+			justify-content: center;
+			gap: var(--space-2);
+			margin-bottom: var(--space-6);
+		}
+
+		.social-link {
+			flex: 1;
+			min-width: 0;
+			max-width: 140px;
+			font-size: var(--font-size-sm);
+			padding: var(--space-2) var(--space-1);
+		}
+
+		.social-name {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.highlights {
+			margin-top: var(--space-6);
+			padding: 0 var(--space-3);
+		}
+
+		.highlights-tagline {
+			margin-bottom: var(--space-4);
+		}
+
+		.highlights-tagline p {
+			font-size: var(--font-size-base);
+		}
+
+		.highlights-grid {
+			grid-template-columns: 1fr;
+			gap: var(--space-3);
+		}
+
+		.highlight-card {
+			padding: var(--space-3) var(--space-4);
+			flex-direction: row;
+			text-align: left;
+			gap: var(--space-3);
+			align-items: center;
+			max-width: none;
+		}
+
+		.highlight-card h3 {
+			font-size: var(--font-size-base);
+			flex: 1;
+			margin: 0;
+		}
+
+		.highlight-btn {
+			align-self: center;
+			width: auto;
+			padding: var(--space-2) var(--space-3);
+			font-size: var(--font-size-sm);
+			flex-shrink: 0;
+			white-space: nowrap;
+			min-width: fit-content;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero {
+			padding: var(--space-4) 0;
+		}
+
+		.hero-text {
+			max-width: 100%;
+		}
+
+		.hero-content {
+			gap: var(--space-4);
+		}
+
+		.hero-image {
+			padding: var(--space-2);
+		}
+
+		.profile-photo {
+			width: 120px;
+			height: 120px;
 		}
 
 		.hero-title {
@@ -396,31 +545,44 @@
 		}
 
 		.social-links {
-			justify-content: center;
+			flex-direction: column;
+			gap: var(--space-2);
 		}
 
-		.highlights {
-			margin-top: var(--space-8);
-		}
-
-		.highlights-tagline {
-			margin-bottom: var(--space-4);
+		.social-link {
+			flex: none;
+			width: 100%;
+			max-width: none;
+			font-size: var(--font-size-base);
+			padding: var(--space-3) var(--space-4);
 		}
 
 		.highlights-grid {
-			grid-template-columns: 1fr;
-			gap: var(--space-3);
+			gap: var(--space-2);
 		}
 
 		.highlight-card {
-			padding: var(--space-3) var(--space-4);
-			flex-direction: column;
-			text-align: center;
-			gap: var(--space-3);
+			padding: var(--space-3);
+			flex-direction: row;
+			text-align: left;
+			gap: var(--space-2);
+			align-items: center;
+			max-width: none;
+		}
+
+		.highlight-card h3 {
+			font-size: var(--font-size-base);
+			flex: 1;
+			margin: 0;
 		}
 
 		.highlight-btn {
-			align-self: center;
+			width: auto;
+			padding: var(--space-2) var(--space-3);
+			font-size: var(--font-size-sm);
+			flex-shrink: 0;
+			white-space: nowrap;
+			min-width: fit-content;
 		}
 	}
 </style>

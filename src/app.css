@@ -138,6 +138,21 @@ a:hover {
 	text-decoration: none;
 	cursor: pointer;
 	transition: all 0.2s ease;
+	min-width: 44px;
+}
+
+@media (max-width: 768px) {
+	.btn {
+		padding: var(--space-3) var(--space-4);
+		font-size: var(--font-size-base);
+	}
+}
+
+@media (max-width: 480px) {
+	.btn {
+		padding: var(--space-3) var(--space-4);
+		font-size: var(--font-size-lg);
+	}
 }
 
 .btn-primary {
@@ -191,6 +206,13 @@ a:hover {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 var(--space-4);
+	width: 100%;
+}
+
+@media (max-width: 640px) {
+	.container {
+		padding: 0 var(--space-3);
+	}
 }
 
 .text-center {
@@ -225,4 +247,41 @@ a:hover {
 }
 .gap-6 {
 	gap: var(--space-6);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+	html {
+		font-size: 14px;
+	}
+
+	h1 {
+		font-size: var(--font-size-3xl);
+	}
+
+	h2 {
+		font-size: var(--font-size-2xl);
+	}
+
+	h3 {
+		font-size: var(--font-size-xl);
+	}
+}
+
+@media (max-width: 480px) {
+	html {
+		font-size: 15px;
+	}
+
+	h1 {
+		font-size: var(--font-size-3xl);
+	}
+
+	h2 {
+		font-size: var(--font-size-2xl);
+	}
+
+	h3 {
+		font-size: var(--font-size-xl);
+	}
 }
