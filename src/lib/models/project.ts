@@ -1,7 +1,7 @@
 export interface Project {
 	title: string;
 	description: string;
-	technologies: string[];
+	technologies?: string[];
 	year: number;
 	type: 'web' | 'mobile' | 'desktop' | 'library' | 'research';
 	status: 'active' | 'completed' | 'archived';

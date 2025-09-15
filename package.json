@@ -27,10 +27,12 @@
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
+			"core-js",
 			"esbuild"
 		]
 	},
 	"dependencies": {
-		"@lucide/svelte": "^0.544.0"
+		"@lucide/svelte": "^0.544.0",
+		"posthog-js": "^1.266.0"
 	}
 }

@@ -93,11 +93,11 @@
 													</ul>
 												{/if}
 
-												{#if project.technologies && project.technologies.length > 0}
-													<div class="project-technologies">
+												{#if project.tags && project.tags.length > 0}
+													<div class="project-tags">
 														<span class="tech-label">{m.technologies()}:</span>
 														<div class="tech-tags">
-															{#each project.technologies as tech}
+															{#each project.tags as tech}
 																<span class="tech-tag">{tech}</span>
 															{/each}
 														</div>
@@ -105,6 +105,17 @@
 												{/if}
 											</div>
 										{/each}
+									</div>
+								{/if}
+
+								{#if job.tags && job.tags.length > 0}
+									<div class="job-tags">
+										<span class="tech-label">{m.technologies()}:</span>
+										<div class="tech-tags">
+											{#each job.tags as tech}
+												<span class="tech-tag">{tech}</span>
+											{/each}
+										</div>
 									</div>
 								{/if}
 							</div>

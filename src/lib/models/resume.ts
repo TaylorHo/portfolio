@@ -1,7 +1,7 @@
 export interface WorkProject {
 	title: string;
 	description: string[];
-	technologies?: string[];
+	tags?: string[];
 }
 
 export interface WorkExperience {
@@ -12,6 +12,7 @@ export interface WorkExperience {
 	endDate?: string;
 	description?: string[];
 	projects: WorkProject[];
+	tags?: string[];
 }
 
 export interface Education {

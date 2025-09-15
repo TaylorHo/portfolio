@@ -83,16 +83,6 @@
 				PDF
 			</a>
 		{/if}
-		{#if publication.doi}
-			<a
-				href="https://doi.org/{publication.doi}"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="btn btn-secondary"
-			>
-				DOI
-			</a>
-		{/if}
 		{#if publication.type === 'book' && publication.purchaseLink}
 			<a
 				href={publication.purchaseLink}
@@ -101,6 +91,16 @@
 				class="btn btn-accent"
 			>
 				{m.buy_physical_copy()}
+			</a>
+		{/if}
+		{#if publication.doi}
+			<a
+				href="https://doi.org/{publication.doi}"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="btn btn-secondary"
+			>
+				DOI
 			</a>
 		{/if}
 	</div>

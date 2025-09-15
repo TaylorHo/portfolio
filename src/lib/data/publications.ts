@@ -1,5 +1,7 @@
 import type { Publication } from '../models/publication';
 
+// TODO: Translate content
+
 export const publications: Publication[] = [
 	{
 		title: 'Segurança de Aplicações para Desenvolvedores',
