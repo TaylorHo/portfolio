@@ -6,6 +6,19 @@ let { locales, baseLocale } = paraglide;
 
 const otherLocales = locales.filter((locale) => locale !== baseLocale);
 
+const svelteConfigFile = path.join(__dirname, '..', 'svelte.config.js');
+
+if (!fs.existsSync(svelteConfigFile)) {
+	console.error('Svelte config file not found');
+	process.exit(1);
+}
+
+const svelteConfigContent = fs.readFileSync(svelteConfigFile, 'utf8');
+if (!svelteConfigContent.includes('@sveltejs/adapter-static')) {
+	console.error('Not building a static site, skipping ...');
+	process.exit(0);
+}
+
 const buildFolder = path.join(__dirname, '..', 'build');
 
 if (!fs.existsSync(buildFolder)) {

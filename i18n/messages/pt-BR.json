@@ -63,5 +63,13 @@
 	"conference_type_conference": "Conferência",
 	"conference_type_talk": "Palestra",
 	"conference_type_workshop": "Oficina",
-	"conference_type_webinar": "Webinar"
+	"conference_type_webinar": "Webinar",
+	"page_not_found_title": "Página não encontrada",
+	"page_not_found_description": "Desculpe, a página que você está procurando não existe ou foi movida. Vamos te levar de volta para o caminho certo.",
+	"go_home": "Ir para a página inicial",
+	"go_back": "Voltar",
+	"error": "Erro",
+	"try_again": "Tentar novamente",
+	"something_went_wrong_title": "Algo deu errado",
+	"something_went_wrong_description": "Desculpe, mas algo inesperado aconteceu. Por favor, tente novamente ou volte para a página inicial."
 }
