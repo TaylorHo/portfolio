@@ -46,9 +46,9 @@
 				</div>
 				<!-- Floating decorations for light theme -->
 				<div class="floating-decorations-light">
-					<span class="decoration atom">
+					<span class="decoration light-bulb">
 						<img
-							src="/images/profile/decorations/atom.webp"
+							src="/images/profile/decorations/light.webp"
 							alt={m.light_theme_decoration_name()}
 							width={36}
 							height={36}
@@ -230,7 +230,7 @@
 		opacity: 0;
 	}
 
-	.atom {
+	.light-bulb {
 		top: 12%;
 		left: 15%;
 		animation-delay: 0s;

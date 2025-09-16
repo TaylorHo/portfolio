@@ -261,8 +261,7 @@
 
 	.nav-link.active {
 		color: var(--color-primary);
-		background-color: var(--color-primary);
-		background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+		background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
 	}
 
 	.nav-controls {
@@ -347,7 +346,7 @@
 
 	.language-option.current {
 		color: var(--color-primary);
-		background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+		background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
 	}
 
 	/* Mobile Menu Button */
@@ -416,7 +415,7 @@
 	.mobile-nav-link:hover,
 	.mobile-nav-link.active {
 		color: var(--color-primary);
-		background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+		background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
 	}
 
 	.mobile-nav-controls {
@@ -483,7 +482,7 @@
 	.mobile-lang-option.current {
 		border-color: var(--color-primary);
 		color: var(--color-primary);
-		background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+		background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
 	}
 
 	@media (max-width: 768px) {
