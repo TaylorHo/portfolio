@@ -1,12 +1,10 @@
+import { m } from '$lib/paraglide/messages';
 import type { Project } from '../models/project';
-
-// TODO: Translate content
 
 export const projects: Project[] = [
 	{
 		title: 'Arcana Pixel',
-		description:
-			'Mesa virtual open source para RPGs com suporte nativo a Ordem Paranormal, D&D, Cthulhu e Tormenta. Interface moderna com todas as ferramentas e automações necessárias.',
+		description: m.projects_arcana_pixel_description(),
 		technologies: ['Rust', 'Svelte', 'RPG'],
 		year: 2025,
 		type: 'web',
@@ -17,9 +15,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Image Hash Linker',
-		description:
-			'Biblioteca para adicionar um link à uma imagem através de mecanismo de hash e tabela de referência. Está para sair um artigo explicando melhor o mecanismo.',
-		technologies: ['Rust', 'Hash', 'Processamento de Imagens'],
+		description: m.projects_image_hash_linker_description(),
+		technologies: ['Rust', 'Hash', m.projects_tag_image_processing()],
 		year: 2025,
 		type: 'library',
 		status: 'active',
@@ -27,9 +24,14 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Econflux',
-		description:
-			'Biblioteca Rust para simulações de física econômica com agentes, eventos probabilísticos e análise de cenários usando métodos Monte Carlo.',
-		technologies: ['Física', 'Rust', 'Física Econômica', 'Simulação', 'Monte Carlo'],
+		description: m.projects_econflux_description(),
+		technologies: [
+			m.projects_tag_physics(),
+			'Rust',
+			m.projects_tag_economics_physics(),
+			m.projects_tag_simulation(),
+			'Monte Carlo'
+		],
 		year: 2025,
 		type: 'library',
 		status: 'active',
@@ -37,9 +39,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Goals Tracker',
-		description:
-			'Aplicativo web para gerenciar e acompanhar metas de longo prazo com visualização de progresso, marcos e estatísticas detalhadas.',
-		technologies: ['Svelte', 'Produtividade'],
+		description: m.projects_goals_tracker_description(),
+		technologies: ['Svelte', m.projects_tag_productivity()],
 		year: 2025,
 		type: 'web',
 		status: 'active',
@@ -48,9 +49,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'audit-export',
-		description:
-			'CLI que converte resultados do npm audit em relatórios HTML interativos para melhor visualização de vulnerabilidades de segurança.',
-		technologies: ['Node.js', 'Segurança', 'CLI'],
+		description: m.projects_audit_export_description(),
+		technologies: ['Node.js', m.projects_tag_security(), 'CLI'],
 		year: 2024,
 		type: 'library',
 		status: 'active',
@@ -59,9 +59,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Avalia',
-		description:
-			'Plataforma completa para avaliação digital de trabalhos em feiras de iniciação científica, com critérios customizáveis e relatórios automatizados.',
-		technologies: ['Next.js', 'Ciência'],
+		description: m.projects_avalia_description(),
+		technologies: ['Next.js', m.projects_tag_science()],
 		year: 2024,
 		type: 'web',
 		status: 'completed',
@@ -71,9 +70,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'D&D Beyond Kit',
-		description:
-			'Extensão para traduzir fichas de personagens no D&D Beyond e adicionar novas funcionalidades, disponível para Chrome e Firefox.',
-		technologies: ['Extensão', 'RPG'],
+		description: m.projects_dnd_beyond_kit_description(),
+		technologies: [m.projects_tag_extension(), 'RPG'],
 		year: 2024,
 		type: 'web',
 		status: 'completed',
@@ -82,9 +80,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'enygmah',
-		description:
-			'CLI unificada para análises de segurança automatizadas com relatórios completos. Suporta web apps, mobile, APIs e containers Docker.',
-		technologies: ['Rust', 'Segurança', 'CLI'],
+		description: m.projects_enygmah_description(),
+		technologies: ['Rust', m.projects_tag_security(), 'CLI'],
 		year: 2024,
 		type: 'library',
 		status: 'completed',
@@ -92,9 +89,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'YouTube Shorts Blocker',
-		description:
-			'Extensão para remover os Shorts da interface do YouTube, evitando distrações e perda de tempo. Disponível para Chrome e Firefox.',
-		technologies: ['Extensão', 'Produtividade'],
+		description: m.projects_youtube_shorts_blocker_description(),
+		technologies: [m.projects_tag_extension(), m.projects_tag_productivity()],
 		year: 2024,
 		type: 'web',
 		status: 'completed',

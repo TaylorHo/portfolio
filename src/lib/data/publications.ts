@@ -1,29 +1,26 @@
 import type { Publication } from '../models/publication';
-
-// TODO: Translate content
+import { m } from '$lib/paraglide/messages';
 
 export const publications: Publication[] = [
 	{
-		title: 'Segurança de Aplicações para Desenvolvedores',
+		title: m.publications_security_book_title(),
 		authors: ['Taylor Hoffmann'],
 		year: 2024,
-		venue: 'Uiclap',
+		venue: m.publications_security_book_publisher(),
 		type: 'book',
-		abstract:
-			'Guia prático que apresenta, de forma simples e objetiva, como desenvolvedores podem aplicar segurança ao ciclo de vida do software, integrando-a à esteira de Integração Contínua e aprendendo a corrigir vulnerabilidades de forma eficaz.',
+		abstract: m.publications_security_book_description(),
 		doi: '10.5281/zenodo.16739985',
 		url: 'https://zenodo.org/records/16739985',
 		purchaseLink: 'https://loja.uiclap.com/titulo/ua56412/',
 		tags: []
 	},
 	{
-		title: 'Kiwix como instrumento de inclusão digital',
+		title: m.publications_kiwix_article_title(),
 		authors: ['Taylor Hoffmann'],
 		year: 2025,
-		venue: 'Revista Informática na educação | UFRGS',
+		venue: m.publications_kiwix_article_publisher(),
 		type: 'article',
-		abstract:
-			'Aceito, ainda não publicado. Em 2022, 58,8% das escolas públicas brasileiras tinham internet instável e 20,4% não tinham acesso. Este trabalho mostra como o Kiwix, ferramenta de software livre, pode levar conteúdos educacionais a essas escolas de forma prática e barata, beneficiando cerca de 70% das escolas brasileiras com acesso restrito ou inexistente, auxiliando na inclusão digital.',
+		abstract: m.publications_kiwix_article_description(),
 		// doi: '',
 		// url: 'https://seer.ufrgs.br/index.php/InfEducTeoriaPratica/index',
 		tags: []

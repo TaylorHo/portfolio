@@ -1,7 +1,6 @@
 import type { Conference } from '../models/conference';
 
-// TODO: Add description to each conference
-// TODO: Translate content
+// TODO: Add description to each conference (and translate them)
 
 export const conferences: Conference[] = [
 	{
