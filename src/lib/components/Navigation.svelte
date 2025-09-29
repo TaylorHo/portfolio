@@ -28,7 +28,8 @@
 			label: m.topbar_tab_publications()
 		},
 		{ href: localizeHref('/projects'), label: m.topbar_tab_projects() },
-		{ href: localizeHref('/resume'), label: m.topbar_tab_resume() }
+		{ href: localizeHref('/resume'), label: m.topbar_tab_resume() },
+		{ href: localizeHref('/blog'), label: 'Blog' }
 	]);
 
 	function isActive(href: string): boolean {

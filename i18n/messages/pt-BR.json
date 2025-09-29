@@ -154,5 +154,11 @@
 	"resume_experience_unialcance_engineer_description_2": "Implementação de automações e relatórios dinâmicos para gestão de negócio e vendas",
 	"resume_experience_unialcance_engineer_description_3": "Colaboração próxima com equipe de marketing, adquirindo experiência em edição de imagens e vídeos",
 	"resume_experience_unialcance_engineer_description_4": "Desenvolvimento de habilidades em escrita criativa e comunicação visual",
-	"resume_experience_unialcance_engineer_description_5": "Implementação de soluções utilizando principalmente PHP e Node.js"
+	"resume_experience_unialcance_engineer_description_5": "Implementação de soluções utilizando principalmente PHP e Node.js",
+	"read_article": "Ler artigo",
+	"blog_title": "Blog Pessoal",
+	"blog_meta_description": "Blog pessoal com artigos sobre física, engenharia de software, simulações, pesquisa e tecnologia.",
+	"blog_description": "Reflexões sobre física, engenharia de software, simulações e pesquisa.",
+	"blog_no_posts_found": "Nenhuma postagem até agora",
+	"blog_check_back_later": "Volte mais tarde para novos conteúdos!"
 }

@@ -18,6 +18,7 @@ export interface FooterLink {
 
 export interface PersonalInfo {
 	name: string;
+	url: string;
 	title: string;
 	bio: string;
 	location: string;

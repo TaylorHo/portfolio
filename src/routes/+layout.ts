@@ -4,7 +4,7 @@ export const trailingSlash = 'always';
 import posthog from 'posthog-js';
 import { browser } from '$app/environment';
 
-export const load = async () => {
+export const load = async ({ url }) => {
 	if (browser) {
 		posthog.init('phc_JBYFh2Ew3kdz3hfD8IIxV62Ml7ipQnAINBYflUv2608', {
 			api_host: 'https://insights.hotay.dev',
@@ -12,5 +12,7 @@ export const load = async () => {
 		});
 	}
 
-	return;
+	return {
+		url: url.pathname
+	};
 };

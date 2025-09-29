@@ -4,6 +4,7 @@ import type { PersonalInfo } from '../models/social';
 
 export const personalInfo: PersonalInfo = {
 	name: 'Taylor Hoffmann',
+	url: 'https://taylor.hotay.dev',
 	title: m.profile_title(),
 	bio: m.profile_bio(),
 	location: m.profile_location(),

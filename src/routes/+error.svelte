@@ -89,6 +89,13 @@
 		padding: var(--space-8) 0;
 	}
 
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.error-content {
 		display: flex;
 		flex-direction: column;

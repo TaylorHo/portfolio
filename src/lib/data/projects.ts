@@ -3,17 +3,6 @@ import type { Project } from '../models/project';
 
 export const projects: Project[] = [
 	{
-		title: 'Arcana Pixel',
-		description: m.projects_arcana_pixel_description(),
-		technologies: ['Rust', 'Svelte', 'RPG'],
-		year: 2025,
-		type: 'web',
-		status: 'active',
-		githubUrl: 'https://github.com/hotaydev/arcana-pixel',
-		demoUrl: 'https://www.arcanapixel.com/',
-		featured: true
-	},
-	{
 		title: 'Image Hash Linker',
 		description: m.projects_image_hash_linker_description(),
 		technologies: ['Rust', 'Hash', m.projects_tag_image_processing()],

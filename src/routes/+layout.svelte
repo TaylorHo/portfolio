@@ -3,11 +3,12 @@
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { browser } from '$app/environment';
-	let { children } = $props();
-
+	import PageTransition from './transition.svelte';
 	import { page } from '$app/state';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import { setContext } from 'svelte';
+
+	let { children, data } = $props();
 
 	// Theme state management
 	let isDark = $state(false);
@@ -41,11 +42,17 @@
 	});
 </script>
 
+<svelte:head>
+	<link rel="alternate" type="application/atom+xml" href="/rss.xml" />
+</svelte:head>
+
 <div class="app-layout">
 	<Navigation {isDark} {toggleTheme} />
 
 	<main>
-		{@render children?.()}
+		<PageTransition url={data.url}>
+			{@render children?.()}
+		</PageTransition>
 	</main>
 
 	<Footer />
