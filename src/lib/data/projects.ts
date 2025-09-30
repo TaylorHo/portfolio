@@ -33,7 +33,7 @@ export const projects: Project[] = [
 		year: 2025,
 		type: 'web',
 		status: 'active',
-		githubUrl: 'https://github.com/hotaydev/goals',
+		githubUrl: 'https://github.com/TaylorHo/goals',
 		demoUrl: 'https://goals.hotay.dev'
 	},
 	{
@@ -43,7 +43,7 @@ export const projects: Project[] = [
 		year: 2024,
 		type: 'library',
 		status: 'active',
-		githubUrl: 'https://github.com/hotaydev/audit-export/',
+		githubUrl: 'https://github.com/TaylorHo/audit-export/',
 		demoUrl: 'https://www.npmjs.com/package/audit-export'
 	},
 	{
@@ -53,7 +53,7 @@ export const projects: Project[] = [
 		year: 2024,
 		type: 'web',
 		status: 'completed',
-		githubUrl: 'https://github.com/hotaydev/avalia',
+		githubUrl: 'https://github.com/TaylorHo/avalia',
 		demoUrl: 'https://avalia.hotay.dev/docs/index.html',
 		featured: true
 	},
@@ -74,7 +74,7 @@ export const projects: Project[] = [
 		year: 2024,
 		type: 'library',
 		status: 'completed',
-		githubUrl: 'https://github.com/hotaydev/enygmah'
+		githubUrl: 'https://github.com/TaylorHo/enygmah'
 	},
 	{
 		title: 'YouTube Shorts Blocker',
@@ -83,7 +83,7 @@ export const projects: Project[] = [
 		year: 2024,
 		type: 'web',
 		status: 'completed',
-		githubUrl: 'https://github.com/hotaydev/youtube-shorts-blocker',
+		githubUrl: 'https://github.com/TaylorHo/youtube-shorts-blocker',
 		demoUrl:
 			'https://chromewebstore.google.com/detail/youtube-shorts-blocker/jchbbofddpgfbaheknainnhbdonkpogf'
 	}
