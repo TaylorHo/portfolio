@@ -1,4 +1,5 @@
 import type { Post } from '$lib/models/blog';
+import { locales } from '$lib/paraglide/runtime';
 import { json } from '@sveltejs/kit';
 
 async function getPosts() {
@@ -12,8 +13,12 @@ async function getPosts() {
 
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
 			const metadata = file.metadata as Omit<Post, 'slug'>;
-			const post = { ...metadata, slug } satisfies Post;
-			if (post.published) {
+			let locale;
+			if (locales.includes(slug.split('.').at(-1) as (typeof locales)[number])) {
+				locale = slug.split('.').at(-1) as (typeof locales)[number];
+			}
+			const post = { ...metadata, slug: slug.replace(`.${locale}`, ''), locale } satisfies Post;
+			if (post.published && locale) {
 				posts.push(post);
 			}
 		}

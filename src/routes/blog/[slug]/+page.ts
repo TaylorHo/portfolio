@@ -1,9 +1,11 @@
+import { getLocale } from '$lib/paraglide/runtime';
 import { error } from '@sveltejs/kit';
 import type { ServerLoadEvent } from '@sveltejs/kit';
 
 export const load = async ({ params }: ServerLoadEvent) => {
 	try {
-		const post = await import(`../../../posts/${params.slug}.md`);
+		const locale = getLocale();
+		const post = await import(`../../../posts/${params.slug}.${locale}.md`);
 
 		return {
 			content: post.default,

@@ -1,3 +1,5 @@
+import { locales } from '$lib/paraglide/runtime';
+
 export interface Post {
 	title: string;
 	slug: string;
@@ -6,4 +8,5 @@ export interface Post {
 	date: string;
 	categories: string[];
 	published: boolean;
+	locale?: (typeof locales)[number];
 }
