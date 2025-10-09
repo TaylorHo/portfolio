@@ -2,8 +2,9 @@
 	import { formatDate } from '$lib/services/date';
 	import type { Post } from '$lib/models/blog';
 	import type { Component } from 'svelte';
-	import { personalInfo } from '$lib/data/personal';
+	import { browser } from '$app/environment';
 	import { Calendar, ArrowLeft } from '@lucide/svelte';
+	import Comments from '$lib/components/blog/Comments.svelte';
 
 	interface Props {
 		data: {
@@ -16,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.meta.title} - {personalInfo.name}</title>
+	<title>{data.meta.title}</title>
 	<meta name="description" content={data.meta.description} />
 	<link
 		rel="stylesheet"
@@ -74,6 +75,10 @@
 				<data.content />
 			</div>
 		</article>
+
+		{#if browser}
+			<Comments />
+		{/if}
 	</div>
 </div>
 
@@ -95,7 +100,7 @@
 
 	.blog-post {
 		max-width: 800px;
-		margin: 0 auto;
+		margin: 0 auto 4rem;
 	}
 
 	.post-header {
