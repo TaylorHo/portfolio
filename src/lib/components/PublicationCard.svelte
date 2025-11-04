@@ -1,9 +1,10 @@
 <script lang="ts">
 	import type { Publication } from '$lib/models/publication';
-	import { m } from '$lib/paraglide/messages';
-	import { getTypeTitle } from '$lib/services/publications';
-	import { FileText, BookOpen, Mic } from '@lucide/svelte';
-	import type { Component } from 'svelte';
+	import { formatAuthors } from '$lib/services/formatting';
+	import {
+		getTitleForPublicationType,
+		getIconForPublicationType
+	} from '$lib/services/publications';
 
 	interface Props {
 		publication: Publication;
@@ -11,27 +12,7 @@
 
 	let { publication }: Props = $props();
 
-	function getTypeIcon(type: string): Component {
-		switch (type) {
-			case 'article':
-				return FileText;
-			case 'book':
-				return BookOpen;
-			case 'conference':
-				return Mic;
-			default:
-				return FileText;
-		}
-	}
-
-	function formatAuthors(authors: string[]): string {
-		if (authors.length <= 2) {
-			return authors.join(' & ');
-		}
-		return `${authors[0]} et al.`;
-	}
-
-	const ComponentIcon = $derived(getTypeIcon(publication.type));
+	const ComponentIcon = $derived(getIconForPublicationType(publication.type));
 </script>
 
 <div class="publication-card card">
@@ -40,13 +21,17 @@
 			<span class="type-icon">
 				<ComponentIcon size={16} />
 			</span>
-			<span class="type-text">{getTypeTitle(publication.type)}</span>
-			<span class="year">{publication.year}</span>
+			<span class="type-text">{getTitleForPublicationType(publication.type)}</span>
+			<span class="year">{new Date(publication.publishedDate).getFullYear()}</span>
 		</div>
 	</div>
 
 	<h3 class="publication-title">
-		{#if publication.url}
+		{#if publication.slug}
+			<a href={`/publications/${publication.slug}`}>
+				{publication.title}
+			</a>
+		{:else if publication.url}
 			<a href={publication.url} target="_blank" rel="noopener noreferrer">
 				{publication.title}
 			</a>
@@ -57,53 +42,20 @@
 
 	<div class="publication-meta">
 		<p class="authors">{formatAuthors(publication.authors)}</p>
-		<p class="venue">{publication.venue}</p>
+		<p class="publisher">{publication.publisher}</p>
 	</div>
 
 	{#if publication.abstract}
 		<p class="abstract">{publication.abstract}</p>
 	{/if}
 
-	{#if publication.tags && publication.tags.length > 0}
-		<div class="tags">
-			{#each publication.tags as tag}
-				<span class="tag">{tag}</span>
+	{#if publication.keywords && publication.keywords.length > 0}
+		<div class="keywords">
+			{#each publication.keywords as keyword}
+				<span class="keyword">{keyword}</span>
 			{/each}
 		</div>
 	{/if}
-
-	<div class="publication-links">
-		{#if publication.url}
-			<a href={publication.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-				{m.view_publication()}
-			</a>
-		{/if}
-		{#if publication.pdf}
-			<a href={publication.pdf} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-				PDF
-			</a>
-		{/if}
-		{#if publication.type === 'book' && publication.purchaseLink}
-			<a
-				href={publication.purchaseLink}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="btn btn-accent"
-			>
-				{m.buy_physical_copy()}
-			</a>
-		{/if}
-		{#if publication.doi}
-			<a
-				href="https://doi.org/{publication.doi}"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="btn btn-secondary"
-			>
-				DOI
-			</a>
-		{/if}
-	</div>
 </div>
 
 <style>
@@ -170,7 +122,7 @@
 		margin: 0 0 var(--space-1) 0;
 	}
 
-	.venue {
+	.publisher {
 		color: var(--color-text-secondary);
 		font-style: italic;
 		margin: 0;
@@ -182,26 +134,20 @@
 		margin-bottom: var(--space-4);
 	}
 
-	.tags {
+	.keywords {
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-2);
 		margin-bottom: var(--space-4);
 	}
 
-	.tag {
+	.keyword {
 		background-color: var(--color-hover);
 		color: var(--color-text-secondary);
 		padding: var(--space-1) var(--space-2);
 		border-radius: var(--radius-sm);
 		font-size: var(--font-size-sm);
 		font-weight: 500;
-	}
-
-	.publication-links {
-		display: flex;
-		gap: var(--space-2);
-		flex-wrap: wrap;
 	}
 
 	@media (max-width: 768px) {
@@ -229,7 +175,7 @@
 			font-size: var(--font-size-sm);
 		}
 
-		.venue {
+		.publisher {
 			font-size: var(--font-size-sm);
 		}
 
@@ -238,23 +184,13 @@
 			margin-bottom: var(--space-3);
 		}
 
-		.tags {
+		.keywords {
 			margin-bottom: var(--space-3);
 		}
 
-		.tag {
+		.keyword {
 			font-size: var(--font-size-sm);
 			padding: var(--space-1) var(--space-2);
-		}
-
-		.publication-links {
-			flex-direction: column;
-			gap: var(--space-2);
-		}
-
-		.publication-links .btn {
-			width: 100%;
-			justify-content: center;
 		}
 	}
 
@@ -275,7 +211,7 @@
 			font-size: var(--font-size-base);
 		}
 
-		.venue {
+		.publisher {
 			font-size: var(--font-size-base);
 		}
 

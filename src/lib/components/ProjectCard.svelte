@@ -1,42 +1,18 @@
 <script lang="ts">
 	import type { Project } from '$lib/models/project';
 	import { m } from '$lib/paraglide/messages';
-	import { getStatusTitle, getTypeTitle } from '$lib/services/projects';
 	import {
-		Globe,
-		Smartphone,
-		Monitor,
-		Package,
-		Microscope,
-		Zap,
-		Star,
-		Github,
-		ExternalLink
-	} from '@lucide/svelte';
-	import type { Component } from 'svelte';
+		getStatusForProjectType,
+		getTitleForProjectType,
+		getIconForProjectType
+	} from '$lib/services/projects';
+	import { Star, Github, ExternalLink } from '@lucide/svelte';
 
 	interface Props {
 		project: Project;
 	}
 
 	let { project }: Props = $props();
-
-	function getTypeIcon(type: string): Component {
-		switch (type) {
-			case 'web':
-				return Globe;
-			case 'mobile':
-				return Smartphone;
-			case 'desktop':
-				return Monitor;
-			case 'library':
-				return Package;
-			case 'research':
-				return Microscope;
-			default:
-				return Zap;
-		}
-	}
 
 	function getStatusColor(status: string): string {
 		switch (status) {
@@ -51,7 +27,7 @@
 		}
 	}
 
-	const ComponentIcon = $derived(getTypeIcon(project.type));
+	const ComponentIcon = $derived(getIconForProjectType(project.type));
 </script>
 
 <div class="project-card card">
@@ -60,7 +36,7 @@
 			<span class="type-icon">
 				<ComponentIcon size={16} />
 			</span>
-			<span class="type-text">{getTypeTitle(project.type)}</span>
+			<span class="type-text">{getTitleForProjectType(project.type)}</span>
 			<span class="year">{project.year}</span>
 		</div>
 		<div class="project-status">
@@ -68,7 +44,7 @@
 				class="status-badge"
 				style="background-color: {getStatusColor(project.status)}; color: white;"
 			>
-				{getStatusTitle(project.status)}
+				{getStatusForProjectType(project.status)}
 			</span>
 			{#if project.featured}
 				<span class="featured-badge">

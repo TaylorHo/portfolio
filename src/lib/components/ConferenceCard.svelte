@@ -1,46 +1,17 @@
 <script lang="ts">
 	import type { Conference } from '$lib/models/conference';
-	import { m } from '$lib/paraglide/messages';
-	import { Calendar, MapPin, User, Globe, Video, Wrench } from '@lucide/svelte';
-	import type { Component } from 'svelte';
+	import {
+		getIconForConferenceType,
+		getTypeLabelForConferenceType
+	} from '$lib/services/conferences';
+	import { MapPin, Globe } from '@lucide/svelte';
 
 	interface Props {
 		conference: Conference;
 	}
 
 	let { conference }: Props = $props();
-
-	function getTypeIcon(type: string): Component {
-		switch (type) {
-			case 'conference':
-				return Calendar;
-			case 'talk':
-				return User;
-			case 'workshop':
-				return Wrench;
-			case 'webinar':
-				return Video;
-			default:
-				return Calendar;
-		}
-	}
-
-	function getTypeLabel(type: string): string {
-		switch (type) {
-			case 'conference':
-				return m.conference_type_conference();
-			case 'talk':
-				return m.conference_type_talk();
-			case 'workshop':
-				return m.conference_type_workshop();
-			case 'webinar':
-				return m.conference_type_webinar();
-			default:
-				return type.charAt(0).toUpperCase() + type.slice(1);
-		}
-	}
-
-	const ComponentIcon = $derived(getTypeIcon(conference.type));
+	const ComponentIcon = $derived(getIconForConferenceType(conference.type));
 </script>
 
 <div class="conference-card card">
@@ -49,7 +20,7 @@
 			<span class="type-icon">
 				<ComponentIcon size={16} />
 			</span>
-			<span class="type-text">{getTypeLabel(conference.type)}</span>
+			<span class="type-text">{getTypeLabelForConferenceType(conference.type)}</span>
 			<span class="year">{conference.year}</span>
 		</div>
 	</div>

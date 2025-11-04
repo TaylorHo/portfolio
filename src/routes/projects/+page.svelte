@@ -2,8 +2,9 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import { personalInfo } from '$lib/data/personal';
 	import { projects } from '$lib/data/projects';
+	import type { ProjectStatus, ProjectType } from '$lib/models/project';
 	import { m } from '$lib/paraglide/messages';
-	import { getStatusTitle, getTypeTitle } from '$lib/services/projects';
+	import { getStatusForProjectType, getTitleForProjectType } from '$lib/services/projects';
 	import { Search } from '@lucide/svelte';
 
 	// Sort projects: featured first, then by year (most recent first)
@@ -17,8 +18,8 @@
 	let selectedType = $state('all');
 	let selectedStatus = $state('all');
 
-	const types = ['all', ...new Set(projects.map((p) => p.type))];
-	const statuses = ['all', ...new Set(projects.map((p) => p.status))];
+	const types: (ProjectType | 'all')[] = ['all', ...new Set(projects.map((p) => p.type))];
+	const statuses: (ProjectStatus | 'all')[] = ['all', ...new Set(projects.map((p) => p.status))];
 
 	// Filtered projects
 	const filteredProjects = $derived(() => {
@@ -52,7 +53,7 @@
 				<label for="type-filter">{m.project_filter_type()}:</label>
 				<select id="type-filter" bind:value={selectedType}>
 					{#each types as type}
-						<option value={type}>{getTypeTitle(type)}</option>
+						<option value={type}>{getTitleForProjectType(type)}</option>
 					{/each}
 				</select>
 			</div>
@@ -61,7 +62,7 @@
 				<label for="status-filter">{m.project_filter_status()}:</label>
 				<select id="status-filter" bind:value={selectedStatus}>
 					{#each statuses as status}
-						<option value={status}>{getStatusTitle(status)}</option>
+						<option value={status}>{getStatusForProjectType(status)}</option>
 					{/each}
 				</select>
 			</div>

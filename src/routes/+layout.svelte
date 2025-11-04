@@ -15,10 +15,6 @@
 	});
 </script>
 
-<svelte:head>
-	<link rel="alternate" type="application/atom+xml" href="/rss.xml" />
-</svelte:head>
-
 <div class="app-layout">
 	<Navigation {isDark} toggleTheme={() => themeStore.toggle()} />
 

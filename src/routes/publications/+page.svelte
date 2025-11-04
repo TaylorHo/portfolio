@@ -5,7 +5,8 @@
 	import { publications } from '$lib/data/publications';
 	import { conferences } from '$lib/data/conferences';
 	import { m } from '$lib/paraglide/messages';
-	import { getTypeTitle } from '$lib/services/publications';
+	import { getTitleForPublicationType } from '$lib/services/publications';
+	import type { PublicationType } from '$lib/models/publication';
 
 	// Sort publications by year (most recent first)
 	const sortedPublications = publications.sort((a, b) => b.year - a.year);
@@ -22,7 +23,7 @@
 		{} as Record<string, typeof publications>
 	);
 
-	const typeOrder = ['book', 'article', 'conference'];
+	const typeOrder: PublicationType[] = ['book', 'article', 'conference'];
 	const orderedTypes = typeOrder.filter((type) => publicationsByType[type]);
 
 	// Sort conferences by year (most recent first)
@@ -49,7 +50,7 @@
 		<div class="publications-content">
 			{#each orderedTypes as type}
 				<section class="publication-section">
-					<h2 class="section-title">{getTypeTitle(type, true)}</h2>
+					<h2 class="section-title">{getTitleForPublicationType(type, true)}</h2>
 					<div class="publications-grid">
 						{#each publicationsByType[type] as publication}
 							<PublicationCard {publication} />
