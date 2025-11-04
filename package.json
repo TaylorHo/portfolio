@@ -33,6 +33,7 @@
 		"remark-math": "^3.0.1",
 		"remark-toc": "^9.0.0",
 		"shiki": "^3.13.0",
+		"super-sitemap": "^1.0.5",
 		"svelte": "^5.39.11",
 		"svelte-check": "^4.3.3",
 		"typescript": "^5.9.3",

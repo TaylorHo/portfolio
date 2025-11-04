@@ -6,7 +6,7 @@ import { publications } from '$lib/data/publications';
 export const load = async ({ params }: ServerLoadEvent) => {
 	try {
 		const locale = getLocale();
-		const publication = await import(`../../../posts/projects/${params.slug}.${locale}.md`);
+		const publication = await import(`../../../../posts/projects/${params.slug}.${locale}.md`);
 
 		// Find the full publication metadata from publications.ts
 		const publicationMeta = publications.find((pub) => pub.slug === params.slug);

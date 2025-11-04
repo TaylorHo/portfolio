@@ -5,7 +5,7 @@ import type { ServerLoadEvent } from '@sveltejs/kit';
 export const load = async ({ params }: ServerLoadEvent) => {
 	try {
 		const locale = getLocale();
-		const post = await import(`../../../posts/${params.slug}.${locale}.md`);
+		const post = await import(`../../../../posts/${params.slug}.${locale}.md`);
 
 		return {
 			content: post.default,

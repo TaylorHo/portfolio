@@ -19,14 +19,14 @@
 			<div class="hero-image">
 				<div class="profile-photo">
 					<img
-						src="/images/profile/light.webp"
+						src="/assets/images/profile/light.webp"
 						width={240}
 						height={240}
 						alt={personalInfo.name}
 						class="profile-img light-theme"
 					/>
 					<img
-						src="/images/profile/dark.webp"
+						src="/assets/images/profile/dark.webp"
 						width={240}
 						height={240}
 						alt={personalInfo.name}
@@ -37,7 +37,7 @@
 				<div class="floating-decorations">
 					<span class="decoration moon">
 						<img
-							src="/images/profile/decorations/moon.webp"
+							src="/assets/images/profile/decorations/moon.webp"
 							alt={m.dark_theme_decoration_name()}
 							width={36}
 							height={36}
@@ -48,7 +48,7 @@
 				<div class="floating-decorations-light">
 					<span class="decoration light-bulb">
 						<img
-							src="/images/profile/decorations/globe.webp"
+							src="/assets/images/profile/decorations/globe.webp"
 							alt={m.light_theme_decoration_name()}
 							width={36}
 							height={36}
@@ -77,7 +77,7 @@
 						>
 							<span class="social-icon">
 								<img
-									src={`/images/social/${social.icon}`}
+									src={`/assets/images/social/${social.icon}`}
 									width={social.iconSize}
 									height={social.iconSize}
 									alt={social.icon}
