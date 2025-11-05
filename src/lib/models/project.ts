@@ -1,5 +1,5 @@
 export type ProjectType = 'web' | 'mobile' | 'desktop' | 'library' | 'research';
-export type ProjectStatus = 'active' | 'completed' | 'archived';
+export type ProjectStatus = 'maintained' | 'archived';
 
 export interface Project {
 	title: string;
@@ -12,4 +12,5 @@ export interface Project {
 	demoUrl?: string;
 	doi?: string;
 	featured?: boolean;
+	stars?: number;
 }

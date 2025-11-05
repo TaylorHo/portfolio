@@ -14,7 +14,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 		throw error(500, 'Could not load data for param values.');
 	}
 
-	const result = await sitemap.response({
+	const original = await sitemap.response({
 		origin: 'https://hoffmann.io',
 		paramValues: {
 			'/[[lang]]/blog/[slug]': posts.map((post) => post.slug ?? ''),
@@ -28,7 +28,18 @@ export const GET: RequestHandler = async ({ fetch }) => {
 		}
 	});
 
-	return result;
+	// Get the sitemap XML as a string
+	let xml = await original.text();
+
+	// Modify the XML however you like
+	xml = xml.replace(/http:\/\//g, 'https:\/\/');
+
+	// Return your modified version
+	return new Response(xml, {
+		headers: {
+			'Content-Type': 'application/xml'
+		}
+	});
 };
 
 export const prerender = true;

@@ -20,19 +20,6 @@ export function getTitleForProjectType(type: ProjectType | 'all'): string {
 	}
 }
 
-export function getStatusForProjectType(status: ProjectStatus | 'all'): string {
-	switch (status) {
-		case 'active':
-			return m.project_status_active();
-		case 'completed':
-			return m.project_status_completed();
-		case 'archived':
-			return m.project_status_archived();
-		case 'all':
-			return m.project_filter_all();
-	}
-}
-
 export function getIconForProjectType(type: ProjectType): Component {
 	switch (type) {
 		case 'web':

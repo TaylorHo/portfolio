@@ -1,32 +1,81 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import { personalInfo } from '$lib/data/personal';
 	import { projects } from '$lib/data/projects';
-	import type { ProjectStatus, ProjectType } from '$lib/models/project';
+	import type { Project, ProjectType } from '$lib/models/project';
 	import { m } from '$lib/paraglide/messages';
-	import { getStatusForProjectType, getTitleForProjectType } from '$lib/services/projects';
+	import { getTitleForProjectType } from '$lib/services/projects';
 	import { Search } from '@lucide/svelte';
 
-	// Sort projects: featured first, then by year (most recent first)
-	const sortedProjects = projects.sort((a, b) => {
-		if (a.featured && !b.featured) return -1;
-		if (!a.featured && b.featured) return 1;
-		return b.year - a.year;
+	// Function to extract owner and repo from GitHub URL
+	function extractGithubInfo(url: string): { owner: string; repo: string } | null {
+		const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
+		if (!match) return null;
+		return { owner: match[1], repo: match[2].replace(/\/$/, '') };
+	}
+
+	// Function to fetch GitHub stars for a single repo
+	async function fetchGithubStars(githubUrl: string): Promise<number> {
+		try {
+			const info = extractGithubInfo(githubUrl);
+			if (!info) return 0;
+
+			const response = await fetch(`https://api.github.com/repos/${info.owner}/${info.repo}`);
+			if (!response.ok) return 0;
+
+			const data = await response.json();
+			return data.stargazers_count || 0;
+		} catch (error) {
+			console.error('Error fetching GitHub stars:', error);
+			return 0;
+		}
+	}
+
+	// Sort projects: featured first, then by stars (most stars first), then by year (most recent first)
+	function sortProjects(projectsList: Project[]): Project[] {
+		return projectsList.sort((a, b) => {
+			// Featured projects first
+			if (a.featured && !b.featured) return -1;
+			if (!a.featured && b.featured) return 1;
+
+			// Within each group (featured/unfeatured), sort by stars
+			const aStars = a.stars || 0;
+			const bStars = b.stars || 0;
+			if (aStars !== bStars) return bStars - aStars;
+
+			// If stars are equal, sort by year
+			return b.year - a.year;
+		});
+	}
+
+	// State for projects with stars
+	let projectsWithStars = $state<Project[]>(sortProjects([...projects]));
+
+	// Fetch stars for all projects with GitHub URLs
+	onMount(async () => {
+		const fetchedProjects = await Promise.all(
+			projects.map(async (project) => {
+				if (project.githubUrl) {
+					const stars = await fetchGithubStars(project.githubUrl);
+					return { ...project, stars };
+				}
+				return project;
+			})
+		);
+		projectsWithStars = sortProjects(fetchedProjects);
 	});
 
 	// Filter options
 	let selectedType = $state('all');
-	let selectedStatus = $state('all');
 
 	const types: (ProjectType | 'all')[] = ['all', ...new Set(projects.map((p) => p.type))];
-	const statuses: (ProjectStatus | 'all')[] = ['all', ...new Set(projects.map((p) => p.status))];
 
 	// Filtered projects
 	const filteredProjects = $derived(() => {
-		return sortedProjects.filter((project) => {
+		return projectsWithStars.filter((project) => {
 			const typeMatch = selectedType === 'all' || project.type === selectedType;
-			const statusMatch = selectedStatus === 'all' || project.status === selectedStatus;
-			return typeMatch && statusMatch;
+			return typeMatch;
 		});
 	});
 </script>
@@ -49,22 +98,19 @@
 		</div>
 
 		<div class="filters">
-			<div class="filter-group">
-				<label for="type-filter">{m.project_filter_type()}:</label>
-				<select id="type-filter" bind:value={selectedType}>
+			<div class="filter-section">
+				<span class="filter-label">{m.project_filter_type()}:</span>
+				<div class="filter-tags">
 					{#each types as type}
-						<option value={type}>{getTitleForProjectType(type)}</option>
+						<button
+							class="filter-tag"
+							class:active={selectedType === type}
+							onclick={() => (selectedType = type)}
+						>
+							{getTitleForProjectType(type)}
+						</button>
 					{/each}
-				</select>
-			</div>
-
-			<div class="filter-group">
-				<label for="status-filter">{m.project_filter_status()}:</label>
-				<select id="status-filter" bind:value={selectedStatus}>
-					{#each statuses as status}
-						<option value={status}>{getStatusForProjectType(status)}</option>
-					{/each}
-				</select>
+				</div>
 			</div>
 		</div>
 
@@ -111,31 +157,59 @@
 	}
 
 	.filters {
-		display: flex;
-		gap: var(--space-4);
 		margin-bottom: var(--space-8);
-		justify-content: center;
-		flex-wrap: wrap;
 	}
 
-	.filter-group {
+	.filter-section {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		gap: var(--space-2);
+		gap: var(--space-3);
 	}
 
-	.filter-group label {
+	.filter-label {
 		font-weight: 500;
 		color: var(--color-text);
+		font-size: var(--font-size-base);
 	}
 
-	.filter-group select {
-		padding: var(--space-2) var(--space-3);
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-md);
+	.filter-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		justify-content: center;
+	}
+
+	.filter-tag {
+		padding: var(--space-2) var(--space-4);
+		border: 2px solid var(--color-border);
+		border-radius: var(--radius-full);
 		background-color: var(--color-surface);
-		color: var(--color-text);
+		color: var(--color-text-secondary);
 		font-size: var(--font-size-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		text-transform: capitalize;
+	}
+
+	.filter-tag:hover {
+		border-color: var(--color-primary);
+		color: var(--color-text);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.filter-tag.active {
+		background-color: var(--color-primary);
+		border-color: var(--color-primary);
+		color: white;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	.filter-tag.active:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 	}
 
 	.projects-grid {
@@ -186,9 +260,13 @@
 			grid-template-columns: 1fr;
 		}
 
-		.filters {
-			flex-direction: column;
-			align-items: center;
+		.filter-tags {
+			gap: var(--space-2);
+		}
+
+		.filter-tag {
+			font-size: var(--font-size-sm);
+			padding: var(--space-2) var(--space-3);
 		}
 	}
 </style>

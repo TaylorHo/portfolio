@@ -1,31 +1,14 @@
 <script lang="ts">
 	import type { Project } from '$lib/models/project';
 	import { m } from '$lib/paraglide/messages';
-	import {
-		getStatusForProjectType,
-		getTitleForProjectType,
-		getIconForProjectType
-	} from '$lib/services/projects';
-	import { Star, Github, ExternalLink } from '@lucide/svelte';
+	import { getTitleForProjectType, getIconForProjectType } from '$lib/services/projects';
+	import { Star, Github, ExternalLink, Archive } from '@lucide/svelte';
 
 	interface Props {
 		project: Project;
 	}
 
 	let { project }: Props = $props();
-
-	function getStatusColor(status: string): string {
-		switch (status) {
-			case 'active':
-				return 'var(--color-primary)';
-			case 'completed':
-				return '#10b981';
-			case 'archived':
-				return 'var(--color-text-secondary)';
-			default:
-				return 'var(--color-text-secondary)';
-		}
-	}
 
 	const ComponentIcon = $derived(getIconForProjectType(project.type));
 </script>
@@ -40,12 +23,12 @@
 			<span class="year">{project.year}</span>
 		</div>
 		<div class="project-status">
-			<span
-				class="status-badge"
-				style="background-color: {getStatusColor(project.status)}; color: white;"
-			>
-				{getStatusForProjectType(project.status)}
-			</span>
+			{#if project.status === 'archived'}
+				<span class="status-badge">
+					<Archive size={16} />
+					{m.project_status_archived()}
+				</span>
+			{/if}
 			{#if project.featured}
 				<span class="featured-badge">
 					<Star size={16} />
@@ -72,6 +55,12 @@
 			<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
 				<Github size={16} />
 				GitHub
+				{#if project.stars && project.stars > 1}
+					<span class="stars-badge">
+						<Star size={14} fill="currentColor" />
+						{project.stars}
+					</span>
+				{/if}
 			</a>
 		{/if}
 		{#if project.demoUrl}
@@ -157,11 +146,16 @@
 	}
 
 	.status-badge {
+		background-color: #6b7280;
+		color: white;
 		padding: var(--space-1) var(--space-2);
 		border-radius: var(--radius-sm);
 		font-size: var(--font-size-sm);
 		font-weight: 500;
 		text-transform: capitalize;
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 
 	.project-description {
@@ -196,6 +190,17 @@
 		display: flex;
 		align-items: center;
 		gap: var(--space-1);
+	}
+
+	.stars-badge {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+		margin-left: var(--space-1);
+		padding-left: var(--space-2);
+		border-left: 1px solid rgba(255, 255, 255, 0.2);
+		font-weight: 500;
+		font-size: var(--font-size-sm);
 	}
 
 	@media (max-width: 768px) {

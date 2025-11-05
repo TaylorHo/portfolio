@@ -34,7 +34,12 @@
 
 	function isActive(href: string): boolean {
 		let currentPath: string = page.url.pathname;
-		return currentPath.replaceAll('/', '') === href.replaceAll('/', '');
+
+		if (href === localizeHref('/')) {
+			return currentPath === href;
+		}
+
+		return currentPath.startsWith(href);
 	}
 
 	function toggleMobileMenu() {
