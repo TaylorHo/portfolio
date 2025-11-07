@@ -3,6 +3,7 @@ import { error, type RequestHandler } from '@sveltejs/kit';
 import type { Post } from '$lib/models/blog';
 import { publications } from '$lib/data/publications';
 import { locales, baseLocale } from '$lib/paraglide/runtime';
+import { personalInfo } from '$lib/data/personal';
 
 export const GET: RequestHandler = async ({ fetch }) => {
 	let posts: Post[];
@@ -15,7 +16,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 	}
 
 	const original = await sitemap.response({
-		origin: 'https://hoffmann.io',
+		origin: personalInfo.url,
 		paramValues: {
 			'/[[lang]]/blog/[slug]': posts.map((post) => post.slug ?? ''),
 			'/[[lang]]/publications/[slug]': publications

@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /.well-known/*
+Allow: /
 
 Sitemap: https://hoffmann.io/sitemap.xml

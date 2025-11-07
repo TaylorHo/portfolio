@@ -34,7 +34,7 @@ export const projects: Project[] = [
 		type: 'web',
 		status: 'maintained',
 		githubUrl: 'https://github.com/TaylorHo/goals',
-		demoUrl: 'https://goals.hotay.dev'
+		demoUrl: 'https://goals.hoffmann.io'
 	},
 	{
 		title: 'audit-export',
@@ -54,7 +54,7 @@ export const projects: Project[] = [
 		type: 'web',
 		status: 'maintained',
 		githubUrl: 'https://github.com/TaylorHo/avalia',
-		demoUrl: 'https://avalia.hotay.dev/docs/index.html',
+		demoUrl: 'https://avalia.hoffmann.io/docs/index.html',
 		featured: true
 	},
 	{
@@ -64,8 +64,8 @@ export const projects: Project[] = [
 		year: 2024,
 		type: 'web',
 		status: 'maintained',
-		githubUrl: 'https://github.com/hotaydev/dnd-beyond-kit',
-		demoUrl: 'https://dnd-beyond-kit.hotay.dev/'
+		githubUrl: 'https://github.com/TaylorHo/dnd-beyond-kit',
+		demoUrl: 'https://dnd-beyond-kit.hoffmann.io'
 	},
 	{
 		title: 'enygmah',
