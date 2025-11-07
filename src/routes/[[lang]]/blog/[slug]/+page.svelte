@@ -5,6 +5,7 @@
 	import { browser } from '$app/environment';
 	import { Calendar, ArrowLeft } from '@lucide/svelte';
 	import Comments from '$lib/components/blog/Comments.svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	interface Props {
 		data: {
@@ -33,7 +34,7 @@
 		<div class="back-link">
 			<a href="/blog" class="btn btn-secondary">
 				<ArrowLeft size={16} />
-				Back to Blog
+				{m.blog_back_to_blog()}
 			</a>
 		</div>
 

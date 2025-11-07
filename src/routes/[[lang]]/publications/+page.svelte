@@ -9,7 +9,9 @@
 	import type { PublicationType } from '$lib/models/publication';
 
 	// Sort publications by year (most recent first)
-	const sortedPublications = publications.sort((a, b) => b.year - a.year);
+	const sortedPublications = publications.sort(
+		(a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+	);
 
 	// Group publications by type
 	const publicationsByType = sortedPublications.reduce(

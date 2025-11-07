@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Publication } from '$lib/models/publication';
+	import { m } from '$lib/paraglide/messages';
 	import { formatAuthors } from '$lib/services/formatting';
 	import {
 		getTitleForPublicationType,
@@ -55,6 +56,22 @@
 				<span class="keyword">{keyword}</span>
 			{/each}
 		</div>
+	{/if}
+
+	{#if publication.slug}
+		<a href={`/publications/${publication.slug}`} class="btn btn-primary">
+			{m.view_publication()}
+		</a>
+	{/if}
+	{#if publication.purchaseLink}
+		<a
+			href={publication.purchaseLink}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="btn btn-accent"
+		>
+			{m.buy_physical_copy()}
+		</a>
 	{/if}
 </div>
 
