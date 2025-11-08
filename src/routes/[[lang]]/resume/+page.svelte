@@ -5,7 +5,7 @@
 	import { Briefcase, GraduationCap, Award } from '@lucide/svelte';
 
 	function formatDate(dateStr: string): string {
-		const date = new Date(dateStr);
+		const date = new Date(dateStr + 'T00:00'); // "T00:00" solves the UTC ISO date issues where it was showing the previous month instead of the actual month
 		return date.toLocaleDateString(undefined, {
 			month: 'short',
 			year: 'numeric'
