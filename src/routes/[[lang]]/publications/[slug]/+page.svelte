@@ -8,6 +8,7 @@
 		getIconForPublicationType
 	} from '$lib/services/publications';
 	import { formatAuthors } from '$lib/services/formatting';
+	import SEO from '$lib/components/SEO.svelte';
 
 	interface Props {
 		data: {
@@ -26,10 +27,7 @@
 	const ComponentIcon = $derived(getIconForPublicationType(data.meta.type));
 </script>
 
-<svelte:head>
-	<title>{data.meta.title}</title>
-	<meta name="description" content={data.meta.abstract || ''} />
-</svelte:head>
+<SEO title={data.meta.title} description={data.meta.abstract || ''} />
 
 <div class="publication-page">
 	<div class="container">

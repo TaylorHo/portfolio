@@ -7,6 +7,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import { getTitleForProjectType } from '$lib/services/projects';
 	import { Search } from '@lucide/svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	// Function to extract owner and repo from GitHub URL
 	function extractGithubInfo(url: string): { owner: string; repo: string } | null {
@@ -80,13 +81,10 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{m.projects()} - {personalInfo.name}</title>
-	<meta
-		name="description"
-		content={m.projects_page_meta_description({ name: personalInfo.name })}
-	/>
-</svelte:head>
+<SEO
+	title="{m.projects()} - {personalInfo.name}"
+	description={m.projects_page_meta_description({ name: personalInfo.name })}
+/>
 
 <div class="projects-page">
 	<div class="container">

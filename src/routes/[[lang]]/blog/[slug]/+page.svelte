@@ -6,6 +6,7 @@
 	import { Calendar, ArrowLeft } from '@lucide/svelte';
 	import Comments from '$lib/components/blog/Comments.svelte';
 	import { m } from '$lib/paraglide/messages';
+	import SEO from '$lib/components/SEO.svelte';
 
 	interface Props {
 		data: {
@@ -18,8 +19,6 @@
 </script>
 
 <svelte:head>
-	<title>{data.meta.title}</title>
-	<meta name="description" content={data.meta.description} />
 	<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
@@ -27,6 +26,12 @@
 		crossorigin="anonymous"
 	/>
 </svelte:head>
+
+<SEO
+	title={data.meta.title}
+	description={data.meta.description || ''}
+	tags={data.meta.categories}
+/>
 
 <div class="blog-post-page">
 	<div class="container">

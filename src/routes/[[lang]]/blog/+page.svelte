@@ -3,6 +3,7 @@
 	import type { Post } from '$lib/models/blog';
 	import { personalInfo } from '$lib/data/personal';
 	import { m } from '$lib/paraglide/messages';
+	import SEO from '$lib/components/SEO.svelte';
 
 	interface Props {
 		data: {
@@ -13,10 +14,7 @@
 	let { data }: Props = $props();
 </script>
 
-<svelte:head>
-	<title>{m.blog_title()} - {personalInfo.name}</title>
-	<meta name="description" content={m.blog_meta_description()} />
-</svelte:head>
+<SEO title="{m.blog_title()} - {personalInfo.name}" description={m.blog_meta_description()} />
 
 <div class="blog-page">
 	<div class="container">

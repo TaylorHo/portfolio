@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SEO from '$lib/components/SEO.svelte';
 	import { personalInfo } from '$lib/data/personal';
 	import { resume } from '$lib/data/resume';
 	import { m } from '$lib/paraglide/messages';
@@ -19,10 +20,10 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{m.experience()} - {personalInfo.name}</title>
-	<meta name="description" content={m.resume_page_meta_description({ name: personalInfo.name })} />
-</svelte:head>
+<SEO
+	title="{m.experience()} - {personalInfo.name}"
+	description={m.resume_page_meta_description({ name: personalInfo.name })}
+/>
 
 <div class="resume-page">
 	<div class="container">

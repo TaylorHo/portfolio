@@ -4,6 +4,7 @@
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { ArrowLeft, TriangleAlert, House } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages';
+	import SEO from '$lib/components/SEO.svelte';
 
 	const errorStatus = $derived(page.status);
 	const errorMessage = $derived(page.error?.message);
@@ -12,10 +13,13 @@
 </script>
 
 <svelte:head>
-	<title>{errorStatus} - {personalInfo.name}</title>
-	<meta name="description" content="{m.error()} {errorStatus} - {personalInfo.name}" />
 	<meta name="robots" content="noindex" />
 </svelte:head>
+
+<SEO
+	title="{errorStatus} - {personalInfo.name}"
+	description="{m.error()} {errorStatus} - {personalInfo.name}"
+/>
 
 <div class="error-container">
 	<div class="container">

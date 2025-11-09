@@ -7,6 +7,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import { getTitleForPublicationType } from '$lib/services/publications';
 	import type { PublicationType } from '$lib/models/publication';
+	import SEO from '$lib/components/SEO.svelte';
 
 	// Sort publications by year (most recent first)
 	const sortedPublications = publications.sort(
@@ -32,13 +33,10 @@
 	const sortedConferences = conferences.sort((a, b) => b.year - a.year);
 </script>
 
-<svelte:head>
-	<title>{m.publications()} - {personalInfo.name}</title>
-	<meta
-		name="description"
-		content={m.publications_page_meta_description({ name: personalInfo.name })}
-	/>
-</svelte:head>
+<SEO
+	title="{m.publications()} - {personalInfo.name}"
+	description={m.publications_page_meta_description({ name: personalInfo.name })}
+/>
 
 <div class="publications-page">
 	<div class="container">

@@ -3,15 +3,13 @@
 	import { MapPin, BookOpen, Code, GraduationCap } from '@lucide/svelte';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { m } from '$lib/paraglide/messages';
+	import SEO from '$lib/components/SEO.svelte';
 </script>
 
-<svelte:head>
-	<title>{personalInfo.name} - {personalInfo.title}</title>
-	<meta
-		name="description"
-		content="{m.personal_portfolio_of()} {personalInfo.name}, {personalInfo.title}"
-	/>
-</svelte:head>
+<SEO
+	title="{personalInfo.name} - {personalInfo.title}"
+	description="{m.personal_portfolio_of()} {personalInfo.name}, {personalInfo.title}"
+/>
 
 <div class="hero">
 	<div class="container">
