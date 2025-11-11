@@ -33,7 +33,7 @@ Fique à vontade para entrar em contato ou acompanhar meu trabalho:
 - **Email**: taylor@hoffmann.io
 - **LinkedIn**: [hoffmann-taylor](https://www.linkedin.com/in/hoffmann-taylor/)
 - **GitHub**: [TaylorHo](https://github.com/TaylorHo)
-- **Lattes**: [8033491399693302](http://lattes.cnpq.br/8033491399693302)
+- **Lattes**: [8033491399693302](https://lattes.cnpq.br/8033491399693302)
 - **ORCID**: [0000-0002-8418-514X](https://orcid.org/0000-0002-8418-514X)
 
 ## Licença

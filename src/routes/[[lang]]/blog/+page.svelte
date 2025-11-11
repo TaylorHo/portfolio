@@ -4,6 +4,7 @@
 	import { personalInfo } from '$lib/data/personal';
 	import { m } from '$lib/paraglide/messages';
 	import SEO from '$lib/components/SEO.svelte';
+	import PageHeader from '$lib/components/PageHeader.svelte';
 
 	interface Props {
 		data: {
@@ -18,12 +19,7 @@
 
 <div class="blog-page">
 	<div class="container">
-		<div class="page-header">
-			<h1>{m.blog_title()}</h1>
-			<p class="page-description">
-				{m.blog_description()}
-			</p>
-		</div>
+		<PageHeader title={m.blog_title()} description={m.blog_description()} />
 
 		{#if data.posts.length > 0}
 			<div class="blog-grid">
@@ -44,26 +40,6 @@
 	.blog-page {
 		padding: var(--space-12) 0 var(--space-20) 0;
 		min-height: calc(100vh - 64px);
-	}
-
-	.page-header {
-		text-align: center;
-		margin-bottom: var(--space-12);
-	}
-
-	.page-header h1 {
-		font-size: var(--font-size-4xl);
-		font-weight: 700;
-		margin-bottom: var(--space-4);
-		color: var(--color-text);
-	}
-
-	.page-description {
-		font-size: var(--font-size-lg);
-		color: var(--color-text-secondary);
-		max-width: 600px;
-		margin: 0 auto;
-		line-height: 1.6;
 	}
 
 	.blog-grid {
@@ -88,14 +64,6 @@
 	@media (max-width: 768px) {
 		.blog-page {
 			padding: var(--space-8) 0 var(--space-16) 0;
-		}
-
-		.page-header h1 {
-			font-size: var(--font-size-3xl);
-		}
-
-		.page-description {
-			font-size: var(--font-size-base);
 		}
 
 		.blog-grid {

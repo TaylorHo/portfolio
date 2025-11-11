@@ -33,7 +33,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 	let xml = await original.text();
 
 	// Modify the XML however you like
-	xml = xml.replace(/http:\/\//g, 'https:\/\/');
+	xml = xml.replaceAll('http://', 'https://');
 
 	// Return your modified version
 	return new Response(xml, {

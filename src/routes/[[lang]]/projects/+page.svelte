@@ -8,6 +8,7 @@
 	import { getTitleForProjectType } from '$lib/services/projects';
 	import { Search } from '@lucide/svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import PageHeader from '$lib/components/PageHeader.svelte';
 
 	// Function to extract owner and repo from GitHub URL
 	function extractGithubInfo(url: string): { owner: string; repo: string } | null {
@@ -88,12 +89,7 @@
 
 <div class="projects-page">
 	<div class="container">
-		<div class="page-header">
-			<h1>{m.projects()}</h1>
-			<p class="page-description">
-				{m.projects_page_headline()}
-			</p>
-		</div>
+		<PageHeader title={m.projects()} description={m.projects_page_headline()} />
 
 		<div class="filters">
 			<div class="filter-section">
@@ -132,26 +128,6 @@
 	.projects-page {
 		padding: var(--space-12) 0 var(--space-20) 0;
 		min-height: calc(100vh - 64px);
-	}
-
-	.page-header {
-		text-align: center;
-		margin-bottom: var(--space-12);
-	}
-
-	.page-header h1 {
-		font-size: var(--font-size-4xl);
-		font-weight: 700;
-		margin-bottom: var(--space-4);
-		color: var(--color-text);
-	}
-
-	.page-description {
-		font-size: var(--font-size-lg);
-		color: var(--color-text-secondary);
-		max-width: 600px;
-		margin: 0 auto var(--space-8) auto;
-		line-height: 1.6;
 	}
 
 	.filters {
@@ -244,14 +220,6 @@
 	@media (max-width: 768px) {
 		.projects-page {
 			padding: var(--space-8) 0 var(--space-16) 0;
-		}
-
-		.page-header h1 {
-			font-size: var(--font-size-3xl);
-		}
-
-		.page-description {
-			font-size: var(--font-size-base);
 		}
 
 		.projects-grid {

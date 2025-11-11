@@ -3,6 +3,8 @@
 	import { m } from '$lib/paraglide/messages';
 	import { getTitleForProjectType, getIconForProjectType } from '$lib/services/projects';
 	import { Star, Github, ExternalLink, Archive } from '@lucide/svelte';
+	import Badge from '$lib/components/Badge.svelte';
+	import CardHeader from '$lib/components/CardHeader.svelte';
 
 	interface Props {
 		project: Project;
@@ -14,14 +16,12 @@
 </script>
 
 <div class="project-card card">
-	<div class="project-header">
-		<div class="project-type">
-			<span class="type-icon">
-				<ComponentIcon size={16} />
-			</span>
-			<span class="type-text">{getTitleForProjectType(project.type)}</span>
-			<span class="year">{project.year}</span>
-		</div>
+	<CardHeader
+		icon={ComponentIcon}
+		typeText={getTitleForProjectType(project.type)}
+		year={project.year}
+		badgeVariant="hover"
+	>
 		<div class="project-status">
 			{#if project.status === 'archived'}
 				<span class="status-badge">
@@ -36,7 +36,7 @@
 				</span>
 			{/if}
 		</div>
-	</div>
+	</CardHeader>
 
 	<h3 class="project-title">{project.title}</h3>
 
@@ -45,7 +45,7 @@
 	{#if project.technologies && project.technologies.length > 0}
 		<div class="technologies">
 			{#each project.technologies as tech}
-				<span class="tech-tag">{tech}</span>
+				<Badge variant="default">{tech}</Badge>
 			{/each}
 		</div>
 	{/if}
@@ -85,39 +85,6 @@
 <style>
 	.project-card {
 		position: relative;
-	}
-
-	.project-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: var(--space-3);
-	}
-
-	.project-type {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-size: var(--font-size-sm);
-		color: var(--color-text-secondary);
-	}
-
-	.type-icon {
-		font-size: var(--font-size-base);
-	}
-
-	.type-text {
-		text-transform: capitalize;
-		font-weight: 500;
-	}
-
-	.year {
-		background-color: var(--color-hover);
-		color: var(--color-text);
-		padding: var(--space-1) var(--space-2);
-		border-radius: var(--radius-sm);
-		font-size: var(--font-size-sm);
-		font-weight: 500;
 	}
 
 	.featured-badge {
@@ -171,15 +138,6 @@
 		margin-bottom: var(--space-4);
 	}
 
-	.tech-tag {
-		background-color: rgba(var(--base-color-rgb), 0.05);
-		color: var(--color-text);
-		padding: var(--space-1) var(--space-2);
-		border-radius: var(--radius-sm);
-		font-size: var(--font-size-sm);
-		font-weight: 500;
-	}
-
 	.project-links {
 		display: flex;
 		gap: var(--space-2);
@@ -204,17 +162,6 @@
 	}
 
 	@media (max-width: 768px) {
-		.project-header {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: var(--space-2);
-			margin-bottom: var(--space-2);
-		}
-
-		.project-type {
-			font-size: var(--font-size-sm);
-		}
-
 		.project-status {
 			margin-bottom: var(--space-2);
 		}
@@ -233,11 +180,6 @@
 			margin-bottom: var(--space-3);
 		}
 
-		.tech-tag {
-			font-size: var(--font-size-sm);
-			padding: var(--space-1) var(--space-2);
-		}
-
 		.project-links {
 			flex-direction: column;
 			gap: var(--space-2);
@@ -250,14 +192,6 @@
 	}
 
 	@media (max-width: 480px) {
-		.project-header {
-			gap: var(--space-1);
-		}
-
-		.project-type {
-			gap: var(--space-1);
-		}
-
 		.project-title {
 			font-size: var(--font-size-lg);
 		}
@@ -267,11 +201,6 @@
 		}
 
 		.featured-badge {
-			font-size: var(--font-size-sm);
-			padding: var(--space-1) var(--space-2);
-		}
-
-		.year {
 			font-size: var(--font-size-sm);
 			padding: var(--space-1) var(--space-2);
 		}

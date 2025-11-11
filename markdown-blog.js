@@ -26,7 +26,7 @@ const transformerLineStart = ({ lines = 0 }) => {
 const remarkLogContent = () => {
 	return (tree, _) => {
 		// Process code blocks to handle meta line numbers
-		tree.children.forEach((node) => {
+		for (const node of tree.children) {
 			if (node.type === 'code' && node.meta) {
 				// Check if meta contains {<number>} pattern
 				const metaMatch = node.meta.match(/\{(\d+)\}/);
@@ -36,7 +36,7 @@ const remarkLogContent = () => {
 					node.lang = node.lang ? `${node.lang}-${lineNumber}` : `text-${lineNumber}`;
 				}
 			}
-		});
+		}
 	};
 };
 
@@ -83,7 +83,7 @@ export const mdsvexOptions = {
 							feedbackDuration: 3_000
 						}),
 						transformerLineStart({
-							lines: langMatch ? parseInt(langMatch[2], 10) : 0
+							lines: langMatch ? Number.parseInt(langMatch[2], 10) : 0
 						})
 					]
 				})

@@ -8,6 +8,7 @@
 	import { getTitleForPublicationType } from '$lib/services/publications';
 	import type { PublicationType } from '$lib/models/publication';
 	import SEO from '$lib/components/SEO.svelte';
+	import PageHeader from '$lib/components/PageHeader.svelte';
 
 	// Sort publications by year (most recent first)
 	const sortedPublications = publications.sort(
@@ -40,12 +41,7 @@
 
 <div class="publications-page">
 	<div class="container">
-		<div class="page-header">
-			<h1>{m.publications()}</h1>
-			<p class="page-description">
-				{m.publications_page_headline()}
-			</p>
-		</div>
+		<PageHeader title={m.publications()} description={m.publications_page_headline()} />
 
 		<div class="publications-content">
 			{#each orderedTypes as type}
@@ -79,26 +75,6 @@
 		min-height: calc(100vh - 64px);
 	}
 
-	.page-header {
-		text-align: center;
-		margin-bottom: var(--space-12);
-	}
-
-	.page-header h1 {
-		font-size: var(--font-size-4xl);
-		font-weight: 700;
-		margin-bottom: var(--space-4);
-		color: var(--color-text);
-	}
-
-	.page-description {
-		font-size: var(--font-size-lg);
-		color: var(--color-text-secondary);
-		max-width: 600px;
-		margin: 0 auto var(--space-8) auto;
-		line-height: 1.6;
-	}
-
 	.publications-content {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -130,14 +106,6 @@
 	@media (max-width: 768px) {
 		.publications-page {
 			padding: var(--space-8) 0 var(--space-16) 0;
-		}
-
-		.page-header h1 {
-			font-size: var(--font-size-3xl);
-		}
-
-		.page-description {
-			font-size: var(--font-size-base);
 		}
 
 		.publication-section {

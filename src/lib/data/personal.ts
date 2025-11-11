@@ -26,7 +26,7 @@ export const personalInfo: PersonalInfo = {
 		},
 		{
 			name: 'Lattes',
-			url: 'http://lattes.cnpq.br/8033491399693302',
+			url: 'https://lattes.cnpq.br/8033491399693302',
 			icon: 'lattes.webp',
 			iconSize: 18,
 			label: m.profile_name({ social: 'Lattes' })

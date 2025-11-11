@@ -1,0 +1,170 @@
+/* Shared markdown content styles */
+.markdown-content {
+	line-height: 1.8;
+	font-size: var(--font-size-lg);
+	color: var(--color-text);
+}
+
+/* Typography */
+.markdown-content :global(h1),
+.markdown-content :global(h2),
+.markdown-content :global(h3),
+.markdown-content :global(h4),
+.markdown-content :global(h5),
+.markdown-content :global(h6) {
+	color: var(--color-text);
+	font-weight: 600;
+	margin: var(--space-8) 0 var(--space-4) 0;
+	line-height: 1.3;
+}
+
+.markdown-content :global(h1) {
+	font-size: var(--font-size-3xl);
+}
+
+.markdown-content :global(h2) {
+	font-size: var(--font-size-2xl);
+}
+
+.markdown-content :global(h3) {
+	font-size: var(--font-size-xl);
+}
+
+.markdown-content :global(p) {
+	margin: 0 0 var(--space-6) 0;
+	color: var(--color-text);
+}
+
+.markdown-content :global(a) {
+	color: var(--color-primary);
+	text-decoration: underline;
+	text-decoration-color: rgba(var(--base-color-rgb), 0.3);
+	transition: all 0.2s ease;
+}
+
+.markdown-content :global(a:hover) {
+	color: var(--color-primary-hover);
+	text-decoration-color: var(--color-primary-hover);
+}
+
+.markdown-content :global(ul),
+.markdown-content :global(ol) {
+	margin: 0 0 var(--space-6) 0;
+	padding-left: var(--space-6);
+}
+
+.markdown-content :global(li) {
+	margin-bottom: var(--space-2);
+	color: var(--color-text);
+}
+
+.markdown-content :global(blockquote) {
+	border-left: 4px solid var(--color-primary);
+	padding-left: var(--space-4);
+	margin: var(--space-6) 0;
+	font-style: italic;
+	color: var(--color-text-secondary);
+}
+
+.markdown-content :global(code) {
+	background-color: var(--color-hover);
+	padding: var(--space-1) var(--space-2);
+	border-radius: var(--radius-sm);
+	font-size: 0.9em;
+	color: var(--color-text);
+	counter-reset: step;
+	counter-increment: step calc(var(--start, 1) - 1);
+}
+
+.markdown-content :global(pre) {
+	background-color: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	padding: var(--space-4);
+	margin: var(--space-6) 0;
+	overflow-x: auto;
+	position: relative;
+}
+
+.markdown-content :global(pre code) {
+	background: none;
+	padding: 0;
+}
+
+/* Copy button styles */
+.markdown-content :global(.rehype-pretty-copy) {
+	position: absolute;
+	top: var(--space-2);
+	right: var(--space-2);
+	background-color: #2a2a2a;
+	border: 1px solid #adadad;
+	border-radius: var(--radius-sm);
+	padding: var(--space-2);
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.markdown-content :global(.rehype-pretty-copy::before) {
+	content: '';
+	width: 16px;
+	height: 16px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.markdown-content :global(.rehype-pretty-copy:hover) {
+	border-color: #adadad;
+	background-color: #3a3a3a;
+}
+
+.markdown-content :global(.rehype-pretty-copy.rehype-pretty-copied) {
+	border-color: #66ff85;
+}
+
+.markdown-content :global(.rehype-pretty-copy.rehype-pretty-copied::before) {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+.markdown-content :global(code .line::before) {
+	content: counter(step);
+	counter-increment: step;
+	width: 1rem;
+	margin-right: 1.5rem;
+	display: inline-block;
+	text-align: right;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.markdown-content :global(img) {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--radius-md);
+	margin: var(--space-6) 0;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+	.markdown-content {
+		font-size: var(--font-size-base);
+	}
+
+	.markdown-content :global(h1) {
+		font-size: var(--font-size-2xl);
+	}
+
+	.markdown-content :global(h2) {
+		font-size: var(--font-size-xl);
+	}
+
+	.markdown-content :global(h3) {
+		font-size: var(--font-size-lg);
+	}
+}

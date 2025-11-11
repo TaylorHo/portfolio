@@ -6,6 +6,8 @@
 		getTitleForPublicationType,
 		getIconForPublicationType
 	} from '$lib/services/publications';
+	import Badge from '$lib/components/Badge.svelte';
+	import CardHeader from '$lib/components/CardHeader.svelte';
 
 	interface Props {
 		publication: Publication;
@@ -17,15 +19,12 @@
 </script>
 
 <div class="publication-card card">
-	<div class="publication-header">
-		<div class="publication-type">
-			<span class="type-icon">
-				<ComponentIcon size={16} />
-			</span>
-			<span class="type-text">{getTitleForPublicationType(publication.type)}</span>
-			<span class="year">{new Date(publication.publishedDate).getFullYear()}</span>
-		</div>
-	</div>
+	<CardHeader
+		icon={ComponentIcon}
+		typeText={getTitleForPublicationType(publication.type)}
+		year={new Date(publication.publishedDate).getFullYear()}
+		badgeVariant="primary"
+	/>
 
 	<h3 class="publication-title">
 		{#if publication.slug}
@@ -53,7 +52,7 @@
 	{#if publication.keywords && publication.keywords.length > 0}
 		<div class="keywords">
 			{#each publication.keywords as keyword}
-				<span class="keyword">{keyword}</span>
+				<Badge variant="hover">{keyword}</Badge>
 			{/each}
 		</div>
 	{/if}
@@ -78,40 +77,6 @@
 <style>
 	.publication-card {
 		cursor: pointer;
-	}
-
-	.publication-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: var(--space-3);
-	}
-
-	.publication-type {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-size: var(--font-size-sm);
-		color: var(--color-text-secondary);
-	}
-
-	.type-icon {
-		font-size: var(--font-size-base);
-		display: flex;
-	}
-
-	.type-text {
-		text-transform: capitalize;
-		font-weight: 500;
-	}
-
-	.year {
-		background-color: var(--color-primary);
-		color: white;
-		padding: var(--space-1) var(--space-2);
-		border-radius: var(--radius-sm);
-		font-size: var(--font-size-sm);
-		font-weight: 500;
 	}
 
 	.publication-title {
@@ -158,27 +123,7 @@
 		margin-bottom: var(--space-4);
 	}
 
-	.keyword {
-		background-color: var(--color-hover);
-		color: var(--color-text-secondary);
-		padding: var(--space-1) var(--space-2);
-		border-radius: var(--radius-sm);
-		font-size: var(--font-size-sm);
-		font-weight: 500;
-	}
-
 	@media (max-width: 768px) {
-		.publication-header {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: var(--space-2);
-			margin-bottom: var(--space-2);
-		}
-
-		.publication-type {
-			font-size: var(--font-size-sm);
-		}
-
 		.publication-title {
 			font-size: var(--font-size-lg);
 			margin-bottom: var(--space-2);
@@ -204,22 +149,9 @@
 		.keywords {
 			margin-bottom: var(--space-3);
 		}
-
-		.keyword {
-			font-size: var(--font-size-sm);
-			padding: var(--space-1) var(--space-2);
-		}
 	}
 
 	@media (max-width: 480px) {
-		.publication-header {
-			gap: var(--space-1);
-		}
-
-		.publication-type {
-			gap: var(--space-1);
-		}
-
 		.publication-title {
 			font-size: var(--font-size-lg);
 		}
@@ -230,11 +162,6 @@
 
 		.publisher {
 			font-size: var(--font-size-base);
-		}
-
-		.year {
-			font-size: var(--font-size-sm);
-			padding: var(--space-1) var(--space-2);
 		}
 	}
 </style>

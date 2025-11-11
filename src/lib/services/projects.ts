@@ -1,4 +1,4 @@
-import type { ProjectStatus, ProjectType } from '$lib/models/project';
+import type { ProjectType } from '$lib/models/project';
 import { m } from '$lib/paraglide/messages';
 import { Globe, Smartphone, Monitor, Package, Microscope, Zap } from '@lucide/svelte';
 import type { Component } from 'svelte';

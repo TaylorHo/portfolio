@@ -5,6 +5,7 @@
 		getTypeLabelForConferenceType
 	} from '$lib/services/conferences';
 	import { MapPin, Globe } from '@lucide/svelte';
+	import CardHeader from '$lib/components/CardHeader.svelte';
 
 	interface Props {
 		conference: Conference;
@@ -15,15 +16,12 @@
 </script>
 
 <div class="conference-card card">
-	<div class="conference-header">
-		<div class="conference-type">
-			<span class="type-icon">
-				<ComponentIcon size={16} />
-			</span>
-			<span class="type-text">{getTypeLabelForConferenceType(conference.type)}</span>
-			<span class="year">{conference.year}</span>
-		</div>
-	</div>
+	<CardHeader
+		icon={ComponentIcon}
+		typeText={getTypeLabelForConferenceType(conference.type)}
+		year={conference.year}
+		badgeVariant="accent"
+	/>
 
 	<h3 class="conference-title">
 		{conference.title}
@@ -51,40 +49,6 @@
 	.conference-card {
 		cursor: pointer;
 		padding: var(--space-3) var(--space-6);
-	}
-
-	.conference-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: var(--space-3);
-	}
-
-	.conference-type {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-size: var(--font-size-sm);
-		color: var(--color-text-secondary);
-	}
-
-	.type-icon {
-		font-size: var(--font-size-base);
-		display: flex;
-	}
-
-	.type-text {
-		text-transform: capitalize;
-		font-weight: 500;
-	}
-
-	.year {
-		background-color: var(--color-accent);
-		color: white;
-		padding: var(--space-1) var(--space-2);
-		border-radius: var(--radius-sm);
-		font-size: var(--font-size-sm);
-		font-weight: 500;
 	}
 
 	.conference-title {
@@ -116,12 +80,6 @@
 	}
 
 	@media (max-width: 768px) {
-		.conference-header {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: var(--space-2);
-		}
-
 		.conference-meta {
 			gap: var(--space-2);
 		}
