@@ -7,7 +7,6 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkToc from 'remark-toc';
 import { transformerCopyButton } from '@rehype-pretty/transformers';
-// import { ... } from '@shikijs/transformers';
 
 // Custom transformer to handle line numbering from lang string
 const transformerLineStart = ({ lines = 0 }) => {
