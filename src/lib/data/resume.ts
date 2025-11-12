@@ -1,8 +1,6 @@
 import { m } from '$lib/paraglide/messages';
 import type { Resume } from '../models/resume';
 
-// TODO: Translate content
-
 export const resume: Resume = {
 	workExperience: [
 		{
