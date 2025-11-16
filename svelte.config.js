@@ -14,6 +14,9 @@ const config = {
 			directives: {
 				'frame-ancestors': ['self', 'https://giscus.app']
 			}
+		},
+		prerender: {
+			origin: 'https://hoffmann.io'
 		}
 	},
 	extensions: ['.svelte', '.md']
