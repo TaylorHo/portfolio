@@ -4,6 +4,20 @@ import type { Conference } from '../models/conference';
 
 export const conferences: Conference[] = [
 	{
+		title: 'XXIV Curso de Radioterapia de Última Geração e Controle de Qualidade',
+		organizer: 'Centro de Oncologia - Faculdade Sírio-Libanês',
+		year: 2025,
+		venue: 'São Paulo, São Paulo, Brasil',
+		type: 'webinar'
+	},
+	{
+		title: 'Workshop Internacional SUSTENTARE & WIPIS 2025',
+		organizer: 'PUC - Campinas | USP',
+		year: 2025,
+		venue: 'Campinas, São Paulo, Brasil',
+		type: 'workshop'
+	},
+	{
 		title: '29th IPPOG meeting',
 		organizer: 'IPPOG - International Particle Physics Outreach Group',
 		year: 2025,
