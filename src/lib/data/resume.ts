@@ -142,7 +142,7 @@ export const resume: Resume = {
 			startDate: '2023-01',
 			endDate: '2025-12',
 			description: m.resume_education_physics_description(),
-			gpa: '9.92/10.0'
+			gpa: '9.82/10.0'
 		},
 		{
 			degree: m.resume_education_computer_science_title(),
@@ -151,14 +151,22 @@ export const resume: Resume = {
 			startDate: '2023-01',
 			endDate: '2026-06',
 			description: m.resume_education_computer_science_description(),
-			gpa: '9.74/10.0'
+			gpa: '9.79/10.0'
 		}
 		// {
-		// 	degree: 'Especialização em Biotecnologia',
-		// 	institution: 'Universidade Estácio',
-		// 	location: 'Rio de Janeiro, Rio de Janeiro, Brasil',
+		// 	degree: 'Especialização em Química',
+		// 	institution: 'Faculdade de São Marcos',
+		// 	location: 'São Marcos, Rio Grande do Sul, Brasil',
 		// 	startDate: '2026',
-		// 	endDate: '2027',
+		// 	endDate: '2026',
+		// 	description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
+		// },
+		// {
+		// 	degree: 'Especialização em Biotecnologia', // Ou Biologia Molecular
+		// 	institution: 'Faculdade de São Marcos',
+		// 	location: 'São Marcos, Rio Grande do Sul, Brasil',
+		// 	startDate: '2026',
+		// 	endDate: '2026',
 		// 	description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
 		// },
 		// {
@@ -166,11 +174,18 @@ export const resume: Resume = {
 		// 	institution: 'Universidade Federal do Rio Grande do Sul',
 		// 	location: 'Porto Alegre, Rio Grande do Sul, Brasil',
 		// 	startDate: '2026',
-		// 	endDate: '2030',
+		// 	endDate: '2031',
 		// 	description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
 		// }
 	],
 	extraCapacitation: [
+		{
+			title: m.resume_extra_capacitation_radiotherapy(),
+			institution: 'Centro de Oncologia - Faculdade Sírio-Libanês',
+			completionDate: '2025-11',
+			// description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod',
+			credentialUrl: 'https://drive.google.com/file/d/1dj6n6gwiVeS8uOr9HeSd6RVLMqxpEId_/view'
+		},
 		{
 			title: m.resume_extra_capacitation_open_science(),
 			institution: 'NASA - National Aeronautics and Space Administration',

@@ -15,14 +15,14 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@inlang/paraglide-js": "^2.5.0",
+		"@inlang/paraglide-js": "^2.7.1",
 		"@rehype-pretty/transformers": "^0.13.2",
-		"@sveltejs/adapter-vercel": "^6.1.2",
-		"@sveltejs/kit": "^2.49.0",
+		"@sveltejs/adapter-vercel": "^6.2.0",
+		"@sveltejs/kit": "^2.49.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"mdsvex": "^0.12.6",
-		"prettier": "^3.6.2",
-		"prettier-plugin-svelte": "^3.4.0",
+		"prettier": "^3.7.4",
+		"prettier-plugin-svelte": "^3.4.1",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-highlight": "^7.0.2",
 		"rehype-highlight-code-lines": "^1.2.1",
@@ -31,12 +31,12 @@
 		"remark-abbr": "^1.4.2",
 		"remark-math": "^3.0.1",
 		"remark-toc": "^9.0.0",
-		"shiki": "^3.15.0",
+		"shiki": "^3.20.0",
 		"super-sitemap": "^1.0.5",
-		"svelte": "^5.43.14",
-		"svelte-check": "^4.3.4",
+		"svelte": "^5.46.1",
+		"svelte-check": "^4.3.5",
 		"typescript": "^5.9.3",
-		"vite": "^7.2.4",
+		"vite": "^7.3.0",
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"pnpm": {
@@ -46,8 +46,8 @@
 		]
 	},
 	"dependencies": {
-		"@lucide/svelte": "^0.553.0",
-		"posthog-js": "^1.298.0"
+		"@lucide/svelte": "^0.562.0",
+		"posthog-js": "^1.310.1"
 	},
 	"license": "MIT"
 }
