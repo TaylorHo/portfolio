@@ -13,7 +13,7 @@
 
 	const { title, description, tags, keywords, image }: Props = $props();
 
-	const ogImage = image || `${personalInfo.url}/assets/images/profile/light.webp`;
+	const ogImage = $derived(image || `${personalInfo.url}/assets/images/profile/light.webp`);
 </script>
 
 <svelte:head>
