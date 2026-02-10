@@ -6,59 +6,84 @@
 }
 
 /* Typography */
-.markdown-content :global(h1),
-.markdown-content :global(h2),
-.markdown-content :global(h3),
-.markdown-content :global(h4),
-.markdown-content :global(h5),
-.markdown-content :global(h6) {
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
 	color: var(--color-text);
 	font-weight: 600;
-	margin: var(--space-8) 0 var(--space-4) 0;
+	margin: var(--space-12) 0 var(--space-4) 0;
 	line-height: 1.3;
 }
 
-.markdown-content :global(h1) {
+.markdown-content h1 a,
+.markdown-content h2 a,
+.markdown-content h3 a,
+.markdown-content h4 a,
+.markdown-content h5 a,
+.markdown-content h6 a {
+	text-decoration: none !important;
+	color: inherit;
+}
+
+.markdown-content h1 a:hover,
+.markdown-content h2 a:hover,
+.markdown-content h3 a:hover,
+.markdown-content h4 a:hover,
+.markdown-content h5 a:hover,
+.markdown-content h6 a:hover {
+	text-decoration: none !important;
+	color: inherit;
+}
+
+.markdown-content h1 {
 	font-size: var(--font-size-3xl);
 }
 
-.markdown-content :global(h2) {
+.markdown-content h2 {
 	font-size: var(--font-size-2xl);
 }
 
-.markdown-content :global(h3) {
+.markdown-content h3 {
 	font-size: var(--font-size-xl);
 }
 
-.markdown-content :global(p) {
+.markdown-content p {
 	margin: 0 0 var(--space-6) 0;
 	color: var(--color-text);
 }
 
-.markdown-content :global(a) {
+.markdown-content sub {
+	position: relative;
+	top: -1.5em;
+}
+
+.markdown-content a {
 	color: var(--color-primary);
 	text-decoration: underline;
 	text-decoration-color: rgba(var(--base-color-rgb), 0.3);
 	transition: all 0.2s ease;
 }
 
-.markdown-content :global(a:hover) {
+.markdown-content a:hover {
 	color: var(--color-primary-hover);
 	text-decoration-color: var(--color-primary-hover);
 }
 
-.markdown-content :global(ul),
-.markdown-content :global(ol) {
+.markdown-content ul,
+.markdown-content ol {
 	margin: 0 0 var(--space-6) 0;
 	padding-left: var(--space-6);
 }
 
-.markdown-content :global(li) {
+.markdown-content li {
 	margin-bottom: var(--space-2);
 	color: var(--color-text);
 }
 
-.markdown-content :global(blockquote) {
+.markdown-content blockquote {
 	border-left: 4px solid var(--color-primary);
 	padding-left: var(--space-4);
 	margin: var(--space-6) 0;
@@ -66,7 +91,7 @@
 	color: var(--color-text-secondary);
 }
 
-.markdown-content :global(code) {
+.markdown-content code {
 	background-color: var(--color-hover);
 	padding: var(--space-1) var(--space-2);
 	border-radius: var(--radius-sm);
@@ -76,7 +101,7 @@
 	counter-increment: step calc(var(--start, 1) - 1);
 }
 
-.markdown-content :global(pre) {
+.markdown-content pre {
 	background-color: var(--color-surface);
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius-md);
@@ -86,13 +111,13 @@
 	position: relative;
 }
 
-.markdown-content :global(pre code) {
+.markdown-content pre code {
 	background: none;
 	padding: 0;
 }
 
 /* Copy button styles */
-.markdown-content :global(.rehype-pretty-copy) {
+.markdown-content .rehype-pretty-copy {
 	position: absolute;
 	top: var(--space-2);
 	right: var(--space-2);
@@ -110,7 +135,7 @@
 	justify-content: center;
 }
 
-.markdown-content :global(.rehype-pretty-copy::before) {
+.markdown-content .rehype-pretty-copy::before {
 	content: '';
 	width: 16px;
 	height: 16px;
@@ -120,20 +145,20 @@
 	background-position: center;
 }
 
-.markdown-content :global(.rehype-pretty-copy:hover) {
+.markdown-content .rehype-pretty-copy:hover {
 	border-color: #adadad;
 	background-color: #3a3a3a;
 }
 
-.markdown-content :global(.rehype-pretty-copy.rehype-pretty-copied) {
+.markdown-content .rehype-pretty-copy.rehype-pretty-copied {
 	border-color: #66ff85;
 }
 
-.markdown-content :global(.rehype-pretty-copy.rehype-pretty-copied::before) {
+.markdown-content .rehype-pretty-copy.rehype-pretty-copied::before {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");
 }
 
-.markdown-content :global(code .line::before) {
+.markdown-content code .line::before {
 	content: counter(step);
 	counter-increment: step;
 	width: 1rem;
@@ -143,7 +168,7 @@
 	color: rgba(255, 255, 255, 0.5);
 }
 
-.markdown-content :global(img) {
+.markdown-content img {
 	max-width: 100%;
 	height: auto;
 	border-radius: var(--radius-md);
@@ -156,15 +181,15 @@
 		font-size: var(--font-size-base);
 	}
 
-	.markdown-content :global(h1) {
+	.markdown-content h1 {
 		font-size: var(--font-size-2xl);
 	}
 
-	.markdown-content :global(h2) {
+	.markdown-content h2 {
 		font-size: var(--font-size-xl);
 	}
 
-	.markdown-content :global(h3) {
+	.markdown-content h3 {
 		font-size: var(--font-size-lg);
 	}
 }

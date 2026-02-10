@@ -40,6 +40,27 @@ const remarkLogContent = () => {
 	};
 };
 
+// Custom rehype plugin to make all links open in new tab
+const rehypeExternalLinks = () => {
+	return (tree) => {
+		const visit = (node) => {
+			if (
+				node.type === 'element' &&
+				node.tagName === 'a' &&
+				node.properties &&
+				node.properties.href
+			) {
+				node.properties.target = '_blank';
+				node.properties.rel = 'noopener noreferrer';
+			}
+			if (node.children) {
+				node.children.forEach(visit);
+			}
+		};
+		visit(tree);
+	};
+};
+
 /** @type {import('mdsvex').MdsvexOptions} */
 export const mdsvexOptions = {
 	extensions: ['.md'],
@@ -95,6 +116,7 @@ export const mdsvexOptions = {
 	rehypePlugins: [
 		[rehypeKatexSvelte, { output: 'mathml' }],
 		rehypeSlug,
+		rehypeExternalLinks,
 		[rehypeAutolinkHeadings, { behavior: 'wrap' }]
 	]
 };

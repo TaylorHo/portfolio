@@ -19,16 +19,20 @@ export const publications: Publication[] = [
 		language: m.language_portuguese()
 	},
 	{
-		slug: undefined, // No slug = no detail page
+		slug: 'kiwix-as-a-digital-inclusion-tool',
 		title: m.publications_kiwix_article_title(),
 		authors: ['Taylor Hoffmann'],
-		publishedDate: '2025-01-01', // TODO: Add publishing date
+		publishedDate: '2026-02-06',
 		publisher: 'Revista Informática na educação | UFRGS',
 		type: 'article',
 		abstract: m.publications_kiwix_article_description(),
 		// doi: '',
-		// url: 'https://seer.ufrgs.br/index.php/InfEducTeoriaPratica/index',
-		keywords: [],
-		language: m.language_portuguese()
+		url: 'https://seer.ufrgs.br/index.php/InfEducTeoriaPratica/article/view/143926',
+		keywords: ['Inclusão digital', 'Conectividade', 'Educação digital', 'Tecnologias educacionais'],
+		language: m.language_portuguese(),
+		issn: '1982-1654',
+		pages: 19,
+		volume: 28,
+		issue: 2
 	}
 ];
