@@ -24,27 +24,25 @@ This guide demonstrates how to set up a complete n8n stack at no cost:
 
 Oracle Cloud offers the **Always Free** tier, which includes permanently free virtual machines. The `VM.Standard.E2.1.Micro` instance has 1GB RAM, 1 vCPU and 0.48 Gbps bandwidth — sufficient specifications to run n8n.
 
-### Procedure:
+**Procedure**
 
-**1.1.** Access [Oracle Cloud signup](https://signup.cloud.oracle.com/) and create your account.
+1. Access [Oracle Cloud signup](https://signup.cloud.oracle.com/) and create your account.
 
 > **Note:** A credit card will be required for validation, and there may be a temporary charge that will be automatically refunded.
 
-**1.2.** Access the Oracle Cloud dashboard and click **"Create a VM instance"**.
+2. Access the Oracle Cloud dashboard and click **"Create a VM instance"**.
 
-**1.3.** Select the operating system:
+3. Select the operating system:
+   - The default is "Oracle Linux", change it to **Ubuntu**
+   - A "Minimal" image is recommended (example: `Canonical Ubuntu 24.04 Minimal`)
 
-- The default is "Oracle Linux", change it to **Ubuntu**
-- A "Minimal" image is recommended (example: `Canonical Ubuntu 24.04 Minimal`)
+4. Click **"Change Shape"** and select:
+   - **Virtual machine** → **Specialty and previous generation** → **VM.Standard.E2.1.Micro**
+   - The **"Always Free-eligible"** tag indicates eligibility for the free tier
 
-**1.4.** Click **"Change Shape"** and select:
+5. Configure the remaining options (boot volume, SSH key, etc.) and click **"Create"**.
 
-- **Virtual machine** → **Specialty and previous generation** → **VM.Standard.E2.1.Micro**
-- The **"Always Free-eligible"** tag indicates eligibility for the free tier
-
-**1.5.** Configure the remaining options (boot volume, SSH key, etc.) and click **"Create"**.
-
-**1.6.** After creation, the VM's public IP will be displayed along with the **"Always Free"** tag identifying the instance.
+6. After creation, the VM's public IP will be displayed along with the **"Always Free"** tag identifying the instance.
 
 > **Note:** After 30 days, Oracle may send emails requesting an account upgrade. These can be ignored if you wish to keep only the free instance.
 
@@ -59,7 +57,7 @@ To make n8n available through your own domain (like `n8n.yourdomain.com`) and en
 
 Here we'll see how to get a free domain and SMTP access, but if you already have your own services, you can use them.
 
-### 2.1. Free Domain
+### Free Domain
 
 Providers that offer free domains and subdomains:
 
@@ -70,21 +68,21 @@ Register with one of these services and configure a domain or subdomain.
 
 There are also others on the internet, worth checking out.
 
-### 2.2. Free Google SMTP
+### Free Google SMTP
 
 Google provides a free SMTP server through Gmail, suitable for sending n8n password recovery emails.
 
 **Procedure:**
 
-**2.2.1.** Access [myaccount.google.com](https://myaccount.google.com/).
+1. Access [myaccount.google.com](https://myaccount.google.com/).
 
-**2.2.2.** Navigate to **Security** → **2-Step Verification** and enable it if not already enabled.
+2. Navigate to **Security** → **2-Step Verification** and enable it if not already enabled.
 
-**2.2.3.** In **Security**, locate the **"App passwords"** option.
+3. In **Security**, locate the **"App passwords"** option.
 
-**2.2.4.** Generate an app password specific for n8n.
+4. Generate an app password specific for n8n.
 
-**2.2.5.** Store the generated password for later use in the configuration.
+5. Store the generated password for later use in the configuration.
 
 **Google SMTP Settings:**
 
@@ -95,7 +93,7 @@ Google provides a free SMTP server through Gmail, suitable for sending n8n passw
 
 > **Complete tutorial:** [How to use Google SMTP](https://www.hostinger.com/tutorials/how-to-use-free-google-smtp-server)
 
-### 2.3. DNS Configuration
+### DNS Configuration
 
 After obtaining the free domain, you need to point it to the Oracle Cloud VM IP.
 
@@ -108,7 +106,7 @@ Configure an **A-type DNS record** with the following parameters:
 
 The configuration interface varies depending on the chosen domain provider.
 
-### 2.4 Email Plans with Free Domain
+### Email Plans with Free Domain
 
 Hostinger has email plans that come with 1 year of free domain. Sometimes it ends up being easier and faster to configure this way, plus you have greater freedom of choice over your domain name, and can create multiple subdomains for different purposes.
 
@@ -126,11 +124,11 @@ The installation uses a pre-configured repository that includes:
 
 Repository: [TaylorHo/n8n-with-caddy](https://github.com/TaylorHo/n8n-with-caddy)
 
-### Procedure:
+### Procedure
 
-**3.1.** Connect to your VM via SSH.
+1. Connect to your VM via SSH.
 
-**3.2.** Execute the commands sequentially:
+2. Execute the commands sequentially:
 
 ```sh
 LINUX_DISTRO=ubuntu
@@ -169,9 +167,9 @@ docker volume create n8n_data
 
 These same code lines are also available in the mentioned repository, in the `init.sh` file ([link](https://github.com/TaylorHo/n8n-with-caddy/blob/main/init.sh))
 
-**3.3.** Environment files configuration.
+### Environment files configuration
 
-### 3.3.1. `.env` File Configuration
+#### `.env` File Configuration
 
 Edit the environment file located at `~/n8n/.env`:
 
@@ -206,11 +204,11 @@ N8N_SMTP_PASS="your-google-app-password"
 
 - `your-domain.com`: configured domain or subdomain
 - `your-email@gmail.com`: Gmail account used
-- `your-google-app-password`: app password generated in step 2.2
+- `your-google-app-password`: app password generated previously
 
 > **Note:** To disable password recovery via email, comment out the `N8N_SMTP_*` lines by adding `#` at the beginning.
 
-### 3.3.2. `Caddyfile` Configuration
+#### `Caddyfile` Configuration
 
 Edit the Caddy configuration file:
 
@@ -224,14 +222,13 @@ Modify the following values:
 
 1. `email support@email.com` → `email your-email@gmail.com`
 2. `localhost` → `your-domain.com` (same value as `N8N_HOST`)
-
-**3.4.** Save the changes and start the containers:
+3. Save the changes and start the containers:
 
 ```sh
 docker compose up -d
 ```
 
-**3.5.** After the services start, access `https://your-domain.com`.
+4. After the services start, access `https://your-domain.com`.
 
 > Caddy automatically provisions the SSL certificate via Let's Encrypt. The process may take a few seconds/minutes on the first run.
 
@@ -241,7 +238,7 @@ docker compose up -d
 
 Although there are commercial AI APIs (OpenAI, Anthropic, Google), for smaller request volumes there are viable free alternatives.
 
-### 4.1. Open Router
+### Open Router
 
 The [Open Router](https://openrouter.ai/) service provides:
 
@@ -252,7 +249,7 @@ The [Open Router](https://openrouter.ai/) service provides:
   - `google/gemma-3-27b-it`
   - [Complete list of free models](https://openrouter.ai/models?fmt=cards&max_price=0)
 
-### 4.2. Integration with n8n
+### Integration with n8n
 
 Two approaches to integrate Open Router:
 

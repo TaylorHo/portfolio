@@ -24,27 +24,25 @@ Este guia demonstra como configurar uma stack completa do n8n sem custos:
 
 A Oracle Cloud oferece o tier **Always Free**, que inclui máquinas virtuais permanentemente gratuitas. A instância `VM.Standard.E2.1.Micro` possui 1GB de RAM, 1 vCPU e 0.48 Gbps de largura de banda — especificações suficientes para executar o n8n.
 
-### Procedimento:
+**Procedimento**
 
-**1.1.** Acesse o [cadastro da Oracle Cloud](https://signup.cloud.oracle.com/) e crie sua conta.
+1. Acesse o [cadastro da Oracle Cloud](https://signup.cloud.oracle.com/) e crie sua conta.
 
 > **Nota:** Será solicitado um cartão de crédito para validação, podendo haver uma cobrança temporária que será extornada automaticamente.
 
-**1.2.** Acesse o dashboard da Oracle Cloud e clique em **"Create a VM instance"**.
+2. Acesse o dashboard da Oracle Cloud e clique em **"Create a VM instance"**.
 
-**1.3.** Selecione o sistema operacional:
+3. Selecione o sistema operacional:
+   - O padrão é "Oracle Linux", altere para **Ubuntu**
+   - Recomenda-se uma imagem "Minimal" (exemplo: `Canonical Ubuntu 24.04 Minimal`)
 
-- O padrão é "Oracle Linux", altere para **Ubuntu**
-- Recomenda-se uma imagem "Minimal" (exemplo: `Canonical Ubuntu 24.04 Minimal`)
+4. Clique em **"Change Shape"** e selecione:
+   - **Virtual machine** → **Specialty and previous generation** → **VM.Standard.E2.1.Micro**
+   - A tag **"Always Free-eligible"** indica elegibilidade para o tier gratuito
 
-**1.4.** Clique em **"Change Shape"** e selecione:
+5. Configure as demais opções (volume de boot, chave SSH, etc.) e clique em **"Create"**.
 
-- **Virtual machine** → **Specialty and previous generation** → **VM.Standard.E2.1.Micro**
-- A tag **"Always Free-eligible"** indica elegibilidade para o tier gratuito
-
-**1.5.** Configure as demais opções (volume de boot, chave SSH, etc.) e clique em **"Create"**.
-
-**1.6.** Após a criação, o IP público da VM será exibido junto com a tag **"Always Free"** identificando a instância.
+6. Após a criação, o IP público da VM será exibido junto com a tag **"Always Free"** identificando a instância.
 
 > **Nota:** Após 30 dias, a Oracle pode enviar e-mails solicitando upgrade da conta. Estes podem ser ignorados caso deseje manter apenas a instância gratuita.
 
@@ -59,7 +57,7 @@ Para disponibilizar o n8n através de um domínio próprio (como `n8n.seudominio
 
 Aqui vamos ver como obter um domínio e acesso à SMTP gratuitos, mas se você já tiver seus serviços próprios, pode usar eles.
 
-### 2.1. Domínio gratuito
+### Domínio gratuito
 
 Provedores que oferecem domínios e subdomínios gratuitos:
 
@@ -70,21 +68,21 @@ Registre-se em um desses serviços e configure um domínio ou subdomínio.
 
 Também existem outros pela internet, vale a pena dar uma olhada.
 
-### 2.2. SMTP gratuito do Google
+### SMTP gratuito do Google
 
 O Google disponibiliza servidor SMTP gratuito através do Gmail, adequado para envio de e-mails de recuperação de senha do n8n.
 
 **Procedimento:**
 
-**2.2.1.** Acesse [myaccount.google.com](https://myaccount.google.com/).
+1. Acesse [myaccount.google.com](https://myaccount.google.com/).
 
-**2.2.2.** Navegue até **Segurança** → **Verificação em duas etapas** e ative caso não esteja habilitado.
+2. Navegue até **Segurança** → **Verificação em duas etapas** e ative caso não esteja habilitado.
 
-**2.2.3.** Em **Segurança**, localize a opção **"Senhas de app"**.
+3. Em **Segurança**, localize a opção **"Senhas de app"**.
 
-**2.2.4.** Gere uma senha de app específica para o n8n.
+4. Gere uma senha de app específica para o n8n.
 
-**2.2.5.** Armazene a senha gerada para uso posterior nas configurações.
+5. Armazene a senha gerada para uso posterior nas configurações.
 
 **Configurações SMTP do Google:**
 
@@ -95,7 +93,7 @@ O Google disponibiliza servidor SMTP gratuito através do Gmail, adequado para e
 
 > **Tutorial completo:** [Como utilizar o SMTP do Google](https://www.hostinger.com/br/tutoriais/aprenda-a-utilizar-o-smtp-google)
 
-### 2.3. Configuração DNS
+### Configuração DNS
 
 Após obter o domínio gratuito, é necessário apontá-lo para o IP da VM Oracle Cloud.
 
@@ -108,7 +106,7 @@ Configure um **registro DNS do tipo A** com os seguintes parâmetros:
 
 A interface de configuração varia conforme o provedor de domínio escolhido.
 
-### 2.4 Planos de e-mail com domínio gratuito
+### Planos de e-mail com domínio gratuito
 
 A Hostinger conta com planos de e-mail que já vêm com 1 ano de domínio gratuito. Às vezes acaba sendo mais fácil e rápido de configurar dessa forma, além de que assim você tem maior liberdade de scolha sobre o nome do seu domínio, além de poder criar múltiplos subdomínios para diferentes propósitos.
 
@@ -126,11 +124,11 @@ A instalação utiliza um repositório pré-configurado que inclui:
 
 Repositório: [TaylorHo/n8n-with-caddy](https://github.com/TaylorHo/n8n-with-caddy)
 
-### Procedimento:
+### Procedimento
 
-**3.1.** Conecte-se à sua VM via SSH.
+1. Conecte-se à sua VM via SSH.
 
-**3.2.** Execute os comandos sequencialmente:
+2. Execute os comandos sequencialmente:
 
 ```sh
 LINUX_DISTRO=ubuntu
@@ -169,9 +167,9 @@ docker volume create n8n_data
 
 Essas mesmas linhas de código também estão disponíveis no repositório já mencionado, no arquivo `init.sh` ([link](https://github.com/TaylorHo/n8n-with-caddy/blob/main/init.sh))
 
-**3.3.** Configuração dos arquivos de ambiente.
+### Configuração dos arquivos de ambiente
 
-### 3.3.1. Configuração do arquivo `.env`
+#### Configuração do arquivo `.env`
 
 Edite o arquivo de ambiente localizado em `~/n8n/.env`:
 
@@ -206,11 +204,11 @@ N8N_SMTP_PASS="sua-senha-de-app-do-google"
 
 - `seu-dominio.com`: domínio ou subdomínio configurado
 - `seu-email@gmail.com`: conta Gmail utilizada
-- `sua-senha-de-app-do-google`: senha de app gerada na etapa 2.2
+- `sua-senha-de-app-do-google`: senha de app gerada anteriormente
 
 > **Nota:** Para desabilitar recuperação de senha via e-mail, comente as linhas `N8N_SMTP_*` adicionando `#` no início.
 
-### 3.3.2. Configuração do arquivo `Caddyfile`
+#### Configuração do arquivo `Caddyfile`
 
 Edite o arquivo de configuração do Caddy:
 
@@ -224,14 +222,13 @@ Modifique os seguintes valores:
 
 1. `email support@email.com` → `email seu-email@gmail.com`
 2. `localhost` → `seu-dominio.com` (mesmo valor de `N8N_HOST`)
-
-**3.4.** Salve as alterações e inicie os containers:
+3. Salve as alterações e inicie os containers:
 
 ```sh
 docker compose up -d
 ```
 
-**3.5.** Após a inicialização dos serviços, acesse `https://seu-dominio.com`.
+4. Após a inicialização dos serviços, acesse `https://seu-dominio.com`.
 
 > O Caddy provisiona automaticamente o certificado SSL via Let's Encrypt. O processo pode levar alguns segundos/minutos na primeira execução.
 
@@ -241,7 +238,7 @@ docker compose up -d
 
 Embora existam APIs de IA comerciais (OpenAI, Anthropic, Google), para volumes menores de requisições há alternativas gratuitas viáveis.
 
-### 4.1. Open Router
+### Open Router
 
 O serviço [Open Router](https://openrouter.ai/) disponibiliza:
 
@@ -252,7 +249,7 @@ O serviço [Open Router](https://openrouter.ai/) disponibiliza:
   - `google/gemma-3-27b-it`
   - [Lista completa de modelos gratuitos](https://openrouter.ai/models?fmt=cards&max_price=0)
 
-### 4.2. Integração com n8n
+### Integração com n8n
 
 Duas abordagens para integrar o Open Router:
 
