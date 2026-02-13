@@ -26,7 +26,7 @@ export const publications: Publication[] = [
 		publisher: 'Revista Informática na educação | UFRGS',
 		type: 'article',
 		abstract: m.publications_kiwix_article_description(),
-		// doi: '',
+		doi: '10.22456/1982-1654.143926',
 		url: 'https://seer.ufrgs.br/index.php/InfEducTeoriaPratica/article/view/143926',
 		keywords: ['Inclusão digital', 'Conectividade', 'Educação digital', 'Tecnologias educacionais'],
 		language: m.language_portuguese(),
