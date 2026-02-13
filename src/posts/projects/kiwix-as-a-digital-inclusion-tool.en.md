@@ -8,4 +8,4 @@ _The precarious state of connectivity in Brazilian public schools limits the use
 
 ---
 
-Article published in the journal Informática na Educação: teoria & prática, v. 28 n. 2 (2025).
+Article published in the journal [Informática na Educação: teoria & prática, v. 28 n. 2 (2025)](https://seer.ufrgs.br/index.php/InfEducTeoriaPratica/article/view/143926).

@@ -8,4 +8,4 @@ _A conectividade limitada nas escolas públicas brasileiras representa um obstá
 
 ---
 
-Artigo publicado na revista Informática na Educação: teoria & prática, v. 28 n. 2 (2025).
+Artigo publicado na revista [Informática na Educação: teoria & prática, v. 28 n. 2 (2025)](https://seer.ufrgs.br/index.php/InfEducTeoriaPratica/article/view/143926).
