@@ -24,7 +24,6 @@ vite.config.ts.timestamp-*
 
 # Paraglide
 src/lib/paraglide
-i18n/cache/
 
 # Analysis
 .scannerwork/

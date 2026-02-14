@@ -8,7 +8,7 @@ export default defineConfig({
 		sveltekit(),
 		devtoolsJson(),
 		paraglideVitePlugin({
-			project: './i18n',
+			project: './project.inlang',
 			outdir: './src/lib/paraglide',
 			strategy: ['url', 'baseLocale'],
 			urlPatterns: [

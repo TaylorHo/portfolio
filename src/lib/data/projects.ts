@@ -86,5 +86,15 @@ export const projects: Project[] = [
 		githubUrl: 'https://github.com/TaylorHo/youtube-shorts-blocker',
 		demoUrl:
 			'https://chromewebstore.google.com/detail/youtube-shorts-blocker/jchbbofddpgfbaheknainnhbdonkpogf'
+	},
+	{
+		title: 'Simulado EUF',
+		description: m.projects_simulado_euf_description(),
+		technologies: [m.projects_tag_physics(), m.projects_tag_education(), 'Svelte'],
+		year: 2026,
+		type: 'web',
+		status: 'maintained',
+		githubUrl: 'https://github.com/TaylorHo/simulado-euf',
+		demoUrl: 'https://euf.hoffmann.io'
 	}
 ];
