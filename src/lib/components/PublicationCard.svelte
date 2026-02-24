@@ -58,7 +58,7 @@
 	{/if}
 
 	{#if publication.slug}
-		<a href={`/publications/${publication.slug}`} class="btn btn-primary">
+		<a href={`/publications/${publication.slug}`} class="btn btn-primary space-below">
 			{m.view_publication()}
 		</a>
 	{/if}
@@ -67,7 +67,7 @@
 			href={publication.purchaseLink}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="btn btn-accent"
+			class="btn btn-accent space-below"
 		>
 			{m.buy_physical_copy()}
 		</a>
@@ -149,6 +149,10 @@
 		.keywords {
 			margin-bottom: var(--space-3);
 		}
+
+		.space-below:not(:last-child) {
+			margin-bottom: var(--space-2);
+		}
 	}
 
 	@media (max-width: 480px) {
@@ -162,6 +166,10 @@
 
 		.publisher {
 			font-size: var(--font-size-base);
+		}
+
+		.space-below:not(:last-child) {
+			margin-bottom: var(--space-2);
 		}
 	}
 </style>

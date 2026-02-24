@@ -162,7 +162,7 @@
 								href={data.meta.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="btn btn-primary btn-block"
+								class="btn btn-primary btn-block space-below"
 							>
 								{m.view_publication()}
 							</a>
@@ -172,7 +172,7 @@
 								href={data.meta.pdf}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="btn btn-secondary btn-block"
+								class="btn btn-secondary btn-block space-below"
 							>
 								PDF
 							</a>
@@ -182,7 +182,7 @@
 								href={data.meta.purchaseLink}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="btn btn-accent btn-block"
+								class="btn btn-accent btn-block space-below"
 							>
 								{m.buy_physical_copy()}
 							</a>
@@ -400,6 +400,10 @@
 			grid-template-columns: 1fr;
 			gap: var(--space-1);
 		}
+
+		.info-actions .space-below:not(:last-child) {
+			margin-bottom: var(--space-2);
+		}
 	}
 
 	@media (max-width: 480px) {
@@ -413,6 +417,10 @@
 
 		.abstract {
 			font-size: var(--font-size-sm);
+		}
+
+		.info-actions .space-below:not(:last-child) {
+			margin-bottom: var(--space-2);
 		}
 	}
 </style>
