@@ -22,7 +22,7 @@ The first version was a simple exam generator, [archived on GitHub](https://gith
 
 ## The current version: EUF Simulator
 
-After that initial experience, I developed a more complete web tool: the [EUF Simulator](https://euf.hoffmann.io).
+After that initial experience, I developed a more complete web tool: the [EUF Simulator](https://euf.hoffmann.io?utm_source=portfolio).
 
 It includes two main features:
 
@@ -67,4 +67,4 @@ Some improvements I still plan to implement:
 
 If you have any comments or suggestions, leave them in the comments below!
 
-Again, the project link: [https://euf.hoffmann.io](https://euf.hoffmann.io)
+Again, the project link: [https://euf.hoffmann.io](https://euf.hoffmann.io?utm_source=portfolio)

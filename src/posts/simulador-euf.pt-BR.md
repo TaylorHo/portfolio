@@ -22,7 +22,7 @@ A primeira versão foi um gerador de simulados simples, [arquivado no GitHub](ht
 
 ## A versão atual: Simulador EUF
 
-Depois dessa experiência inicial, desenvolvi uma ferramenta web mais completa: o [Simulador EUF](https://euf.hoffmann.io).
+Depois dessa experiência inicial, desenvolvi uma ferramenta web mais completa: o [Simulador EUF](https://euf.hoffmann.io?utm_source=portfolio).
 
 Ela inclui dois recursos principais:
 
@@ -67,4 +67,4 @@ Algumas melhorias que ainda pretendo implementar:
 
 Se você tiver algum comentário ou sugestão, deixe nos comentários abaixo!
 
-Novamente, o link do projeto: [https://euf.hoffmann.io](https://euf.hoffmann.io)
+Novamente, o link do projeto: [https://euf.hoffmann.io](https://euf.hoffmann.io?utm_source=portfolio)
