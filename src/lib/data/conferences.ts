@@ -3,6 +3,22 @@ import type { Conference } from '../models/conference';
 // TODO: Add description to each conference (and translate them)
 
 export const conferences: Conference[] = [
+	// Will happen in March 30th to April 3rd, 2026
+	// {
+	// 	title: 'EGSnrc Monte Carlo school for Medical Physics',
+	// 	organizer: 'ICTP-SAIFR | IFT-Unesp',
+	// 	year: 2026,
+	// 	venue: 'São Paulo, São Paulo, Brasil',
+	// 	type: 'workshop'
+	// },
+	{
+		title:
+			'Workshop on Non-equilibrium Statistical Physics: From glasses and active matter to stochastic thermodynamics and complex networks',
+		organizer: 'ICTP-SAIFR',
+		year: 2026,
+		venue: 'São Paulo, São Paulo, Brasil',
+		type: 'workshop'
+	},
 	{
 		title: 'XXIV Curso de Radioterapia de Última Geração e Controle de Qualidade',
 		organizer: 'Centro de Oncologia - Faculdade Sírio-Libanês',

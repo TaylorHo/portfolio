@@ -180,6 +180,13 @@ export const resume: Resume = {
 	],
 	extraCapacitation: [
 		{
+			title: 'EGSnrc Monte Carlo for Medical Physics',
+			institution: 'ICTP-SAIFR | IFT-Unesp',
+			completionDate: '2026-04'
+			// description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod',
+			// credentialUrl: ''
+		},
+		{
 			title: m.resume_extra_capacitation_radiotherapy(),
 			institution: 'Centro de Oncologia - Faculdade Sírio-Libanês',
 			completionDate: '2025-11',
