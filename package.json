@@ -15,14 +15,14 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@inlang/paraglide-js": "^2.12.0",
+		"@inlang/paraglide-js": "^2.14.1",
 		"@rehype-pretty/transformers": "^0.13.2",
-		"@sveltejs/adapter-vercel": "^6.3.2",
-		"@sveltejs/kit": "^2.53.0",
+		"@sveltejs/adapter-vercel": "^6.3.3",
+		"@sveltejs/kit": "^2.54.0",
 		"@sveltejs/vite-plugin-svelte": "^6.2.4",
-		"mdsvex": "^0.12.6",
+		"mdsvex": "^0.12.7",
 		"prettier": "^3.8.1",
-		"prettier-plugin-svelte": "^3.5.0",
+		"prettier-plugin-svelte": "^3.5.1",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-highlight": "^7.0.2",
 		"rehype-highlight-code-lines": "^1.2.2",
@@ -31,10 +31,10 @@
 		"remark-abbr": "^1.4.2",
 		"remark-math": "^3.0.1",
 		"remark-toc": "^9.0.0",
-		"shiki": "^3.22.0",
+		"shiki": "^3.23.0",
 		"super-sitemap": "^1.0.7",
-		"svelte": "^5.53.3",
-		"svelte-check": "^4.4.3",
+		"svelte": "^5.53.11",
+		"svelte-check": "^4.4.5",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1",
 		"vite-plugin-devtools-json": "^1.0.0"
@@ -50,8 +50,8 @@
 		}
 	},
 	"dependencies": {
-		"@lucide/svelte": "^0.575.0",
-		"posthog-js": "^1.353.0"
+		"@lucide/svelte": "^0.577.0",
+		"posthog-js": "^1.360.1"
 	},
 	"license": "MIT"
 }
