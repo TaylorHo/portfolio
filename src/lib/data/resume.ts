@@ -152,18 +152,18 @@ export const resume: Resume = {
 			endDate: '2026-06',
 			description: m.resume_education_computer_science_description(),
 			gpa: '9.79/10.0'
+		},
+		{
+			degree: 'Especialização em Química Geral e Industrial',
+			institution: 'FACSM - Faculdade de São Marcos',
+			location: 'São Marcos, Rio Grande do Sul, Brasil',
+			startDate: '2026-03'
+			// endDate: '2026-07',
+			// description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
 		}
 		// {
-		// 	degree: 'Especialização em Química',
-		// 	institution: 'Faculdade de São Marcos',
-		// 	location: 'São Marcos, Rio Grande do Sul, Brasil',
-		// 	startDate: '2026',
-		// 	endDate: '2026',
-		// 	description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
-		// },
-		// {
-		// 	degree: 'Especialização em Biotecnologia', // Ou Biologia Molecular
-		// 	institution: 'Faculdade de São Marcos',
+		// 	degree: 'Especialização em Biotecnologia',
+		// 	institution: 'FACSM - Faculdade de São Marcos',
 		// 	location: 'São Marcos, Rio Grande do Sul, Brasil',
 		// 	startDate: '2026',
 		// 	endDate: '2026',
@@ -185,6 +185,13 @@ export const resume: Resume = {
 			completionDate: '2026-04'
 			// description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod',
 			// credentialUrl: ''
+		},
+		{
+			title: m.resume_extra_capacitation_quantum_information(),
+			institution: 'IBM Quantum',
+			completionDate: '2026-03',
+			// description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod',
+			credentialUrl: 'https://www.credly.com/badges/f092e318-db20-484e-b7f8-2f6f4f5428e5'
 		},
 		{
 			title: m.resume_extra_capacitation_radiotherapy(),
