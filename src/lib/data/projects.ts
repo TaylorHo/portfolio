@@ -2,30 +2,6 @@ import { m } from '$lib/paraglide/messages';
 import type { Project } from '../models/project';
 
 export const projects: Project[] = [
-	// {
-	// 	title: 'Image Hash Linker',
-	// 	description: m.projects_image_hash_linker_description(),
-	// 	technologies: ['Rust', 'Hash', m.projects_tag_image_processing()],
-	// 	year: 2025,
-	// 	type: 'library',
-	// 	status: 'maintained',
-	// 	githubUrl: 'https://github.com/TaylorHo/img-hash-linker'
-	// },
-	// {
-	// 	title: 'Econflux',
-	// 	description: m.projects_econflux_description(),
-	// 	technologies: [
-	// 		m.projects_tag_physics(),
-	// 		'Rust',
-	// 		m.projects_tag_economics_physics(),
-	// 		m.projects_tag_simulation(),
-	// 		'Monte Carlo'
-	// 	],
-	// 	year: 2025,
-	// 	type: 'library',
-	// 	status: 'maintained',
-	// 	githubUrl: 'https://github.com/TaylorHo/econflux'
-	// },
 	{
 		title: 'Goals Tracker',
 		description: m.projects_goals_tracker_description(),
@@ -54,8 +30,7 @@ export const projects: Project[] = [
 		type: 'web',
 		status: 'maintained',
 		githubUrl: 'https://github.com/TaylorHo/avalia',
-		demoUrl: 'https://avalia.hoffmann.io/docs/index.html',
-		featured: true
+		demoUrl: 'https://avalia.hoffmann.io/docs/index.html'
 	},
 	{
 		title: 'D&D Beyond Kit',
@@ -95,6 +70,7 @@ export const projects: Project[] = [
 		type: 'web',
 		status: 'maintained',
 		githubUrl: 'https://github.com/TaylorHo/simulado-euf',
-		demoUrl: 'https://euf.hoffmann.io'
+		demoUrl: 'https://euf.hoffmann.io',
+		featured: true
 	}
 ];

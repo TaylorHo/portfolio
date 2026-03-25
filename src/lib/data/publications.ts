@@ -3,6 +3,23 @@ import { m } from '$lib/paraglide/messages';
 
 export const publications: Publication[] = [
 	{
+		slug: 'eosbf-26-dicom-presentation',
+		title: m.publications_eosbf26_conference_presentation_title(),
+		authors: [
+			'Taylor Hoffmann',
+			'Carlos Antonio Campos Jorge',
+			'Kauee Rocha Puertas',
+			'Rafael Torales de Souza'
+		],
+		publishedDate: '2026-05-18',
+		publisher: m.publications_eosbf26_conference_presentation_publisher(),
+		type: 'conference',
+		abstract: m.publications_eosbf26_conference_presentation_description(),
+		keywords: ['DICOM', 'Computed Tomography', 'Medical Imaging', 'Medical Physics'],
+		url: 'https://www1.fisica.org.br/~eosbf/2026/index.php/en/',
+		language: m.language_english()
+	},
+	{
 		slug: 'security-book',
 		title: m.publications_security_book_title(),
 		authors: ['Taylor Hoffmann'],

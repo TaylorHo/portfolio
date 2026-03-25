@@ -21,10 +21,8 @@
 						title={social.label}
 						aria-label={social.label}
 					>
-						{#if social.svg}
-							{@html social.svg}
-						{:else if social.icon}
-							<social.icon size={18} />
+						{#if social.icon}
+							<social.icon size={social.iconSize} />
 						{:else}
 							{social.label}
 						{/if}
@@ -81,11 +79,6 @@
 		color: var(--color-primary);
 		background-color: var(--color-hover);
 		transform: translateY(-2px);
-	}
-
-	:global(.bluesky-icon) {
-		width: 18px;
-		height: 18px;
 	}
 
 	@media (max-width: 768px) {

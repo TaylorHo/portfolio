@@ -18,6 +18,9 @@
 		const end = endDate ? formatDate(endDate) : m.present();
 		return `${start} - ${end}`;
 	}
+
+	// TODO: here we could show how many time has passed in each job position
+	// TODO: here we could also add a way of collapsing the job projects section
 </script>
 
 <SEO

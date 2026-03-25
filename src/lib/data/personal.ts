@@ -1,5 +1,6 @@
 import { m } from '$lib/paraglide/messages';
-import { Github, Instagram, Linkedin } from '@lucide/svelte';
+import GitHub from '$lib/components/icons/GitHub.svelte';
+import LinkedIn from '$lib/components/icons/LinkedIn.svelte';
 import type { PersonalInfo } from '../models/social';
 
 export const personalInfo: PersonalInfo = {
@@ -43,20 +44,16 @@ export const personalInfo: PersonalInfo = {
 		{
 			name: 'GitHub',
 			url: 'https://github.com/TaylorHo',
-			icon: Github,
+			icon: GitHub,
+			iconSize: 20,
 			label: m.profile_name({ social: 'GitHub' })
 		},
 		{
 			name: 'LinkedIn',
 			url: 'https://linkedin.com/in/hoffmann-taylor/',
-			icon: Linkedin,
+			icon: LinkedIn,
+			iconSize: 20,
 			label: m.profile_name({ social: 'LinkedIn' })
-		},
-		{
-			name: 'Instagram',
-			url: 'https://www.instagram.com/hoffmann_taylor/',
-			icon: Instagram,
-			label: m.profile_name({ social: 'Instagram' })
 		}
 	]
 };

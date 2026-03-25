@@ -27,7 +27,7 @@
 		{} as Record<string, typeof publications>
 	);
 
-	const typeOrder: PublicationType[] = ['book', 'article', 'conference'];
+	const typeOrder: PublicationType[] = ['article', 'conference', 'book'];
 	const orderedTypes = typeOrder.filter((type) => publicationsByType[type]);
 
 	// Sort conferences by year (most recent first)

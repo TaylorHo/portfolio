@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { formatDate } from '$lib/services/date';
 	import type { Post } from '$lib/models/blog';
-	import { Calendar, Clock } from '@lucide/svelte';
+	import { Calendar } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	interface Props {

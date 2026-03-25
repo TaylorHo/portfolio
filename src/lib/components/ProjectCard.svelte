@@ -2,9 +2,10 @@
 	import type { Project } from '$lib/models/project';
 	import { m } from '$lib/paraglide/messages';
 	import { getTitleForProjectType, getIconForProjectType } from '$lib/services/projects';
-	import { Star, Github, ExternalLink, Archive } from '@lucide/svelte';
+	import { Star, ExternalLink, Archive } from '@lucide/svelte';
 	import Badge from '$lib/components/Badge.svelte';
 	import CardHeader from '$lib/components/CardHeader.svelte';
+	import GitHub from './icons/GitHub.svelte';
 
 	interface Props {
 		project: Project;
@@ -53,7 +54,7 @@
 	<div class="project-links">
 		{#if project.githubUrl}
 			<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-				<Github size={16} />
+				<GitHub size={16} />
 				GitHub
 				{#if project.stars && project.stars > 1}
 					<span class="stars-badge">

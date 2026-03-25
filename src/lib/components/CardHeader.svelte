@@ -46,7 +46,6 @@
 	}
 
 	.type-text {
-		text-transform: capitalize;
 		font-weight: 500;
 	}
 

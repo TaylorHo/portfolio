@@ -1,19 +1,18 @@
 import type { Component } from 'svelte';
 
-export interface SocialLink {
+interface BaseLink {
 	name: string;
 	url: string;
-	icon: string;
 	iconSize: number;
 	label: string;
 }
 
-export interface FooterLink {
-	name: string;
-	url: string;
+export interface SocialLink extends BaseLink {
+	icon: string;
+}
+
+export interface FooterLink extends BaseLink {
 	icon?: Component;
-	svg?: string;
-	label: string;
 }
 
 export interface PersonalInfo {

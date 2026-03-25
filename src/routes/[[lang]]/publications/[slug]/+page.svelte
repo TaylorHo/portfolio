@@ -67,7 +67,7 @@
 									? m.publication_info_authors()
 									: m.publication_info_author()}
 							</dt>
-							<dd class="info-value">{formatAuthors(data.meta.authors)}</dd>
+							<dd class="info-value">{formatAuthors(data.meta.authors, true)}</dd>
 						</div>
 
 						<!-- Published Date -->
