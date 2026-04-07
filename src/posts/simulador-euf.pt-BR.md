@@ -1,6 +1,6 @@
 ---
 title: 'Plataforma de simulados do EUF (Exame Unificado de Física)'
-description: 'Como surgiu o Simulador EUF: uma ferramenta web gratuita e de código aberto para geração de simulados e flashcards de estudo baseados nas provas anteriores do Exame Unificado de Física.'
+description: 'Como surgiu o Simulado EUF: uma ferramenta web gratuita e de código aberto para geração de simulados e flashcards de estudo baseados nas provas anteriores do Exame Unificado de Física.'
 date: '2026-03-02'
 published: true
 categories:
@@ -9,6 +9,10 @@ categories:
   - Inovação
   - Tecnologia
 ---
+
+Link do simulador: [https://euf.hoffmann.io](https://euf.hoffmann.io?utm_source=portfolio)
+
+<br/>
 
 Um passo muito importante na vida de todo físico brasileiro é o **Exame Unificado de Física**, o EUF. O exame é requisito de entrada em praticamente todas as universidades federais que oferecem programas de pós em física, e a preparação para ele não é algo simples.
 
@@ -20,9 +24,9 @@ Diante disso, resolvi criar uma ferramenta de simulados para estudar com base na
 
 A primeira versão foi um gerador de simulados simples, [arquivado no GitHub](https://github.com/TaylorHo/gerador-de-simulados-do-EUF). Funcionou para um primeiro uso, mas os simulados gerados eram pouco customizáveis — qualquer variação exigia mexer diretamente no código. Claramente não era uma solução conveniente para uso contínuo.
 
-## A versão atual: Simulador EUF
+## A versão atual: Simulado EUF
 
-Depois dessa experiência inicial, desenvolvi uma ferramenta web mais completa: o [Simulador EUF](https://euf.hoffmann.io?utm_source=portfolio).
+Depois dessa experiência inicial, desenvolvi uma ferramenta web mais completa: o [Simulado EUF](https://euf.hoffmann.io?utm_source=portfolio).
 
 Ela inclui dois recursos principais:
 

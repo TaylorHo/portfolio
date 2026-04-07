@@ -10,6 +10,10 @@ categories:
   - Technology
 ---
 
+Simulator link: [https://euf.hoffmann.io](https://euf.hoffmann.io?utm_source=portfolio)
+
+<br/>
+
 A very important milestone in the life of every Brazilian physicist is the **Unified Physics Exam**, known as the EUF. The exam is an entry requirement for virtually all federal universities that offer graduate programs in physics, and preparing for it is no simple task.
 
 When looking for study materials, I came across a considerable shortage of resources. At the time I started preparing, one of the few available initiatives was the series of solutions to past exams made by the [Uai Física](https://www.youtube.com/@UaiFisica) YouTube channel — to which many students owe a great deal. Today the channel offers more comprehensive prep courses, but for a long time there was almost nothing structured to help those taking the EUF.
