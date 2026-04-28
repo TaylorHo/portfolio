@@ -16,7 +16,7 @@ export const publications: Publication[] = [
 		type: 'conference',
 		abstract: m.publications_eosbf26_conference_presentation_description(),
 		keywords: ['DICOM', 'Computed Tomography', 'Medical Imaging', 'Medical Physics'],
-		url: 'https://www1.fisica.org.br/~eosbf/2026/index.php/en/',
+		url: 'https://www.eventweb.com.br/eosbf2026/specific-files/manuscripts/eosbf2026/90_1764615656.pdf',
 		language: m.language_english()
 	},
 	{

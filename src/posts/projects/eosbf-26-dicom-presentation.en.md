@@ -9,4 +9,4 @@ slug: 'eosbf-26-dicom-presentation'
 
 [Link to the event page](https://www1.fisica.org.br/~eosbf/2026/index.php/en/).
 
-The schedule of presentations will be published later.
+[Access to the abstract of the work published in the event proceedings](https://www.eventweb.com.br/eosbf2026/specific-files/manuscripts/eosbf2026/90_1764615656.pdf).
