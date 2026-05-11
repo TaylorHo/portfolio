@@ -154,21 +154,21 @@ export const resume: Resume = {
 			gpa: '9.79/10.0'
 		},
 		{
-			degree: 'Especialização em Química Geral e Industrial',
+			degree: m.resume_education_specialization_chemistry_title(),
 			institution: 'FACSM - Faculdade de São Marcos',
-			location: 'São Marcos, Rio Grande do Sul, Brasil',
+			location: m.resume_education_specialization_facsm_location(),
+			startDate: '2026-03'
+			// endDate: '2026-07',
+			// description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
+		},
+		{
+			degree: m.resume_education_specialization_biotechnology_title(),
+			institution: 'FACSM - Faculdade de São Marcos',
+			location: m.resume_education_specialization_facsm_location(),
 			startDate: '2026-03'
 			// endDate: '2026-07',
 			// description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
 		}
-		// {
-		// 	degree: 'Especialização em Biotecnologia',
-		// 	institution: 'FACSM - Faculdade de São Marcos',
-		// 	location: 'São Marcos, Rio Grande do Sul, Brasil',
-		// 	startDate: '2026',
-		// 	endDate: '2026',
-		// 	description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
-		// },
 		// {
 		// 	degree: 'Doutorado em Física',
 		// 	institution: 'Universidade Federal do Rio Grande do Sul',
@@ -180,10 +180,10 @@ export const resume: Resume = {
 	],
 	extraCapacitation: [
 		{
-			title: 'EGSnrc Monte Carlo for Medical Physics',
+			title: 'EGSnrc Monte Carlo school for Medical Physics',
 			institution: 'ICTP-SAIFR | IFT-Unesp',
-			completionDate: '2026-04'
-			// description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod',
+			completionDate: '2026-04',
+			description: m.resume_extra_capacitation_egsnrc_medical_physics_description()
 			// credentialUrl: ''
 		},
 		{

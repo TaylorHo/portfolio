@@ -2,7 +2,7 @@
 slug: 'eosbf-26-dicom-presentation'
 ---
 
-<img src="https://www1.fisica.org.br/~eosbf/2026/images/banner-eosbf-2026.png" />
+<img src="https://www1.fisica.org.br/~eosbf/2026/images/banner-eosbf-2026.png" alt="EOSBF-26 banner" />
 
 <br />
 <br />
