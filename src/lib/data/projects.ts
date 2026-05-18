@@ -72,5 +72,14 @@ export const projects: Project[] = [
 		githubUrl: 'https://github.com/TaylorHo/simulado-euf',
 		demoUrl: 'https://euf.hoffmann.io',
 		featured: true
+	},
+	{
+		title: 'dicom-12bit',
+		description: 'Library to convert DICOM files from 16-bit to 12-bit',
+		technologies: [m.projects_tag_physics(), 'Rust', 'CLI'],
+		year: 2026,
+		type: 'library',
+		status: 'maintained',
+		githubUrl: 'https://github.com/TaylorHo/dicom-12bit'
 	}
 ];
