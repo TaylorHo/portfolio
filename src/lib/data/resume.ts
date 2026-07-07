@@ -151,7 +151,7 @@ export const resume: Resume = {
 			startDate: '2023-01',
 			endDate: '2026-06',
 			description: m.resume_education_computer_science_description(),
-			gpa: '9.79/10.0'
+			gpa: '9.82/10.0'
 		},
 		{
 			degree: m.resume_education_specialization_chemistry_title(),
