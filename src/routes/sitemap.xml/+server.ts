@@ -1,4 +1,4 @@
-import * as sitemap from 'super-sitemap';
+import * as sitemap from 'super-sitemap/sveltekit';
 import { error, type RequestHandler } from '@sveltejs/kit';
 import type { Post } from '$lib/models/blog';
 import { publications } from '$lib/data/publications';
@@ -18,12 +18,12 @@ export const GET: RequestHandler = async ({ fetch }) => {
 	const original = await sitemap.response({
 		origin: personalInfo.url,
 		paramValues: {
-			'/[[lang]]/blog/[slug]': posts.map((post) => post.slug ?? ''),
-			'/[[lang]]/publications/[slug]': publications
+			'/[[locale]]/blog/[slug]': posts.map((post) => post.slug ?? ''),
+			'/[[locale]]/publications/[slug]': publications
 				.filter((publication) => publication.slug)
 				.map((publication) => publication.slug ?? '')
 		},
-		lang: {
+		locales: {
 			default: baseLocale,
 			alternates: locales.filter((locale) => locale !== baseLocale)
 		}

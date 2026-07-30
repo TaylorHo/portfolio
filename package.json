@@ -22,7 +22,7 @@
 		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"mdsvex": "^0.12.8",
 		"prettier": "^3.9.6",
-		"prettier-plugin-svelte": "^3.5.2",
+		"prettier-plugin-svelte": "^4.1.1",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-highlight": "^7.0.2",
 		"rehype-highlight-code-lines": "^1.2.4",
@@ -31,8 +31,8 @@
 		"remark-abbr": "^1.4.2",
 		"remark-math": "^3.0.1",
 		"remark-toc": "^9.0.0",
-		"shiki": "^3.23.0",
-		"super-sitemap": "^1.0.12",
+		"shiki": "^4.3.1",
+		"super-sitemap": "^2.0.6",
 		"svelte": "^5.56.8",
 		"svelte-check": "^4.7.4",
 		"typescript": "^6.0.3",
@@ -52,5 +52,8 @@
 		"@lucide/svelte": "^1.28.0",
 		"posthog-js": "^1.408.3"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"engines": {
+		"node": ">=20 || >=22 || >=24"
+	}
 }
