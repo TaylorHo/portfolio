@@ -157,8 +157,8 @@ export const resume: Resume = {
 			degree: m.resume_education_specialization_chemistry_title(),
 			institution: 'FACSM - Faculdade de São Marcos',
 			location: m.resume_education_specialization_facsm_location(),
-			startDate: '2026-03'
-			// endDate: '2026-07',
+			startDate: '2026-03',
+			endDate: '2026-07'
 			// description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis'
 		},
 		{

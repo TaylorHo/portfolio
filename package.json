@@ -15,17 +15,17 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@inlang/paraglide-js": "^2.18.0",
+		"@inlang/paraglide-js": "^2.23.0",
 		"@rehype-pretty/transformers": "^0.13.2",
-		"@sveltejs/adapter-vercel": "^6.3.3",
-		"@sveltejs/kit": "^2.59.1",
-		"@sveltejs/vite-plugin-svelte": "^7.1.2",
-		"mdsvex": "^0.12.7",
-		"prettier": "^3.8.3",
+		"@sveltejs/adapter-vercel": "^6.3.4",
+		"@sveltejs/kit": "^2.70.2",
+		"@sveltejs/vite-plugin-svelte": "^7.2.0",
+		"mdsvex": "^0.12.8",
+		"prettier": "^3.9.6",
 		"prettier-plugin-svelte": "^3.5.2",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-highlight": "^7.0.2",
-		"rehype-highlight-code-lines": "^1.2.3",
+		"rehype-highlight-code-lines": "^1.2.4",
 		"rehype-katex-svelte": "^1.2.0",
 		"rehype-slug": "^6.0.0",
 		"remark-abbr": "^1.4.2",
@@ -33,10 +33,10 @@
 		"remark-toc": "^9.0.0",
 		"shiki": "^3.23.0",
 		"super-sitemap": "^1.0.12",
-		"svelte": "^5.55.5",
-		"svelte-check": "^4.4.8",
+		"svelte": "^5.56.8",
+		"svelte-check": "^4.7.4",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.12"
+		"vite": "^8.2.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
@@ -49,8 +49,8 @@
 		}
 	},
 	"dependencies": {
-		"@lucide/svelte": "^1.14.0",
-		"posthog-js": "^1.373.1"
+		"@lucide/svelte": "^1.28.0",
+		"posthog-js": "^1.408.3"
 	},
 	"license": "MIT"
 }
